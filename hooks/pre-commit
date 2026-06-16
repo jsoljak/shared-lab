@@ -50,10 +50,10 @@ for f in $STAGED; do
   case "$f" in
     *.skill)
       if command -v unzip >/dev/null 2>&1; then
-        unzip -p "$f" '*.md' '*.yaml' '*.yml' '*.txt' 2>/dev/null | scan "$f (.skill payload)"
+        scan "$f (.skill payload)" "$(unzip -p "$f" '*.md' '*.yaml' '*.yml' '*.txt' 2>/dev/null)"
       fi ;;
     *.md|*.yaml|*.yml|*.txt|*.json)
-      git show ":$f" 2>/dev/null | scan "$f" ;;
+      scan "$f" "$(git show ":$f" 2>/dev/null)" ;;
   esac
 done
 
