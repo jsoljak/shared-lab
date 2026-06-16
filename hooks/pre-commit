@@ -1,0 +1,72 @@
+#!/bin/bash
+# ════════════════════════════════════════════════════════════════════════════
+# SITEQ Distribution Git-Gate — pre-commit data scanner
+# Kanonický skript — IDENTICKÝ pro všechny distribuční repy (siteq-*-repo, shared-lab).
+# Přísnost řídí soubor .gitgate v rootu repa: "TEAM" (default) nebo "PUBLIC".
+# Instalace (jednou per klon):   git config core.hooksPath hooks
+# Tvrdý blok: vědomý override jen přes  git commit --no-verify -m "intentional: <důvod>"
+# ADR: git-gate rozšíření na distribuční repy (navazuje na ADR-022).
+# ════════════════════════════════════════════════════════════════════════════
+
+ROOT="$(git rev-parse --show-toplevel)"
+PROFILE="TEAM"
+[ -f "$ROOT/.gitgate" ] && PROFILE="$(tr -dc 'A-Z' < "$ROOT/.gitgate")"
+[ -z "$PROFILE" ] && PROFILE="TEAM"
+
+STAGED="$(git diff --cached --name-only --diff-filter=ACM)"
+[ -z "$STAGED" ] && exit 0
+
+# ── vzory ───────────────────────────────────────────────────────────────────
+CLIENTS='EMATIQ|ISECO|SOITRON|\bGPE\b|ČRA|\bCRA\b|\bEY\b'
+RATES='[0-9]{3,} ?(CZK|Kč|EUR|€)|MD sazba|marže|hodinová sazba'
+EMAIL='[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.(cz|com|sk)'
+PHONE='\+42[01] ?[0-9]{3} ?[0-9]{3} ?[0-9]{3}'
+PERSONA='[Jj]irka|[Ss]oljak|\bJSO\b'
+
+findings=""
+flag(){ findings="${findings}
+  🔴 $1"; }
+
+scan(){           # $1 = label ; $2 = obsah (NE přes pipe — jinak subshell ztratí nálezy)
+  local L="$1" t="$2"
+  grep -m1 -qE '^visibility: (FOUNDER|MANAGEMENT)' <<<"$t" && flag "$L — visibility FOUNDER/MANAGEMENT"
+  grep -m1 -qE '^audience: (CLIENT|CANDIDATE|VENDOR)' <<<"$t" && flag "$L — citlivé audience"
+  grep -m1 -qE "$CLIENTS" <<<"$t" && flag "$L — reálný klientský název"
+  grep -m1 -qE "$RATES"   <<<"$t" && flag "$L — sazba / marže"
+  grep -m1 -qE "$PHONE"   <<<"$t" && flag "$L — telefonní číslo"
+  if [ "$PROFILE" = "PUBLIC" ]; then
+    grep -m1 -qE "$EMAIL"   <<<"$t" && flag "$L — e-mail (PUBLIC: zakázáno)"
+    grep -m1 -qE "$PERSONA" <<<"$t" && flag "$L — persona/firma Jirka/JSO (PUBLIC: zakázáno)"
+  else
+    if grep -oE "$EMAIL" <<<"$t" | grep -vqE '@siteq\.cz|@email\.cz|example'; then
+      flag "$L — cizí e-mail (mimo @siteq.cz)"
+    fi
+  fi
+  return 0
+}
+
+for f in $STAGED; do
+  [ -f "$f" ] || continue
+  case "$f" in
+    *.skill)
+      if command -v unzip >/dev/null 2>&1; then
+        unzip -p "$f" '*.md' '*.yaml' '*.yml' '*.txt' 2>/dev/null | scan "$f (.skill payload)"
+      fi ;;
+    *.md|*.yaml|*.yml|*.txt|*.json)
+      git show ":$f" 2>/dev/null | scan "$f" ;;
+  esac
+done
+
+if [ -n "$findings" ]; then
+  echo ""
+  echo "🛑 SITEQ GIT-GATE [$PROFILE] — commit ZABLOKOVÁN"
+  echo "Staged soubory obsahují citlivá data, která nesmí do distribučního repa:"
+  echo "$findings"
+  echo ""
+  echo "Oprava: soubor přežeň přes skill-sanitizer, nebo unstage (git restore --staged <soubor>)."
+  echo "Vědomý override (governance výjimka): git commit --no-verify -m \"intentional: <důvod>\""
+  exit 1
+fi
+
+echo "✅ git-gate [$PROFILE] OK"
+exit 0
