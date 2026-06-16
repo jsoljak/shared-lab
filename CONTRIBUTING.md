@@ -23,9 +23,12 @@ commit, pokud najde:
 
 - `visibility: FOUNDER/MANAGEMENT`, citlivé `audience`
 - reálné klientské názvy, sazby/marže, telefony
-- **jakýkoli e-mail** a **personu/firmu** (jméno autora, iniciály, interní firemní markery)
+- **jakýkoli e-mail** a **personu/firmu** (neformální moniker, iniciály, interní firemní markery)
 
-PUBLIC profil je přísnější než TEAM — ven nesmí ani jméno autora.
+PUBLIC profil je přísnější než TEAM. **Výjimka — schválená attribution autora projde:**
+formální `Author: Jiří Soljak | linkedin.com/in/jirisoljak` (canonical PUBLIC header dle
+distribution-standardu). Cokoli mimo tuhle přesnou podobu (neformální moniker autora, e-mail apod.)
+gate stále blokuje.
 
 ## Když gate zablokuje
 

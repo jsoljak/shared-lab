@@ -35,8 +35,11 @@ scan(){           # $1 = label ; $2 = obsah (NE přes pipe — jinak subshell zt
   grep -m1 -qE "$RATES"   <<<"$t" && flag "$L — sazba / marže"
   grep -m1 -qE "$PHONE"   <<<"$t" && flag "$L — telefonní číslo"
   if [ "$PROFILE" = "PUBLIC" ]; then
-    grep -m1 -qE "$EMAIL"   <<<"$t" && flag "$L — e-mail (PUBLIC: zakázáno)"
-    grep -m1 -qE "$PERSONA" <<<"$t" && flag "$L — persona/firma Jirka/JSO (PUBLIC: zakázáno)"
+    # Schválená attribution autora (canonical PUBLIC header dle distribution-standardu)
+    # se odečte PŘED skenem — povoleno je jen formální jméno + LinkedIn, nic víc.
+    local pub; pub="$(sed -E 's#Jiří Soljak##g; s#linkedin\.com/in/jirisoljak##g' <<<"$t")"
+    grep -m1 -qE "$EMAIL"   <<<"$pub" && flag "$L — e-mail (PUBLIC: zakázáno)"
+    grep -m1 -qE "$PERSONA" <<<"$pub" && flag "$L — persona/firma (PUBLIC: OK jen schválená attribution Jiří Soljak + LinkedIn)"
   else
     if grep -oE "$EMAIL" <<<"$t" | grep -vqE '@siteq\.cz|@email\.cz|example'; then
       flag "$L — cizí e-mail (mimo @siteq.cz)"
