@@ -1,0 +1,33 @@
+# ════════════════════════════════════════════════════════════════════════════
+# shared-lab — .gitignore (leak-vector block, doplňuje pre-commit check)
+# ════════════════════════════════════════════════════════════════════════════
+
+# ── leak vektory ────────────────────────────────────────────────────────────
+**/config/
+**/data/
+**/inputs/
+**/outputs/
+**/examples/
+**/skill-memory/
+**/memory-template/
+*.draft.md
+*-raw.md
+*_feedback.json
+
+# ── lokální pre-commit patterns (nikdy nesdílet) ────────────────────────────
+.gate-local-patterns
+
+# ── binárky (kromě .skill) ──────────────────────────────────────────────────
+*.docx
+*.xlsx
+*.pdf
+*.zip
+*.key
+*.env
+.DS_Store
+**/.DS_Store
+
+# ── OS / editor ─────────────────────────────────────────────────────────────
+.obsidian/
+*.tmp
+*.bak

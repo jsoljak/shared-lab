@@ -1,0 +1,78 @@
+#!/bin/bash
+# ────────────────────────────────────────────────────────────────────────────
+# Pre-commit safety check — blocks accidental commits of sensitive data.
+# Strictness is controlled by .gitgate in the repo root: "TEAM" (default) or
+# "PUBLIC". Install once per clone:  git config core.hooksPath hooks
+# Deliberate override: git commit --no-verify -m "intentional: <reason>"
+#
+# Note: this is a public-safe variant. Organization-specific name matching
+# (if any) is loaded from an optional local, gitignored file — never
+# hardcoded here, since this script itself lives in a public repo.
+# ────────────────────────────────────────────────────────────────────────────
+
+ROOT="$(git rev-parse --show-toplevel)"
+PROFILE="TEAM"
+[ -f "$ROOT/.gitgate" ] && PROFILE="$(tr -dc 'A-Z' < "$ROOT/.gitgate")"
+[ -z "$PROFILE" ] && PROFILE="TEAM"
+
+STAGED="$(git diff --cached --name-only --diff-filter=ACM)"
+[ -z "$STAGED" ] && exit 0
+
+# ── vzory ───────────────────────────────────────────────────────────────────
+CLIENTS=""
+[ -f "$ROOT/.gate-local-patterns" ] && CLIENTS="$(cat "$ROOT/.gate-local-patterns")"
+RATES='[0-9]{2,} ?(CZK|Kč|EUR|€)|[0-9]{2,} ?MD\b|(marže|sazb[ay]|provize)[^0-9]{0,15}[0-9]{2,}'
+EMAIL='[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.(cz|com|sk)'
+PHONE='\+42[01] ?[0-9]{3} ?[0-9]{3} ?[0-9]{3}'
+PERSONA='[Jj]irka|[Ss]oljak'
+
+findings=""
+flag(){ findings="${findings}
+  🔴 $1"; }
+
+scan(){           # $1 = label ; $2 = obsah (NE přes pipe — jinak subshell ztratí nálezy)
+  local L="$1" t="$2"
+  grep -m1 -qE '^visibility: (FOUNDER|MANAGEMENT)' <<<"$t" && flag "$L — internal-only marker"
+  grep -m1 -qE '^audience: (CLIENT|CANDIDATE|VENDOR)' <<<"$t" && flag "$L — sensitive audience marker"
+  [ -n "$CLIENTS" ] && grep -m1 -qE "$CLIENTS" <<<"$t" && flag "$L — organization name"
+  grep -m1 -qE "$RATES"   <<<"$t" && flag "$L — rate / fee figure"
+  grep -m1 -qE "$PHONE"   <<<"$t" && flag "$L — phone number"
+  if [ "$PROFILE" = "PUBLIC" ]; then
+    # Approved public attribution line is allowed through — anything else
+    # about the author (casual name, email) is still blocked.
+    local pub; pub="$(sed -E 's#(Jiří|Jiri) Soljak##g; s#linkedin\.com/in/jirisoljak##g' <<<"$t")"
+    grep -m1 -qE "$EMAIL"   <<<"$pub" && flag "$L — email address (blocked in PUBLIC)"
+    grep -m1 -qE "$PERSONA" <<<"$pub" && flag "$L — informal author reference (PUBLIC allows only the formal attribution line)"
+  else
+    if grep -oE "$EMAIL" <<<"$t" | grep -vqE '@example\.'; then
+      flag "$L — external email address"
+    fi
+  fi
+  return 0
+}
+
+for f in $STAGED; do
+  [ -f "$f" ] || continue
+  case "$f" in
+    *.skill)
+      if command -v unzip >/dev/null 2>&1; then
+        scan "$f (.skill payload)" "$(unzip -p "$f" '*.md' '*.yaml' '*.yml' '*.txt' 2>/dev/null)"
+      fi ;;
+    *.md|*.yaml|*.yml|*.txt|*.json)
+      scan "$f" "$(git show ":$f" 2>/dev/null)" ;;
+  esac
+done
+
+if [ -n "$findings" ]; then
+  echo ""
+  echo "🛑 pre-commit check [$PROFILE] — commit blocked"
+  echo "Staged files contain data that shouldn't go into this repo:"
+  echo "$findings"
+  echo ""
+  echo "Fix: clean up the flagged content, or unstage it (git restore --staged <file>)."
+  echo "Deliberate override: git commit --no-verify -m \"intentional: <reason>\""
+  exit 1
+fi
+
+echo "✅ pre-commit check [$PROFILE] OK"
+exit 0
