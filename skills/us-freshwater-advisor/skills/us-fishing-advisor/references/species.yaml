@@ -1,0 +1,379 @@
+# Species cards — machine-readable parameters for the scoring script.
+# Source: references/evidence-tiers.md (evidence and citations live there).
+# tier: D = documented, P = plausible, F = folklore. No tier = operational estimate.
+#
+# temperature:
+#   opt_min/opt_max   – band of peak feeding activity (°F)
+#   stop              – below this, feeding is effectively off
+#   upper_stress      – above this, feeding drops from oxygen/heat stress
+# light: preferred illumination — high | medium | low
+# closed_season: per state law, ORIENTATION ONLY — us-water-finder is the
+#   authoritative source, always confirm there before stating a legal fact.
+#
+# hard_stop (optional): {above: N} or {below: N} plus a `reason`. Forces the score to 0
+#   and outputs the reason verbatim — for thresholds where targeting the species is
+#   wrong regardless of how good conditions otherwise look, typically a documented
+#   mortality risk. Read generically by score.py, so a species added later (via the
+#   skill's EXPAND mode) can declare one without touching code. Use sparingly and only
+#   with a citation: this overrides the whole scoring model.
+#
+#   Distinct from `stop` above: `stop` means "this fish isn't feeding" (score capped
+#   low, still nonzero — it's a fishing-quality statement). `hard_stop` means "don't
+#   target this at all" (score 0 — it's a harm statement).
+
+version: "2026-08"
+
+species:
+
+  largemouth_bass:
+    group: bass
+    common_name: Largemouth Bass
+    latin: Micropterus salmoides
+    temperature: {opt_min: 68, opt_max: 82, stop: 50, upper_stress: 92, tier: D}
+    temperature_note: >
+      Feeding effectively stops below 50°F, rises steeply 50-68°F, stays strong to
+      at least 82°F (adults actively select ~81°F when available), declines above
+      that. Warm-end decline is oxygen-driven, not purely thermal — bass actively
+      seek cooler, better-oxygenated water at high surface temperatures.
+    light: medium
+    light_note: "Foraging success measurably higher at low/moderate light than bright midday sun. [D]"
+    active_windows: [dawn, dusk, night]
+    spawn: {start_temp: 58, end_temp: 65, typical_months: [April, May]}
+    closed_season: null   # size/bag-limit only in IN/OH/IL; no closed season
+    turbidity: benefits    # rising/murky water can trigger a short feeding window; sustained high turbidity favors ambush over reactive strikes
+
+  smallmouth_bass:
+    group: bass
+    common_name: Smallmouth Bass
+    latin: Micropterus dolomieu
+    temperature: {opt_min: 65, opt_max: 79, stop: 45, upper_stress: 95, tier: D}
+    temperature_note: >
+      Field preference ~70°F, growth optimum ~79°F, upper lethal near 100°F.
+      River/stream smallmouth respond as much to current-seam structure as to
+      temperature — treat current speed as an independent tactical variable.
+    light: medium
+    active_windows: [dawn, dusk]
+    spawn: {start_temp: 62, end_temp: 64, typical_months: [May, June]}
+    closed_season: null
+    turbidity: neutral
+
+  crappie:
+    group: panfish
+    common_name: Crappie (black & white)
+    latin: Pomoxis spp.
+    temperature: {opt_min: null, opt_max: null, stop: null, upper_stress: null, tier: P}
+    temperature_note: >
+      Angler-consensus tier, not a controlled study like bluegill has. Spawns
+      roughly 58-65°F, typically a few weeks earlier than bluegill.
+    light: low
+    light_note: "Strong, near-universal angler consensus on low-light/night activity (dock-light feeding). Plausible mechanism, no controlled vision study found — [P], not [D]."
+    active_windows: [dawn, dusk, night]
+    spawn: {start_temp: 58, end_temp: 65, typical_months: [April, May]}
+    closed_season: null
+    turbidity: neutral
+
+  bluegill:
+    group: panfish
+    common_name: Bluegill
+    latin: Lepomis macrochirus
+    temperature: {opt_min: 75, opt_max: 88, stop: null, upper_stress: 93, tier: D}
+    temperature_note: >
+      Fastest growth at 86-88°F; food-conversion efficiency drops by 93°F. Spawns
+      in repeated bouts (4-11 documented per season) from ~64°F through early
+      August — NOT a single spring event. Trophy-class bluegill shift diet toward
+      minnows/young-of-year fish as they grow and water warms (documented, not
+      folklore) — favor minnow-tipped presentation for larger fish specifically.
+    light: unknown
+    light_note: "Wisconsin DNR literature review explicitly found no data on light preference. Treat any dawn/dusk claim as [P] at best, not [D]."
+    active_windows: [unknown]
+    spawn: {start_temp: 64, end_temp: 80, typical_months: [May, June, July, August], note: "multiple spawning bouts through summer"}
+    closed_season: null
+    turbidity: neutral
+
+  common_carp:
+    group: carp
+    common_name: Common Carp
+    latin: Cyprinus carpio
+    temperature: {opt_min: 60, opt_max: 75, stop: null, upper_stress: 85, tier: P}
+    temperature_note: >
+      Bounds informed by aquaculture feeding-rhythm literature and US/European
+      carp-angling consensus, not a dedicated Midwest wild-population field study.
+      Cold water lowers tolerance for large caloric loads — favor smaller,
+      higher-attractor bait over bulk food-value bait below the optimum band.
+    light: unknown
+    active_windows: [unknown]
+    spawn: {start_temp: 60, end_temp: 65, typical_months: [May, June]}
+    closed_season: null
+    turbidity: benefits   # chemosensory/barbel feeder, tolerant of and often more active in disturbed water — mechanism not field-isolated for US populations specifically
+
+  catfish_channel:
+    group: catfish
+    common_name: Channel Catfish
+    latin: Ictalurus punctatus
+    temperature: {opt_min: 80, opt_max: 86, stop: null, upper_stress: 90, tier: D}
+    temperature_note: >
+      Optimal growth 81-86°F, optimal digestion 80-85°F, broad tolerance 41-97°F
+      field range. Omnivorous scavenger — will eat dead/decaying material, unlike
+      flathead. Most tolerant of the three catfish species to prepared/stink baits.
+    light: low
+    active_windows: [night, dusk]
+    spawn: {start_temp: null, end_temp: null, typical_months: [June]}
+    closed_season: null
+    turbidity: benefits
+    note: "Oil-based stink baits don't emulsify below ~60°F and underperform in current — a warm-water, still-water, channel-cat-specific tool, not universal."
+
+  catfish_blue:
+    group: catfish
+    common_name: Blue Catfish
+    latin: Ictalurus furcatus
+    temperature: {opt_min: null, opt_max: null, stop: null, upper_stress: null, tier: P}
+    temperature_note: >
+      Prefers swift current and cleaner substrate (sand/gravel/rubble) more than
+      the "catfish = murky water" stereotype suggests — big-river specialist,
+      migrates downriver (warmer) in winter, upriver in summer. Shifts almost
+      exclusively to shad in cold water as shad become cold-stressed and
+      vulnerable — a real seasonal forage-availability mechanism, not folklore.
+    light: low
+    active_windows: [night, dusk]
+    spawn: {start_temp: null, end_temp: null, typical_months: [May, June]}
+    closed_season: null
+    turbidity: neutral   # prefers clearer water and current over murk, unlike channel/flathead
+
+  catfish_flathead:
+    group: catfish
+    common_name: Flathead Catfish
+    latin: Pylodictis olivaris
+    temperature: {opt_min: null, opt_max: null, stop: null, upper_stress: null, tier: P}
+    temperature_note: >
+      Most behaviorally distinct of the three catfish species. STRICTLY live/
+      freshly-killed bait — does not scavenge dead/decaying material like channel
+      cat does. Strongly nocturnal: moves from deep cover to shallows/riffles
+      specifically after dark. Solitary, territorial ambush predator — one fish
+      per piece of cover, not shared habitat like schooling channel cats. Spawns
+      later than channel/blue.
+    light: low
+    active_windows: [night]
+    spawn: {start_temp: null, end_temp: null, typical_months: [June, July]}
+    closed_season: null
+    turbidity: neutral   # tolerates murky water but prefers slower current than blue cat
+    note: "Bait rule overrides the generic temperature rule: live bait only, regardless of temperature or turbidity."
+
+  walleye:
+    group: predator
+    common_name: Walleye
+    latin: Sander vitreus
+    temperature: {opt_min: null, opt_max: null, stop: 40, upper_stress: null, tier: D}
+    temperature_note: >
+      Spawn trigger 44-48°F (starts ~40°F, tapers by low 50s). Feeding optimum
+      not pinned to a single documented band the way bass is — light window
+      matters more than a temperature number for this species (see below).
+    light: low
+    light_note: >
+      Directly measured (2025 study): broad spectral sensitivity peaking 500-550nm
+      (green); reaction distance and peak foraging success occur specifically
+      between nautical and civil twilight — not full darkness, not bright
+      daylight. Strongest single light-window citation in this knowledge base. [D]
+    active_windows: [dawn, dusk, night]
+    spawn: {start_temp: 40, end_temp: 52, typical_months: [March, April]}
+    closed_season: {michigan_only: "opens last Saturday of April (Lower Peninsula) / May 15 (Upper Peninsula) — confirm exact date via us-water-finder every season"}
+    turbidity: benefits   # jig spinners specifically outperform in cloudy water — flash+vibration compensate for reduced visibility
+
+  northern_pike:
+    group: predator
+    common_name: Northern Pike
+    latin: Esox lucius
+    temperature: {opt_min: 60, opt_max: 65, stop: null, upper_stress: 65, tier: P}
+    temperature_note: >
+      Cool-water species — above ~65°F larger fish push to deeper/cooler water, a
+      documented species-specific thermal-avoidance shift distinct from (and
+      stronger than) the generic bass-style "warm=fast" rule. Spawns very early,
+      40-50°F, ahead of bass and walleye at the same latitude.
+    light: high
+    light_note: "Daytime ambush predator, limited more by temperature/cover than light. [P], not a vision-physiology study like walleye's."
+    active_windows: [day]
+    spawn: {start_temp: 40, end_temp: 50, typical_months: [March]}
+    closed_season: {michigan_only: "opens last Saturday of April (Lower Peninsula) / May 15 (Upper Peninsula) — confirm via us-water-finder"}
+    turbidity: neutral
+
+  muskellunge:
+    group: predator
+    common_name: Muskellunge
+    latin: Esox masquinongy
+    temperature: {opt_min: null, opt_max: 79, stop: null, upper_stress: 79, tier: D}
+    temperature_note: >
+      Direct Midwest telemetry (Illinois reservoir, 2024): 26°C/79°F identified as
+      a critical threshold tied to elevated post-release mortality — larger fish
+      select cooler water, but frequently cannot fully avoid exceeding it in
+      summer. Treat 79°F as a hard "don't target" line, biologically (feeding
+      drop) AND ethically (release mortality risk) — not just a lower score.
+      Documented "shallow slide" behavior mid-August–early September as the
+      thermocline breaks down. Caution: surface temperature can mislead, since
+      muskies often hold at a different depth-temperature than the surface reads.
+    light: unknown
+    active_windows: [unknown]
+    spawn: {start_temp: 50, end_temp: 59, typical_months: [April, May]}
+    closed_season: {michigan_only: "opens first Saturday of June — confirm via us-water-finder"}
+    turbidity: neutral
+    hard_stop:
+      above: 79
+      reason: >
+        Water is at or above 79F — documented post-release mortality risk threshold for
+        muskellunge (Bieber & Suski 2024). Don't target this species right now regardless
+        of score, biologically and ethically.
+
+  rainbow_trout:
+    group: trout
+    common_name: Rainbow Trout
+    latin: Oncorhynchus mykiss
+    temperature: {opt_min: 50, opt_max: 57, stop: 39, upper_stress: 76, tier: D}
+    temperature_note: >
+      Optimal growth measured at 13.1°C/55.6°F (Montana State University comparative
+      study, directly against westslope cutthroat); "fundamental thermal niche"
+      defined as 3°C below to 1°C above that optimum = 50-57°F. 60-day ultimate
+      upper incipient lethal temperature (UUILT) 24.3°C/75.7°F, 7-day UUILT
+      26.0°C/78.8°F — meaningfully higher tolerance than cutthroat trout in the same
+      water (see cutthroat_trout entry), which is a real factor in rainbow
+      out-competing/displacing cutthroat as water warms. Low-end "stop" of 39°F is
+      extrapolated from the same-family brown trout zero-growth threshold, not a
+      rainbow-specific measurement — treat as [P], not [D].
+    light: medium
+    light_note: >
+      2025 study (photoperiod/light-intensity, video-tracked feeding): low light
+      intensity under a moderate photoperiod produced the most efficient feeding;
+      both full darkness AND bright/extended-daylight regimes were inhibitory. This
+      does NOT cleanly support a "dawn/dusk" claim the way walleye's vision study
+      does — it's "moderate low light," not specifically twilight. [D] for the
+      low-light-vs-darkness finding, [P] for mapping it onto dawn/dusk fishing
+      windows specifically.
+    active_windows: [dawn, dusk]
+    spawn: {start_temp: 45, end_temp: 54, typical_months: [March, April, May]}
+    closed_season: null   # varies by specific water — confirm via us-water-finder; most stocked/put-and-take water has no closed season, wild/native water sometimes does
+    turbidity: neutral
+    note: "Hatchery strains selectively bred to spawn in fall exist and are common in stocked fisheries — don't assume spring-only spawning for a specific stocked water without checking."
+
+  brown_trout:
+    group: trout
+    common_name: Brown Trout
+    latin: Salmo trutta
+    temperature: {opt_min: 54, opt_max: 64, stop: 38, upper_stress: 76, tier: D}
+    temperature_note: >
+      Elliott growth model (classic, widely-cited): optimal growth 13.11°C/55.6°F,
+      zero net growth below 3.56°C/38.4°F or above 19.48°C/67.1°F (fish lose weight
+      outside this band even if still feeding). Preferred/selected range in the
+      field 12-17.6°C/53.6-63.7°F, with behavioral avoidance of water above
+      ~20°C/68°F where an alternative exists. Upper lethal 26.7°C/80.1°F (~17-hour
+      survival), 24.7°C/76.5°F (7-day).
+    light: low
+    light_note: >
+      Large brown trout are well-documented in fisheries and angling literature as
+      increasingly nocturnal/low-light feeders as they grow — a strong, specific,
+      repeated pattern for this species (bigger fish get more light-shy), but not
+      independently vision-physiology-confirmed the way walleye's is. [P].
+    active_windows: [dusk, night]
+    spawn: {start_temp: 38, end_temp: 50, typical_months: [September, October, November], note: "fall spawner — opposite season from rainbow/cutthroat. Migration into spawning areas begins ~45-50F, peak spawning activity 38-44F."}
+    closed_season: null   # varies by specific water — confirm via us-water-finder; many states close specific spawning-run stretches in fall, check the named water
+    turbidity: neutral
+    note: "Don't apply the rainbow/cutthroat spring-spawn assumption to brown trout — it's the one species in this group that spawns in fall, and a fall trip near spawning gravel should be treated as a sensitive-period consideration (redds are easy to trample, fish on redds are easy but arguably unsporting/harmful targets), not just a tactical opportunity."
+
+  brook_trout:
+    group: trout
+    common_name: Brook Trout
+    latin: Salvelinus fontinalis
+    temperature: {opt_min: 52, opt_max: 61, stop: null, upper_stress: 68, tier: D}
+    temperature_note: >
+      Raleigh 1982 USFWS Habitat Suitability Index model (the standard reference for
+      this species): optimal growth/survival 11-16°C/52-61°F; a separate, older
+      source (Mullen 1958) gives 12.8-19°C/55-66°F for feeding activity specifically
+      — the two don't fully agree, the USFWS range is used here as the primary
+      number. Sustained stress above 20°C/68°F; short-term maximum tolerable
+      ~23.8°C/74.8°F (Embody 1921); absolute lethal ceiling ~25.3°C/77.5°F. Most
+      temperature-sensitive of the four trout species modeled here — multiple
+      independent USGS thermal-acclimation studies (2024-2025) confirm brook trout
+      lose thermal tolerance faster and recover it slower than other coldwater
+      species. No documented low-end "stop": unlike warmwater species, this group
+      doesn't go off the feed in cold water — water close to freezing is well within
+      a coldwater specialist's normal operating range, it just isn't optimal.
+    light: unknown
+    light_note: "No dedicated light-preference study found for this species specifically — don't assume it matches rainbow's low-light finding without a citation."
+    active_windows: [unknown]
+    spawn: {start_temp: 40, end_temp: 50, typical_months: [September, October, November], note: "fall spawner, like brown trout"}
+    closed_season: null   # varies by specific water — confirm via us-water-finder
+    turbidity: neutral
+    hard_stop:
+      above: 68
+      reason: >
+        Water is at or above 68F/20C — Raleigh 1982 (USFWS Habitat Suitability Index)
+        found brook trout do poorly where temperature exceeds this for extended periods,
+        and this is the most temperature-sensitive species modeled here (multiple USGS
+        2024-2025 acclimation studies confirm it loses thermal tolerance faster and
+        recovers slower than other coldwater species). Catch-and-release mortality rises
+        sharply in this range. Don't target brook trout in water this warm — find a
+        colder headwater reach or a different species.
+    note: "Native range is the coldest, smallest headwater water on this whole species list — a brook trout candidate stretch and a brown/rainbow candidate stretch on the 'same' river system can be genuinely different segments, not interchangeable."
+
+  cutthroat_trout:
+    group: trout
+    common_name: Cutthroat Trout (westslope)
+    latin: Oncorhynchus clarkii lewisi
+    temperature: {opt_min: 51, opt_max: 58, stop: null, upper_stress: 67, tier: D}
+    temperature_note: >
+      Montana State University comparative study, run directly against rainbow
+      trout in the same protocol: optimal growth 13.6°C/56.5°F, fundamental thermal
+      niche 10.6-14.6°C/51.1-58.3°F. 60-day UUILT 19.6°C/67.3°F — genuinely,
+      meaningfully lower than rainbow trout's 24.3°C/75.7°F from the same study, not
+      a rounding difference. Both species survive well 8-18°C/46-64°F, but survival
+      diverges sharply above 20°C/68°F, where cutthroat drops off hard and rainbow
+      does not. This is Montana's state fish and a species of conservation concern
+      in parts of its range — a warm, marginal cutthroat water is a real biological
+      risk to the fish, not just a lower score.
+    light: unknown
+    light_note: "No dedicated light-preference study found — treat any dawn/dusk claim as unverified for this species specifically."
+    active_windows: [unknown]
+    spawn: {start_temp: 50, end_temp: 50, typical_months: [April, May, June], note: "spring spawner, triggered specifically around 10C/50F with high spring runoff flows"}
+    closed_season: null   # confirm via us-water-finder — pure westslope cutthroat populations often carry special catch-and-release or gear-restriction regulations distinct from stocked rainbow water; check the specific water, don't assume general trout rules apply
+    turbidity: neutral
+    hard_stop:
+      above: 67
+      reason: >
+        Water is at or above 67F — the measured 60-day ultimate upper incipient lethal
+        temperature for westslope cutthroat (19.6C/67.3F, McMahon et al., Montana State
+        University). Rainbow trout tolerate this water fine (their equivalent threshold
+        is 75.7F) but cutthroat do not, and this is a species of conservation concern
+        across much of its range. Don't target cutthroat in water this warm — it's a
+        real risk to the fish, not just a lower catch rate. Note this sits below
+        Montana's 73F hoot-owl trigger, so cutthroat water can be biologically unsuitable
+        while still legally open.
+    note: "Hybridizes readily with rainbow trout where the two overlap — a 'cutthroat' catch in a mixed-species water may genuinely be a cutbow hybrid, which matters for conservation-motivated catch-and-release decisions even though it doesn't change the fishing tactics."
+
+  kokanee_salmon:
+    group: salmon
+    common_name: Kokanee Salmon (landlocked sockeye)
+    latin: Oncorhynchus nerka
+    temperature: {opt_min: 47, opt_max: 53, stop: null, upper_stress: null, tier: P}
+    temperature_note: >
+      Washington Dept. of Fish & Wildlife: kokanee "prefer depths where water
+      temperature is near 50°F" and follow that isotherm vertically as lakes
+      stratify — shallow in spring, pinned near the thermocline in summer, shallow
+      again in fall. This is a cross-regional citation (Washington, not Montana) —
+      the mechanism (thermocline-following) is well-established for the species
+      generally, but treat the exact 47-53°F band as [P] for Montana reservoirs
+      specifically, not [D].
+    light: unknown
+    active_windows: [unknown]
+    spawn: {start_temp: 43, end_temp: 43, typical_months: [November, December], note: "migrate into spawning tributary streams starting September-October; eggs take ~110 days to hatch at 43F"}
+    closed_season: null   # confirm via us-water-finder — spawning-run snagging/harvest restrictions are common and vary by water, don't assume open season during the run
+    turbidity: neutral
+    note: "Primarily a STILLWATER species — the one entry in this file that doesn't belong in a river/stream recommendation outside its short fall spawning-run window into tributary streams, and even then many states restrict methods/harvest during the run specifically to protect the spawning population. Forage is plankton, not larger prey — don't apply the trout forage-matching lure-sizing logic here; kokanee tactics center on small, flashy attractors (small spoons/spinners, often behind a dodger/flasher when trolled) rather than imitating a specific prey item."
+
+# ─────────────────────────────────────────────────────────────
+# Scoring weights — see references/evidence-tiers.md for justification
+weights:
+  temperature_position: 0.35   # position on the species' feeding curve
+  temperature_trend: 0.15      # 72h trend, sign depends on which side of the curve
+  light_window: 0.20           # match between time-of-day and species preference
+  seasonal_phase: 0.15         # pre/post-spawn, seasonal shifts
+  flow_turbidity: 0.10         # moving water only
+  wind_cloud: 0.05
+  # Deliberately NOT used as predictors: barometric pressure, moon phase.
+  # Pressure enters only as weather-system description; moon enters only as
+  # night light level for low-light species.

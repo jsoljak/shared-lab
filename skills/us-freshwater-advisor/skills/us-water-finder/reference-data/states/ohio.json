@@ -1,0 +1,70 @@
+{
+  "state": "ohio",
+  "source_note": "Pulled via Mode E on 2026-08-20 (first live run of Mode E for this toolkit). Access points confirmed live against gis2.ohiodnr.gov's Division of Watercraft 'Stream Access' FeatureServer (queried and returned real records for Franklin County, e.g. Olentangy River / Scioto River access points). Regulations confirmed against the official 2026-27 ODNR fishing regulations PDF (effective March 1, 2026 - February 28, 2027, so current for a September 2026 trip). Stocking source identified (data.ohio.gov 'Ohio Fish Stocking Records') but NOT confirmed downloadable in this pass -- the dataset viewer returned an access-approval/login wall live, contradicting the ohiodnr.gov referral page's claim that no login is required. Nothing here has had a second verification pass.",
+  "confirmed": [
+    "access_points_partial",
+    "regulations_size_bag_limits",
+    "regulations_license_fees",
+    "regulations_no_closed_season"
+  ],
+  "unconfirmed": [
+    "access_points_statewide_coverage",
+    "access_points_lake_reservoir_shoreline",
+    "stocking_data_public_access",
+    "regulations_full_water_specific_overrides_list",
+    "great_lakes_erie_specific_rules"
+  ],
+  "access_points_source": "https://gis2.ohiodnr.gov/arcgis/rest/services/DWC_Services/Watercraft_Paddling_Query/FeatureServer/0 (Ohio DNR Division of Watercraft, 'Stream Access (All Fields)' layer) -- fetched via scripts/fetch_ohio.py",
+  "access_points_caveat": "This is a river/stream paddling-access layer from the Division of WATERCRAFT, not a Division of Wildlife fishing-access layer. There is no confirmed dedicated statewide fishing-access-point feed for Ohio (unlike Indiana's Fish_Access_RO or Michigan's boating-access FeatureServer). It does NOT cover lake/reservoir shoreline access or boat ramps on lakes -- only stream/river put-ins, portages, and dam locations. Many points are portage-around-a-dam markers, not fishing spots. Server caps queries at 1000 rows and exceeded that cap on an unfiltered pull during this Mode E pass, so a statewide count is unknown; always filter by county or waterbody name rather than pulling everything. ODNR also runs a 'Where to Fish' species-abundance dashboard (data.ohio.gov) and an 'Interactive Ohio Lake Fishing Map' (per-lake PDF maps at ohiodnr.gov/.../fishing-lake-maps) -- neither was confirmed as a queryable GPS/access-point API in this pass; the lake-maps page is PDF-per-lake, not a feed.",
+  "regulations_source": "https://dam.assets.ohio.gov/image/upload/ohiodnr.gov/documents/wildlife/laws-regs-licenses/OhioFishingRegs_English.pdf (official ODNR 2026-27 Fishing Regulations booklet, effective 2026-03-01 to 2027-02-28)",
+  "regulations_summary": {
+    "largemouth_bass": "5/day (singly or in combination with smallmouth), 12 in minimum, statewide",
+    "smallmouth_bass": "5/day (singly or in combination with largemouth), 12 in minimum, statewide",
+    "walleye_saugeye": "6/day (singly or in combination), no statewide minimum size",
+    "muskellunge": "1/day, no statewide minimum size",
+    "northern_pike": "not listed as a separate line in the statewide table in this pass -- treat as unconfirmed, don't assume unlimited",
+    "channel_catfish": "no limit under 28 in; 1/day (statewide) for 28 in and over",
+    "blue_catfish": "no limit under 35 in; 1/day (statewide) for 35 in and over",
+    "flathead_catfish": "no limit under 35 in; 1/day (statewide) for 35 in and over",
+    "crappie": "30/day (singly or in combination, white/black crappie), no statewide minimum size",
+    "bluegill_sunfish": "no separate statewide limit found in this pass -- falls under general/'all other fish' catch-all; not independently confirmed",
+    "common_carp": "not listed as a regulated game species in the statewide limits table -- treat as unregulated/forage fish pending direct confirmation",
+    "trout_combined_inland": "INLAND waters statewide (lakes, reservoirs, rivers, streams): 5/day, all trout species singly or in combination, NO minimum size. Ohio does not break inland trout out by species. SITE-SPECIFIC OVERRIDES that beat this default: Clear Creek (Fairfield Co. Rd 69 bridge to US 33 bridge, Hocking Co.) and Clear Fork of the Mohican River (Ashland Co.) = 2/day, no minimum; Mad River and tributaries and Clear Fork of the Mohican (Richland Co.) = 2/day, 12 in minimum. BROOK TROUT POSSESSION IS PROHIBITED entirely from the Ashtabula, Chagrin, Grand and Conneaut rivers and their tributaries.",
+    "trout_and_salmon_lake_erie_zone": "SEPARATE REGULATORY ZONE -- Lake Erie proper AND the entire length of every Lake Erie creek, river and tributary. Regulated as 'Trout & Salmon' combined on a SEASONAL schedule, not a flat rule: Mar 1 - May 15 = 2/day, no minimum; May 16 - Aug 31 = 5/day, 12 in minimum; Sep 1 - Feb 28 = 2/day, no minimum. Exception: Cold Creek upstream of State Route 2 (Erie Co.) = 5/day, no minimum, year-round (not date-tiered). Brook trout possession also prohibited in the Ashtabula/Chagrin/Grand/Conneaut systems under this table. Do NOT merge these numbers with the inland rule above -- different zone, different schedule.",
+    "steelhead": "Ohio NEVER uses 'steelhead' as a regulatory category in its size/bag tables. Steelhead is an anadromous rainbow trout, and is covered by whichever zone the water sits in: the Lake Erie 'Trout & Salmon' seasonal table if in Lake Erie or a tributary (which is where the runs are), or the inland 'Trout' line otherwise. The only place the word appears is the voluntary Fish Ohio trophy-award program (28 in qualifying length for Lake Erie) -- that is a recognition threshold, NOT a legal limit, and must never be quoted as one.",
+    "rainbow_trout": "See trout_combined_inland (and trout_and_salmon_lake_erie_zone if the water is Erie or a tributary).",
+    "brown_trout": "See trout_combined_inland (and trout_and_salmon_lake_erie_zone if applicable).",
+    "brook_trout": "See trout_combined_inland, but note the outright POSSESSION PROHIBITION on the Ashtabula, Chagrin, Grand and Conneaut rivers and tributaries -- this is a total ban, not a limit.",
+    "kokanee_salmon": "NOT FOUND in Ohio's regulations -- not a species known to be established here. Do not infer a limit from the trout or the Lake Erie salmon rule.",
+    "water_specific_examples_found": [
+      "Knox Lake: bass 5/day, 18 in minimum (overrides the 12 in statewide bass minimum)",
+      "Acton Lake and Findley Lake: bass split limit, 4/day total (2 fish under 15 in + 2 fish 15 in or longer)"
+    ]
+  },
+  "closed_seasons": {
+    "note": "No closed season found anywhere in the 2026-27 regulations PDF for any species. This matches SKILL.md rule 4 (only Michigan has genuine statewide closed seasons for walleye/pike/musky among these five states) -- Ohio regulates by size/bag limit year-round, not by season."
+  },
+  "license_summary": {
+    "resident_1yr": "$25.00",
+    "resident_lifetime": "$599.04",
+    "resident_senior_65plus_1yr": "$10.00",
+    "resident_senior_65plus_lifetime": "$84.24",
+    "nonresident_1day": "$27.04",
+    "nonresident_1yr": "$76.96",
+    "under_16": "no license required",
+    "source": "same PDF as regulations_source -- fees current for the 2026-27 season as fetched 2026-08-20, confirm before relying on them past this season",
+    "where_to_buy": "Three channels, per the official 2026-27 regulations guide p.4: at any authorized license sales agent statewide (locate via ODNR's 'Find a License Agent' map), inside the free official HuntFish OH mobile app (iOS/Android -- ODNR markets in-app purchase as a core function, not just an info app), and online. CAVEAT verified 2026-08-21: the regs guide names wildohio.gov as the online purchase domain, but that domain returned HTTP 404 on direct fetch; the confirmed-live storefront is oh-web.s3licensing.com/Home. Prefer the app or an in-person agent if the web route misbehaves, and re-check wildohio.gov before quoting it as the purchase link."
+  },
+  "stocking_source": "https://data.ohio.gov/wps/portal/gov/data/view/ohio-fish-stocking-records (dataset described as 1970-present, weekly updates, per ODNR's own referral page at ohiodnr.gov/buy-and-apply/hunting-fishing-boating/fishing-resources/fish-stocking-records) -- ODNR's referral page states no login is required, but the live data.ohio.gov dataset page itself displayed 'You must have an account, log in, and have access approval to view this data' when fetched in this pass. Data.ohio.gov's other ODNR fishing dashboards ('Where to Fish', 'Sport Fish Report') showed the same access-approval wall. Treat the stocking dataset as NOT confirmed publicly accessible without an account, despite ODNR's own marketing copy -- this directly contradicts this toolkit's own prior research note that flagged data.ohio.gov as having 'a strong stocking CSV.'",
+  "reciprocity": "Ohio River main stem is reciprocal with Kentucky (per SKILL.md rule 5) -- confirm current terms directly before relying on it for a specific stretch.",
+  "great_lakes_note": "Lake Erie shoreline is not covered by this file (per SKILL.md rule 7) -- Ohio has a separate Lake Erie fishing regulations/zoning layer that was not researched in this pass.",
+  "known_gaps": [
+    "No confirmed statewide lake/reservoir shoreline fishing-access-point feed (only the river/stream paddling-access layer above)",
+    "Stocking data source identified but access-gated behind a login/approval wall in this pass -- could not confirm the CSV export actually works or what it contains",
+    "Regulations summary above is a size/bag/season/license extraction from the PDF, not the full text -- water-specific overrides beyond the two examples found were not exhaustively catalogued",
+    "Lake Erie-specific regulations not researched",
+    "No second verification pass has been done -- this file is exactly one Mode E pass old (2026-08-20)",
+    "TROUT/STEELHEAD ADDED 2026-08-21 from the official 2026-27 Ohio Fishing Regulations PDF (dam.assets.ohio.gov ... /OhioFishingRegs_English.pdf, effective Mar 1 2026 - Feb 28 2027), pages 6-7 and 10-12 read directly rather than via a summary. Two things to carry forward: (1) Lake Erie and its tributaries are a genuinely separate zone with a seasonal schedule -- recorded here as its own entry, do not merge with inland; (2) NO CLOSED SEASON for trout, salmon or steelhead was found anywhere in the document, but the PDF disclaims itself as a summary and names the Ohio Administrative Code as authoritative, so this is 'not found', not a positive guarantee that none exists.",
+    "LICENCE PURCHASE URL UNSTABLE 2026-08-21: the official regs guide names wildohio.gov as the online purchase domain but it 404'd on direct fetch; oh-web.s3licensing.com/Home is the confirmed-live storefront. Second instance of an ODNR-published destination not matching reality (the first was the login-gated stocking dataset). Verify ODNR URLs by fetching."
+  ]
+}

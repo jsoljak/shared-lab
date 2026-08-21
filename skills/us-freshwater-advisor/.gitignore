@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.DS_Store
+
+# Personal memory lives OUTSIDE this repo (skill-memory/<skill-name>/ next to,
+# not inside, the installed skill — see each SKILL.md's "Personal memory"
+# section). This is a belt-and-suspenders guard in case a real one ever ends
+# up nested inside by accident — it should never contain anything but the
+# empty seeds in memory-template/.
+skill-memory/

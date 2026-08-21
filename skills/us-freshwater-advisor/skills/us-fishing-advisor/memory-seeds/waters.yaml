@@ -1,0 +1,36 @@
+# waters.yaml — your own list of known/scouted waters, separate from the DNR
+# access-point feed us-water-finder queries live.
+#
+# Why this file exists: `us-water-finder`'s FIND mode returns every DNR-listed
+# access point near a location — accurate, but it doesn't know which ones you've
+# actually fished, what worked, or which are worth the drive. This file is the
+# opposite: small, personal, and it only grows because you (or a logged trip) put
+# something in it. PLAN mode checks this FIRST, before falling back to a fresh
+# FIND query — a water you already know beats a stranger's FeatureServer listing.
+#
+# This is a SEED file — it ships empty (just the schema below) inside the skill
+# package. On first real use, copy it to skill-memory/us-fishing-advisor/
+# waters.yaml (per the "Personal memory" section in SKILL.md) and the skill reads
+# from and appends to THAT copy, never this one. Never overwrite an existing
+# entry — append-only, same discipline as lessons.md/preferences.md.
+#
+# Schema per entry:
+#   name: short name you'll recognize (not necessarily the DNR site_name)
+#   state: indiana | michigan | ohio | illinois | kentucky
+#   waterbody: the river/lake/reservoir name
+#   water_type: river | lake
+#   lat / lon: decimal degrees — needed so us-weather-advisor can pull
+#     conditions for this exact spot without re-asking
+#   access_point_source: the DNR site_name this corresponds to (from
+#     us-water-finder Mode A), if there is one — leave null for a
+#     self-discovered spot with no official access-point listing
+#   species_confirmed: species you (or a logged trip) actually caught here —
+#     distinct from the DNR feed's "species" field, which is a documented-presence
+#     list, not a personal confirmation
+#   notes: free text — what worked, what to watch for, why this spot specifically
+#   last_visited: YYYY-MM-DD, or null if never actually fished, just scouted
+#   source: self | logged_trip | dnr_feed_promoted (a DNR result you liked enough
+#     to promote into this personal list)
+#
+# --- entries start here (empty in the shipped seed) ---
+waters: []

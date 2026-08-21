@@ -1,0 +1,36 @@
+# trips.yaml — structured trip log, the actual data CALIBRATE mode compares
+# predictions against outcomes with. Distinct from lessons.md (prose takeaways)
+# and waters.yaml (which specific waters exist) — this is the append-only record
+# of what actually happened, one entry per outing.
+#
+# Accepts raw dictation. If Max says something like "On the White River I did
+# well on bass but nothing was hitting on catfish," that's a complete, valid LOG
+# entry — don't demand every field before logging it. Fill in what's said,
+# backfill conditions from us-weather-advisor for that date/water if easy,
+# leave the rest null, and ask at most three clarifying questions (matching the
+# Czech original's discipline) — never a long intake form. Log a zero-catch trip
+# too; "nothing worked" is exactly the kind of data CALIBRATE needs most and the
+# kind people are least likely to bother logging on their own.
+#
+# Schema per entry:
+#   date: YYYY-MM-DD
+#   water: matches a waters.yaml name if this water is already known, else the
+#     name as given
+#   species_targeted: [list]
+#   species_caught: [list] — empty list (not null) for a real zero-catch trip,
+#     so it's distinguishable from "not recorded"
+#   predicted_score: the score.py output for this water/species/day, IF a
+#     PLAN/WINDOW prediction was logged in advance (Mode PLAN step 6/LOG-internal)
+#     — null if this is a trip that was never predicted in advance, which is a
+#     valid and normal case, just not usable for CALIBRATE's predicted-vs-actual
+#     comparison
+#   outcome_summary: free text, exactly as told — "did well on bass, catfish
+#     nothing," "slow all around," etc.
+#   conditions_note: free text — anything about conditions worth remembering
+#     that isn't captured elsewhere (e.g. "water was visibly muddy," "way more
+#     boat traffic than usual")
+#   promoted_to_waters_yaml: true/false — whether this trip's water/species info
+#     got folded into waters.yaml's species_confirmed field
+#
+# --- entries start here (empty in the shipped seed) ---
+trips: []
