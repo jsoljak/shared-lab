@@ -1,5 +1,7 @@
 ---
 name: moto-buy-advisor
+derived_from: moto-buy-advisor
+derived_from_version: "2026-07-16"
 metadata:
   status: live
   shareability: public
@@ -88,7 +90,7 @@ Uživatel neví co chce — popíše styl jízdy, rozpočet, use-case.
 Odpočtové nabídky (od plátců DPH — dealerů/firem) jsou zajímavé pro každého, kdo si DPH může odečíst. U motocyklů — na rozdíl od osobních aut — zákon odpočet nezakazuje, pokud slouží ekonomické činnosti.
 
 - Vždy uveď **cenu s DPH** (jak inzerováno) i **bez DPH** = s DPH ÷ 1,21.
-- Příklad: 139 000 Kč s DPH → **114 876 Kč bez DPH**.
+- Příklad (v Kč): 139 000 s DPH → **114 876 bez DPH**.
 - Dealer / firma / „odpočet DPH" v inzerátu → ✅ odpočet možný.
 - Soukromník → ❌ bez odpočtu (cena je konečná, žádné DPH k odečtení).
 - Pozor: ojetina může být prodávána ve „zvláštním režimu" (marže) — pak odpočet nejde ani od firmy. Když je to nejasné → „⚠️ ověřit, zda běžný režim s DPH, nebo zvláštní režim".
