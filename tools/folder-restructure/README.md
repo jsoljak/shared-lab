@@ -17,9 +17,11 @@ Určeno pro ty, kdo dostali starší verzi startovní sady (0.2.0), která měla
 
 ## Jak si soubor stáhnout
 
-1. Klikni na [OPRAVA__zaklad-v0-2-0-na-v0-3-0__2026-09-24.zip](../../downloads/OPRAVA__zaklad-v0-2-0-na-v0-3-0__2026-09-24.zip?raw=true) (nebo pravým tlačítkem **Uložit odkaz jako…**). Stáhne se do složky **Stažené**.
-2. Klikni na stažený soubor pravým tlačítkem a zvol **Extrahovat vše**. Vznikne soubor `OPRAVA__zaklad-v0-2-0-na-v0-3-0__2026-09-24.md`. Zkontroluj, že končí na `.md` (ne `.txt`); Windows 10 přípony skrývá, viz „Před začátkem“ výše.
-3. Přesuň ten soubor do své složky `Claude` (obvykle `Dokumenty\Claude`).
+1. Klikni **pravým tlačítkem** na [OPRAVA__zaklad-v0-2-0-na-v0-3-0__2026-09-24.md](OPRAVA__zaklad-v0-2-0-na-v0-3-0__2026-09-24.md?raw=true) a zvol **Uložit odkaz jako…** (Edge, Chrome).
+2. Ulož ho třeba do složky **Stažené**. Zkontroluj, že název končí na `.md` (ne `.txt`); Windows 10 přípony skrývá, viz „Před začátkem“ výše. Pokud se nabízí `.txt`, přepni **Uložit jako typ** na **Všechny soubory**.
+3. Přesuň soubor do své složky `Claude` (obvykle `Dokumenty\Claude`).
+
+*Kdyby se soubor jen otevřel jako text:* zmáčkni **Ctrl + S** a ulož ho stejným způsobem.
 
 ## Jak ho spustit
 
