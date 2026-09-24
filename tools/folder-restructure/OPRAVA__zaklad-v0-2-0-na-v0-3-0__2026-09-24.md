@@ -33,7 +33,12 @@
 
 **Kdyby si Claude nevěděl rady nebo se něco nepovedlo:** nic se neděje, záloha je u tebe. Napiš tomu, kdo ti soubor poslal, a přilož zprávu, kterou ti Claude na konci nabídne připravit (je v ní jen to, co se dělo, ne obsah tvých souborů).
 
-*Doporučení navíc:* než začneš, zkopíruj si ve Finderu celou složku `Claude` na plochu jako `Claude-záloha`. Pro jistotu, i když Claude zálohuje sám.
+*Doporučení navíc:* než začneš, zkopíruj si celou složku `Claude` na plochu jako `Claude-záloha` (Windows: v Průzkumníku pravým tlačítkem na složku, **Kopírovat**, na ploše **Vložit** a přejmenovat; Mac: ve Finderu). Pro jistotu, i když Claude zálohuje sám.
+
+**Máš Windows?** Všechno funguje stejně. Před začátkem:
+- **Zavři Word, Excel a PowerPoint** a soubory, které máš ve složce `Claude` otevřené. Otevřený soubor jde špatně přesunout.
+- Leží-li složka `Claude` ve **OneDrive** (třeba `Dokumenty` se synchronizují), klikni na ni pravým tlačítkem a zvol **Vždy uchovávat na tomto zařízení**. Soubory, které jsou jen „online“, jinak zálohování zpomalí nebo se nepovede.
+- Pokud Claude řekne, že nemá Python, nic neinstaluj: postupuje pomaleji jinou cestou (Plán B).
 
 ---
 
@@ -54,6 +59,17 @@ Uživatel ti dal tenhle soubor, aby sis podle něj **přestavěl jeho složku `C
 9. **Nemáš-li Python nebo příkazový řádek**, použij Plán B (na konci).
 10. **Datum** zjisti ze systému, nehádej.
 11. **Během opravy se řiď jen tímto souborem**, ne staršími skilly (`guard`, `onboarding`…). Ty mluví o starých cestách; po opravě platí nové z tohoto souboru.
+
+### Počítač uživatele (přečti před Krokem 0)
+
+Zjisti, na jakém systému uživatel pracuje (macOS, Windows), a řiď se tím:
+
+1. **Kde poběží příkazy.** Vidíš-li cesty typu `/sessions/…/mnt/Claude`, běží příkazy v Linuxovém prostředí s připojenou složkou a všechny příkazy níže platí tak, jak jsou psané. Běží-li příkazy přímo na Windows (PowerShell, `cmd`), platí body 2 až 4.
+2. **Příkaz pro Python.** Všude, kde text píše `python3`, použij příkaz, který na tomto počítači funguje: zkus `python --version`, pak `py -3 --version`. Nefunguje-li žádný, jdi na Plán B. **Nic neinstaluj.**
+3. **Žádná syntaxe Bashe ve Windows.** Neposílej do PowerShellu ani `cmd` konstrukce `<<'EOF'`, `mv`, `cp`, `zip`. Bootstrap přílohy ulož jako soubor `rozbal.py` a spusť ho (viz Příloha). Cesty s mezerami dej do uvozovek; skript rozumí zpětným i obyčejným lomítkům.
+4. **Otevřené soubory, OneDrive, dlouhé cesty.** Skript při potížích řekne, o který soubor jde. Ty pak: (a) požádáš uživatele, aby soubor v Wordu, Excelu nebo Průzkumníku zavřel; (b) u souborů „jen online“ požádáš o **Vždy uchovávat na tomto zařízení**; (c) u cest delších než asi 260 znaků soubor **neřeš a nechej ho být**, jen ho vypiš uživateli. Poté zkus stejnou dávku znovu, hotové kroky skript přeskočí.
+5. **Velikost písmen.** Windows i macOS nerozlišují velká a malá písmena v názvech (`projects` a `PROJECTS` je totéž). Skript to řeší dvoukrokovým přejmenováním, ty nic zvláštního.
+6. **Soubory, které se ignorují:** skryté soubory, `Thumbs.db`, `desktop.ini` a zámky Office (`~$…`). Nezálohují se a nezařazují.
 
 ### Krok 0 — Zjisti, kde jsi, a řekni uživateli, co se bude dít
 
@@ -131,27 +147,30 @@ Když uživatel řekne „Vrať opravu zpátky“: `python3 Claude/OPRAVA/nove/o
 
 ### Plán B (bez Pythonu nebo bez příkazového řádku)
 
-Přílohu nemusíš rozbalovat skriptem: soubory z ní zapiš sám přesně tak, jak stojí, do `Claude/OPRAVA/nove/…`. Zálohu udělej tak, že uživatele požádáš, aby si složku zkopíroval ve Finderu, a počkáš na potvrzení. Přesuny dělej **jeden po druhém** příkazem přesunu souboru (`mv`), nebo nástrojem pro přesun souborů, vždy po souhlasu, a každý zapiš do `Claude/OPRAVA/denik.txt` (odkud → kam), ať jde vrátit. Odkazy opravuj ručně jen u souborů, které tvoří systém (`SYSTEM/registry/…`, `START-HERE.md`, `CLAUDE.md`). Skill `guard` v tom případě zabal příkazem `zip` tak, aby `SKILL.md` ležel na kořeni archivu (ne v podsložce). Řekni uživateli, že je to pomalejší.
+Přílohu nemusíš rozbalovat skriptem: soubory z ní zapiš sám přesně tak, jak stojí, do `Claude/OPRAVA/nove/…`. Zálohu udělej tak, že uživatele požádáš, aby si složku zkopíroval ve Finderu, a počkáš na potvrzení. Přesuny dělej **jeden po druhém** příkazem přesunu souboru (`mv`; ve Windows PowerShellu `Move-Item -LiteralPath odkud -Destination kam`), nebo nástrojem pro přesun souborů, vždy po souhlasu, a každý zapiš do `Claude/OPRAVA/denik.txt` (odkud → kam), ať jde vrátit. Odkazy opravuj ručně jen u souborů, které tvoří systém (`SYSTEM/registry/…`, `START-HERE.md`, `CLAUDE.md`). Skill `guard` v tom případě zabal příkazem `zip` tak, aby `SKILL.md` ležel na kořeni archivu (ne v podsložce). **Ve Windows a bez Pythonu se tohle spolehlivě dělá špatně** (`Compress-Archive` a `tar` často dají do archivu cesty s předponou nebo zpětnými lomítky), proto skill raději **nepřeinstalovávej**: pravidla dál drží `CLAUDE.md` a mapa složek. Řekni to uživateli a zapiš do `session-brain.md`, že `guard` čeká na aktualizaci od toho, kdo kit předal. Řekni uživateli, že je to pomalejší.
 
 ---
 
 ## PŘÍLOHA (technická; nečti ji celou, jen ji rozbal)
 
-Bootstrap (spusť jednou, vytáhne všechny soubory z přílohy do `Claude/OPRAVA/nove/`; změň cestu k tomuto souboru a ke složce `Claude`):
+Bootstrap (spusť jednou, vytáhne všechny soubory z přílohy do `Claude/OPRAVA/nove/`). **Funguje všude (macOS, Linux, Windows):** ulož následující kód jako soubor `rozbal.py` (kamkoli, třeba na plochu) a spusť ho příkazem `python rozbal.py "CESTA/K/TOMUTO/SOUBORU.md" "CESTA/KE/SLOZCE/Claude"` (v Linuxu a na macOS `python3`; ve Windows případně `py -3`). Obě cesty dej do uvozovek.
 
-```bash
-python3 - "CESTA/K/TOMUTO/SOUBORU.md" "CESTA/KE/SLOZCE/Claude" <<'EOF'
+```python
 import re, sys, os
+try:
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+except (AttributeError, ValueError):
+    pass
 md, ws = sys.argv[1], sys.argv[2]
-t = open(md, encoding="utf-8").read()
+t = open(md, encoding="utf-8-sig").read()
 n = 0
 for m in re.finditer(r"<!-- BEGIN FILE: ([^\n]+?) -->\n(`{3,})[a-z]*\n(.*?)\n\2\n<!-- END FILE -->", t, re.S):
     p = os.path.join(ws, "OPRAVA", "nove", m.group(1))
     os.makedirs(os.path.dirname(p), exist_ok=True)
-    open(p, "w", encoding="utf-8").write(m.group(3) + "\n")
+    with open(p, "w", encoding="utf-8", newline="\n") as f:
+        f.write(m.group(3) + "\n")
     n += 1
-print("rozbaleno souborů:", n)
-EOF
+print("rozbaleno souboru:", n)
 ```
 
 Obsah přílohy (každý soubor je mezi značkami `BEGIN FILE` a `END FILE`):
@@ -193,6 +212,7 @@ se zálohou starého souboru) a při konfliktu se zastaví. Každá operace jde 
 Po přesunu se opraví odkazy: staré cesty v textových souborech (.md, .json, .txt) se nahradí novými
 (kromě složky OPRAVA). Výstup nikdy neobsahuje obsah souborů, jen cesty a počty.
 """
+import filecmp
 import json
 import os
 import re
@@ -213,6 +233,10 @@ LEGACY_TOP = {"Registry", "wiki", "profile.md", "projects", "inbox", "areas", "r
 NEW_TOP = {"INBOX", "PROJECTS", "AREAS", "RESOURCES", "ARCHIVE", "SYSTEM"}
 
 
+OS_HINT = ("Nejčastější příčiny: soubor je otevřený v jiném programu (Word, Excel; zavři ho), soubor je ve OneDrive jen online "
+           "(nastav „Vždy uchovávat na tomto zařízení“), nebo je cesta příliš dlouhá (Windows do asi 260 znaků).")
+
+
 def die(msg):
     print(f"CHYBA: {msg}", file=sys.stderr)
     sys.exit(1)
@@ -230,11 +254,19 @@ def has(ws, name):
     return name in os.listdir(ws)
 
 
+JUNK_NAMES = {"thumbs.db", "desktop.ini"}
+
+
+def skip_file(name):
+    """Souborový šum, který se nezálohuje ani nezařazuje: skryté, Windows Thumbs.db/desktop.ini, zámky Office (~$…)."""
+    return name.startswith(".") or name.startswith("~$") or name.lower() in JUNK_NAMES
+
+
 def rel_iter(ws, include_work=False):
     for root, dirs, files in os.walk(ws):
         dirs[:] = sorted(d for d in dirs if not d.startswith(".") and (include_work or Path(root, d) != ws / WORK))
         for f in sorted(files):
-            if not f.startswith("."):
+            if not skip_file(f):
                 yield Path(root, f).relative_to(ws)
 
 
@@ -246,10 +278,15 @@ def cmd_backup(ws):
         dest = work / f"zaloha__{time.strftime('%Y-%m-%d__%H%M%S')}.zip"
     n = 0
     tmp = work / (dest.name + ".tmp")
-    with zipfile.ZipFile(tmp, "w", zipfile.ZIP_DEFLATED) as z:
-        for rel in rel_iter(ws):
-            z.write(ws / rel, rel.as_posix())
-            n += 1
+    try:
+        with zipfile.ZipFile(tmp, "w", zipfile.ZIP_DEFLATED) as z:
+            for rel in rel_iter(ws):
+                z.write(ws / rel, rel.as_posix())
+                n += 1
+    except OSError as e:
+        if tmp.exists():
+            tmp.unlink()
+        die(f"záloha se nepovedla u souboru {getattr(e, 'filename', None) or '?'}: {e.strerror or e}. {OS_HINT} Nic jsem neměnil.")
     with zipfile.ZipFile(tmp) as z:
         bad = z.testzip()
         if bad or len(z.namelist()) != n:
@@ -268,13 +305,16 @@ def name_problem(name):
 
 
 def cmd_scan(ws):
-    top = sorted(p.name for p in ws.iterdir() if not p.name.startswith(".") and p.name != WORK)
+    top = sorted(p.name for p in ws.iterdir() if not skip_file(p.name) and p.name != WORK)
     legacy = [t for t in top if t in LEGACY_TOP and t not in NEW_TOP]
     new = [t for t in top if t in NEW_TOP]
     print("== STAV STRUKTURY ==")
     print("nový formát (kostra velkými):", ", ".join(new) or "žádný")
     print("starý formát (názvy k převodu):", ", ".join(legacy) or "žádný")
     system_files = {"CLAUDE.md", "START-HERE.md", "PROFILE.md", "profile.md"}
+    locks = [f for _, _, fs in os.walk(ws) for f in fs if f.startswith("~$")]
+    if locks:
+        print(f"\nPOZOR: {len(locks)} otevřených dokumentů Office (soubory ~$…). Zavři Word/Excel/PowerPoint, jinak půjdou přesuny a záloha hůř.")
     print("\n== KOŘEN ==")
     for t in top:
         p = ws / t
@@ -379,14 +419,16 @@ def repair_refs(ws, old, new, dry, is_dir):
             continue
         p = ws / rel
         try:
-            t = p.read_text(encoding="utf-8")
+            with open(p, encoding="utf-8", newline="") as fh:
+                t = fh.read()
         except (UnicodeDecodeError, OSError):
             continue
         t2, c = pat.subn(n, t)
         if c:
             out.append((rel.as_posix(), c))
             if not dry:
-                p.write_text(t2, encoding="utf-8")
+                with open(p, "w", encoding="utf-8", newline="") as fh:
+                    fh.write(t2)
     return out
 
 
@@ -400,12 +442,19 @@ def do_move(ws, src, dst, dry):
     if dry:
         return
     d.parent.mkdir(parents=True, exist_ok=True)
-    if case_only or same_path(s, d):
-        tmp = s.with_name(s.name + ".__prejmenovani__")
-        os.rename(s, tmp)
-        os.rename(tmp, d)
-    else:
-        os.rename(s, d)
+    try:
+        if case_only or same_path(s, d):
+            tmp = s.with_name(s.name + ".__prejmenovani__")
+            os.rename(s, tmp)
+            try:
+                os.rename(tmp, d)
+            except OSError:
+                os.rename(tmp, s)
+                raise
+        else:
+            os.rename(s, d)
+    except OSError as e:
+        die(f"nepodařilo se přesunout {src}: {e.strerror or e}. {OS_HINT} Vše, co se stihlo, je v deníku a jde vrátit (undo).")
 
 
 def cmd_apply(ws, plan_path, batch, dry):
@@ -428,6 +477,9 @@ def cmd_apply(ws, plan_path, batch, dry):
                 append_log(ws, {"batch": batch, "op": "mkdir", "to": dst, "created": chain})
             print(f"  mkdir   {dst}/")
         elif kind == "move":
+            if not (ws / src).exists() and (ws / dst).exists():
+                print(f"  move    {src}  ->  {dst}   (přeskočeno, už je hotovo)")
+                continue
             is_dir = (ws / src).is_dir()
             do_move(ws, src, dst, dry)
             refs = repair_refs(ws, src, dst, True, is_dir) if dry else None
@@ -442,6 +494,9 @@ def cmd_apply(ws, plan_path, batch, dry):
                 die(f"nový soubor {src} chybí")
             tgt = ws / dst
             old_copy = None
+            if tgt.is_file() and filecmp.cmp(new, tgt, shallow=False):
+                print(f"  install {dst}   (přeskočeno, je už nainstalováno)")
+                continue
             if not dry:
                 tgt.parent.mkdir(parents=True, exist_ok=True)
                 if tgt.exists():
@@ -543,7 +598,7 @@ def cmd_packskill(src, out):
             base = src / top
             if base.is_dir():
                 for f in sorted(base.rglob("*")):
-                    if f.is_file() and not f.name.startswith(".") and "__pycache__" not in f.parts:
+                    if f.is_file() and not skip_file(f.name) and "__pycache__" not in f.parts:
                         z.write(f, f.relative_to(src).as_posix())
     with zipfile.ZipFile(tmp) as z:
         names = z.namelist()
@@ -555,6 +610,11 @@ def cmd_packskill(src, out):
 
 
 def main(argv):
+    for stream in (sys.stdout, sys.stderr):
+        try:
+            stream.reconfigure(encoding="utf-8", errors="replace")
+        except (AttributeError, ValueError):
+            pass
     if len(argv) < 3 or argv[1] in ("-h", "--help"):
         print(__doc__)
         return 2
@@ -891,7 +951,7 @@ Ve složce `INBOX/` stačí `RRRR-MM-DD-tema.md` (rychlý zápis). V `RESOURCES/
 
 ## 2. Jak pojmenovat složku
 
-- **velikost písmen se drží přesně** (`PROJECTS`, ne `projects`) a nezakládají se dvě složky lišící se jen velikostí písmen (na macOS by splynuly, jinde ne);
+- **velikost písmen se drží přesně** (`PROJECTS`, ne `projects`) a nezakládají se dvě složky lišící se jen velikostí písmen (na macOS a Windows by splynuly);
 - malá písmena, bez diakritiky, slova spojená pomlčkou (`PROJECTS/rekonstrukce-kuchyne/`);
 - **název složky projektu se nikdy nemění.** Kolem něj visí odkazy. Když ho opravdu potřebuješ změnit, nech to udělat `cleanup` (opraví odkazy);
 - systémové složky (`INBOX`, `PROJECTS`, `AREAS`, `RESOURCES`, `ARCHIVE`, `SYSTEM` a v ní `registry`, `skill-memory`, `skills`) a tři skupiny oblastí (`work`, `school`, `personal`) mají anglický název a nepřejmenovávají se. Názvy **oblastí** si volí uživatel (jedno slovo, bez diakritiky, klidně česky: `domacnost`, `firma-a`).

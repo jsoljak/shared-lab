@@ -12,8 +12,8 @@ Určeno pro ty, kdo dostali starší verzi startovní sady (0.2.0), která měla
 
 1. Otevři soubor: [OPRAVA__zaklad-v0-2-0-na-v0-3-0__2026-09-24.md](OPRAVA__zaklad-v0-2-0-na-v0-3-0__2026-09-24.md)
 2. Vpravo nad textem klikni na ikonu **Download raw file** (šipka dolů). Soubor se uloží do složky Stažené.
-   - Nevidíš-li ikonu: klikni na **Raw**, na otevřené stránce zmáčkni **Cmd + S** (Windows: **Ctrl + S**) a ulož jako soubor s příponou `.md`.
-3. Přesuň stažený soubor do své složky `Claude/` (nebo ho později přetáhni do okna s Claudem).
+   - Nevidíš-li ikonu: klikni na **Raw**, na otevřené stránce zmáčkni **Ctrl + S** (Mac: **Cmd + S**) a ulož jako soubor s příponou `.md` (ve Windows v okně ukládání přepni „Uložit jako typ“ na **Všechny soubory**, ať se nepřipíše `.txt`).
+3. Přesuň stažený soubor do své složky `Claude/` (nebo ho později přetáhni do okna s Claudem). Ve Windows to bývá `Dokumenty\Claude`, na Macu `Dokumenty/Claude`.
 
 ## Jak ho spustit
 
@@ -22,7 +22,14 @@ Určeno pro ty, kdo dostali starší verzi startovní sady (0.2.0), která měla
 3. Napiš: **„Přečti soubor OPRAVA a udělej, co v něm je.“**
 4. Odpovídej na otázky Claude. Trvá to asi 30 až 60 minut.
 
-**Doporučení navíc:** než začneš, zkopíruj si ve Finderu celou složku `Claude` na plochu jako `Claude-záloha`, i když zálohuje Claude sám.
+**Doporučení navíc:** než začneš, zkopíruj si celou složku `Claude` na plochu jako `Claude-záloha` (Windows: v Průzkumníku pravým tlačítkem **Kopírovat**, na ploše **Vložit**; Mac: ve Finderu), i když zálohuje Claude sám.
+
+### Máš Windows?
+
+Funguje to stejně. Před začátkem:
+- **Zavři Word, Excel a PowerPoint** a soubory ze složky `Claude`. Otevřený soubor jde špatně přesunout.
+- Leží-li složka `Claude` ve **OneDrive**, klikni na ni pravým tlačítkem a zvol **Vždy uchovávat na tomto zařízení**.
+- Nic neinstaluj. Kdyby Claude řekl, že nemá Python, postupuje pomaleji jinou cestou.
 
 ## Co se stane a co ne
 
