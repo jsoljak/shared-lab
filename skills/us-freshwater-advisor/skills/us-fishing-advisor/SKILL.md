@@ -3,35 +3,18 @@ name: us-fishing-advisor
 metadata:
   status: draft
 description: >
-  Decision system for a US freshwater fishing trip — answers where, for what
-  species, when, and with what bait/lure/hook/rig. Built out for largemouth and
-  smallmouth bass, panfish (crappie and bluegill), common carp, catfish (channel,
-  blue, and flathead), the spin/lure predator group (walleye, northern pike,
-  muskellunge), coldwater river/stream trout (rainbow, brown, brook, cutthroat),
-  and kokanee salmon. Spinning/casting tackle only, no fly fishing by design — but
-  an on-demand EXPAND procedure researches and adds any species or technique not
-  yet modeled (see a state/species/technique that isn't covered) rather than just
-  refusing. Scores conditions per species from water temperature, time-of-day/light
-  window, season, flow/turbidity, and wind, each weighted by how strong the evidence
-  behind it is. Can evaluate a single day or scan a date range for the best window
-  in it, will say "don't bother today" when conditions are genuinely poor, flags
-  dangerous or unproductive river conditions and suggests a stillwater alternative,
-  and recommends specific bait/lure category, hook type and size, and rig/knot to
-  use. Trigger this for: "where should I fish", "is it worth going out", "what's
-  the best day this week/weekend", "what should I target", "what bait/lure should I
-  use", "what hook and rig for [species]", "is the river too high to fish", "I'm not
-  catching anything, what should I change", "log a catch". Pulls location/legal data
-  from us-water-finder and weather/water data from us-weather-advisor — does not
-  fetch either itself. US freshwater only — decline non-US destinations rather than
-  improvising. Do NOT trigger for: pure location/regulation questions with no
-  fishing-decision component (that's us-water-finder), general outdoor weather
-  questions unrelated to fishing (that's us-weather-advisor), or anything about a
-  fish once it's caught — cleaning, cooking, recipes, taxidermy. This skill's scope
-  ends at the catch; it has nothing to say about what happens after. Fly fishing and
-  unmodeled species are a DIFFERENT case and are NOT refusals: this skill covers
-  spinning/casting tackle and sixteen species today, but EXPAND mode researches and
-  adds a missing species or technique on request, so trigger normally and run EXPAND
-  rather than declining.
+  Decision system for a US freshwater fishing trip: where, for what species, when, and
+  with what bait, lure, hook and rig. Covers sixteen species (bass, panfish, carp,
+  catfish, walleye, pike, trout and more), spinning/casting tackle only; an on-demand
+  EXPAND procedure adds any species or technique not yet modeled instead of refusing.
+  Scores conditions from water temperature, light, season, flow and wind, for one day or
+  the best window in a range, and says "don't bother today" when conditions are poor.
+  Trigger for: "where should I fish", "is it worth going out", "best day this week",
+  "what should I target", "what bait/lure/hook/rig", "is the river too high", "I'm not
+  catching anything", "log a catch". Gets location/legal data from us-water-finder and
+  weather/water data from us-weather-advisor. US freshwater only. Do NOT trigger for
+  pure location/regulation questions, general outdoor weather, or anything after the
+  catch.
 target_stack: null
 ---
 

@@ -12,6 +12,14 @@ reading before you trust it — where it's honestly thin.
 
 ---
 
+## Download
+
+Three files, one per skill. **Download all three**: the fishing advisor takes its data from the other two.
+[us-water-finder.skill](../../downloads/us-water-finder.skill?raw=true) ·
+[us-weather-advisor.skill](../../downloads/us-weather-advisor.skill?raw=true) ·
+[us-fishing-advisor.skill](../../downloads/us-fishing-advisor.skill?raw=true).
+Each file is a complete skill with its reference data; the rest of this folder is for reading.
+
 ## What's here
 
 ```

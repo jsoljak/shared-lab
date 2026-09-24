@@ -11,6 +11,9 @@ Klikni na název **pravým tlačítkem myši** a zvol **Uložit odkaz jako…**.
 |---|---|---|
 | [prompt-coach.skill](prompt-coach.skill?raw=true) | Skill: mentor, který tě naučí psát lepší prompty. | Otevři ho v aplikaci Claude a ulož jako skill. [Návod](../skills/prompt-coach/README.md) |
 | [moto-buy-advisor.skill](moto-buy-advisor.skill?raw=true) | Skill: poradce při nákupu nové nebo ojeté motorky. | Otevři ho v aplikaci Claude a ulož jako skill. |
+| [us-water-finder.skill](us-water-finder.skill?raw=true) | Skill (1 ze 3, **stáhni všechny tři**): kde se v USA smí chytat ryby a jaká tam platí pravidla. | Otevři v aplikaci Claude a ulož jako skill. [Návod](../skills/us-freshwater-advisor/GUIDE.md) |
+| [us-weather-advisor.skill](us-weather-advisor.skill?raw=true) | Skill (2 ze 3): počasí a stav řek pro výlet nebo rybaření v USA. | Totéž. |
+| [us-fishing-advisor.skill](us-fishing-advisor.skill?raw=true) | Skill (3 ze 3): kam, kdy a na co chytat. Bere data z předchozích dvou, samostatně funguje hůř. | Totéž. |
 | [jak-z-ai-dostat-uzitecnou-odpoved.md](../guides/jak-z-ai-dostat-uzitecnou-odpoved.md?raw=true) | Návod: jak zadávat AI dotazy, aby odpovědi dávaly smysl. | Ulož soubor a otevři ho. Kontrola: název musí končit na `.md`. |
 | [OPRAVA__zaklad-v0-2-0-na-v0-3-0__2026-09-24.md](../tools/folder-restructure/OPRAVA__zaklad-v0-2-0-na-v0-3-0__2026-09-24.md?raw=true) | Oprava: uklidí složku Claude podle nové struktury (Windows 10). | Ulož soubor do složky `Claude` a dej ho Claudovi. [Návod](../tools/folder-restructure/README.md) |
 

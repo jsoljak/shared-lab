@@ -3,20 +3,17 @@ name: us-water-finder
 metadata:
   status: draft
 description: >
-  Finds legal freshwater fishing locations, access points, and regulations anywhere
-  in the US. Fully pre-built for Indiana (primary), Michigan, and Ohio, with a
-  documented on-demand expansion procedure (Mode E) for any other state — Illinois
-  and Kentucky have partial data already, everywhere else (Montana, or any state
-  not yet touched) gets built the first time it's asked about. Sourced from
-  official state DNR/fish-and-wildlife open-data portals — GPS access points,
-  size/bag limits, closed seasons, stocking records. Trigger this for: "where can I
-  fish near [place]", "what are the rules on [lake/river]", "is there a closed
-  season for walleye/musky/trout in [state]", "find me a lake/river near [city]",
-  "can I fish [water] right now", or any question about legal fishing access,
-  regulations, or stocking anywhere in the US. Coverage quality varies — say so
-  plainly when it's thin. Do NOT trigger for: fishing technique or bait questions
-  with no location component (that's us-fishing-advisor), or weather/water-condition
-  questions with no location/legal component (that's us-weather-advisor).
+  Finds legal freshwater fishing locations, access points, and regulations anywhere in
+  the US. Fully pre-built for Indiana (primary), Michigan, and Ohio; any other state is
+  built on demand the first time it is asked about (Mode E). Sourced from official state
+  DNR open-data portals: GPS access points, size/bag limits, closed seasons, stocking
+  records. Trigger for: "where can I fish near [place]", "what are the rules on
+  [lake/river]", "is there a closed season for walleye/musky/trout in [state]", "find me
+  a lake/river near [city]", "can I fish [water] right now", or any question about legal
+  fishing access, regulations, or stocking in the US. Coverage varies; say so plainly
+  when it is thin. Do NOT trigger for fishing technique or bait questions with no
+  location component (us-fishing-advisor), or weather/water-condition questions with no
+  location/legal component (us-weather-advisor).
 target_stack: null
 ---
 

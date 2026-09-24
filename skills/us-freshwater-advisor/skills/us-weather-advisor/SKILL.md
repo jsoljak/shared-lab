@@ -3,19 +3,16 @@ name: us-weather-advisor
 metadata:
   status: draft
 description: >
-  Pulls live weather (NOAA/NWS) and river conditions (USGS Water Data — flow, gauge
-  height, water temperature) for any US location and gives a plain verdict on
-  whether it's a good day for a specific outdoor activity: going out in general, a
-  hike, a road trip, or an overnight camping trip. Trigger this for: "is it a good
-  day to go outside", "what's the weather like for a hike near [place]", "should I
-  go camping this weekend", "is it worth a road trip to [place]", "what's the water
-  level/flow on [river]", or any weather/conditions question tied to an outdoor plan
-  that ISN'T specifically about fish biting. Also the data layer that
-  us-fishing-advisor calls for water temperature and flow — don't duplicate its
-  species-scoring logic here. Do NOT trigger for: fishing-specific "will they bite"
-  questions (that's us-fishing-advisor, which calls this skill itself), or
-  questions about legal access/regulations with no weather component (that's
-  us-water-finder).
+  Pulls live weather (NOAA/NWS) and river conditions (USGS: flow, gauge height, water
+  temperature) for any US location and gives a plain verdict on whether it is a good day
+  for an outdoor activity: going out in general, a hike, a road trip, or an overnight
+  camping trip. Trigger for: "is it a good day to go outside", "what's the weather like
+  for a hike near [place]", "should I go camping this weekend", "is it worth a road trip
+  to [place]", "what's the water level/flow on [river]", or any conditions question tied
+  to an outdoor plan that is not specifically about fish biting. Also the data layer us-
+  fishing-advisor calls for water temperature and flow. Do NOT trigger for fishing-
+  specific "will they bite" questions (us-fishing-advisor calls this skill itself) or
+  for legal access/regulations with no weather component (us-water-finder).
 target_stack: null
 ---
 
