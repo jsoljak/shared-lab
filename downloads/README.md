@@ -25,3 +25,5 @@ Nejdřív si přečti **Info** u věci, která tě zajímá: co dělá, pro koho
 - **Návod nebo nástroj (`.md`):** klikni na **Download package pravým tlačítkem** a zvol **Uložit odkaz jako…** (levé tlačítko soubor otevře jako text, pak stačí Ctrl + S). Zkontroluj, že název končí na `.md`.
 
 Historie verzí je vždy v **Info** u dané věci. Odkazy ke stažení vedou vždy na aktuální verzi.
+
+Evidence verzí po jednotlivých balících (verze, datum, kontrolní součet sha256 a poznámka) je ve strojově čitelném souboru [releases.json](releases.json).

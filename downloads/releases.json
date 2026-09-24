@@ -1,0 +1,86 @@
+{
+  "prompt-coach.skill": {
+    "version": "2026-09-24",
+    "sha256": "a8ba46f85d89653198714de2fd5a23e322edaa62471252a0d1d6756959b8d490",
+    "history": [
+      {
+        "version": "2026-09-24",
+        "date": "2026-09-24",
+        "sha256": "a8ba46f85d89653198714de2fd5a23e322edaa62471252a0d1d6756959b8d490",
+        "note": "První veřejná verze. Deník je prázdný vzor, původní prompt se do něj ukládá jen se souhlasem."
+      }
+    ]
+  },
+  "moto-buy-advisor.skill": {
+    "version": "2026-07-16",
+    "sha256": "251b59aed9824906954477ae8a96fea67a1abdec6a6c9b8eb9dea5ade14c31db",
+    "history": [
+      {
+        "version": "2026-07-16",
+        "date": "2026-09-24",
+        "sha256": "251b59aed9824906954477ae8a96fea67a1abdec6a6c9b8eb9dea5ade14c31db",
+        "note": "Aktuální znění skillu (nový obsah nepřibyl, jen přibyl balík ke stažení 2026-09-24)."
+      }
+    ]
+  },
+  "us-water-finder.skill": {
+    "version": "2026-09-24",
+    "sha256": "8a68af724c70cb6128ace4d5507b3d2577a3ea1f75ec4fa55153b98e3564f769",
+    "history": [
+      {
+        "version": "2026-09-24",
+        "date": "2026-09-24",
+        "sha256": "8a68af724c70cb6128ace4d5507b3d2577a3ea1f75ec4fa55153b98e3564f769",
+        "note": "Download packages added. Skill descriptions shortened to fit the 1024-character install limit (triggers and scope unchanged in meaning)."
+      }
+    ]
+  },
+  "us-weather-advisor.skill": {
+    "version": "2026-09-24",
+    "sha256": "dd7e6b886d6d58ba9553b0b7b45a7a5cd4e4d9b09dd0fd8585fc8f0488458d1a",
+    "history": [
+      {
+        "version": "2026-09-24",
+        "date": "2026-09-24",
+        "sha256": "dd7e6b886d6d58ba9553b0b7b45a7a5cd4e4d9b09dd0fd8585fc8f0488458d1a",
+        "note": "Download packages added. Skill descriptions shortened to fit the 1024-character install limit (triggers and scope unchanged in meaning)."
+      }
+    ]
+  },
+  "us-fishing-advisor.skill": {
+    "version": "2026-09-24",
+    "sha256": "d801872d0a0cf831b7d1eaf3bb47b643fa0dd028941793aaf4a6f29ab46b850e",
+    "history": [
+      {
+        "version": "2026-09-24",
+        "date": "2026-09-24",
+        "sha256": "d801872d0a0cf831b7d1eaf3bb47b643fa0dd028941793aaf4a6f29ab46b850e",
+        "note": "Download packages added. Skill descriptions shortened to fit the 1024-character install limit (triggers and scope unchanged in meaning)."
+      }
+    ]
+  },
+  "jak-z-ai-dostat-uzitecnou-odpoved.md": {
+    "version": "2026-06-01",
+    "sha256": "a83c0b7fb33a481126cab122561c1bedfe0080fb5da18fda8fd99504fb2f778a",
+    "history": [
+      {
+        "version": "2026-06-01",
+        "date": "2026-09-24",
+        "sha256": "a83c0b7fb33a481126cab122561c1bedfe0080fb5da18fda8fd99504fb2f778a",
+        "note": "První evidovaná verze"
+      }
+    ]
+  },
+  "OPRAVA__zaklad-v0-2-0-na-v0-3-0__2026-09-24.md": {
+    "version": "0.3.0",
+    "sha256": "db18960c10f9c4bc3116bb0d3d0ec8ce1cfcd1153b67f55c9de46cb520acc1c4",
+    "history": [
+      {
+        "version": "0.3.0",
+        "date": "2026-09-24",
+        "sha256": "db18960c10f9c4bc3116bb0d3d0ec8ce1cfcd1153b67f55c9de46cb520acc1c4",
+        "note": "První vydání. Přechod složky ze struktury 0.2.0 na novou (kostra velkými písmeny, `SYSTEM/`, oblasti, `PROFILE.md`). Určeno pro Windows 10."
+      }
+    ]
+  }
+}
