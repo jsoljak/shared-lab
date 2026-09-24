@@ -14,6 +14,7 @@ articles/  — thoughts and observations
 tools/     — prompts, templates, scripts
 skills/    — Claude skills, each in its own folder with its own README
 guides/    — short step-by-step how-tos (in Czech), one file per guide
+downloads/ — everything you can download: one file per thing, ready to use
 
 ## Who am I
 

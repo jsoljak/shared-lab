@@ -20,12 +20,11 @@ Vhodné pro každého, kdo s AI mluví a nedostává odpovědi, které chce. Nen
 
 ## Jak si ho stáhnout a nainstalovat
 
-**Stáhni jen jeden soubor, `prompt-coach.skill`, a nic jiného.** Obsahuje celý skill včetně referencí. Jednotlivé soubory z tohoto repa si nestahuj a neskládej, slouží jen ke čtení.
+**Stáhni jen jeden soubor, [prompt-coach.skill](../../downloads/prompt-coach.skill?raw=true), a nic jiného.** Obsahuje celý skill včetně referencí. Jednotlivé soubory z tohoto repa si nestahuj, slouží jen ke čtení.
 
-1. Otevři [vydání prompt-coach](../../../../releases/tag/prompt-coach-2026-09-24).
-2. Dole v sekci **Assets** klikni na **prompt-coach.skill**. Soubor se stáhne.
-3. Otevři ho ve své aplikaci Claude (v Coworku se objeví karta s tlačítkem **Uložit skill**). Kdyby aplikace chtěla soubor `.zip`, přejmenuj příponu z `.skill` na `.zip`, formát je stejný.
-4. Napiš třeba: „Zkontroluj prompt: …“, nebo „prompt coach: vylepši to“.
+1. Klikni na odkaz výše (nebo pravým tlačítkem **Uložit odkaz jako…**). Soubor se stáhne.
+2. Otevři ho ve své aplikaci Claude (v Coworku se objeví karta s tlačítkem **Uložit skill**). Kdyby aplikace chtěla soubor `.zip`, přejmenuj příponu z `.skill` na `.zip`, formát je stejný.
+3. Napiš třeba: „Zkontroluj prompt: …“, nebo „prompt coach: vylepši to“.
 
 Přesné tlačítko se liší podle verze aplikace a nemám ho ověřené na každé.
 

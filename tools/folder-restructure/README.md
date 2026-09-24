@@ -17,12 +17,9 @@ Určeno pro ty, kdo dostali starší verzi startovní sady (0.2.0), která měla
 
 ## Jak si soubor stáhnout
 
-1. Otevři [vydání opravy](../../../../releases/tag/folder-restructure-2026-09-24).
-2. Dole v sekci **Assets** klikni na **OPRAVA__zaklad-v0-2-0-na-v0-3-0__2026-09-24.md**. Soubor se stáhne do složky **Stažené**.
-3. Zkontroluj, že název končí na `.md` (ne `.txt`).
-4. Přesuň stažený soubor do své složky `Claude` (obvykle `Dokumenty\Claude`).
-
-*Kdyby se soubor jen otevřel jako text:* zmáčkni **Ctrl + S** a ulož ho jako soubor s příponou `.md` (typ **Všechny soubory**).
+1. Klikni na [OPRAVA__zaklad-v0-2-0-na-v0-3-0__2026-09-24.zip](../../downloads/OPRAVA__zaklad-v0-2-0-na-v0-3-0__2026-09-24.zip?raw=true) (nebo pravým tlačítkem **Uložit odkaz jako…**). Stáhne se do složky **Stažené**.
+2. Klikni na stažený soubor pravým tlačítkem a zvol **Extrahovat vše**. Vznikne soubor `OPRAVA__zaklad-v0-2-0-na-v0-3-0__2026-09-24.md`. Zkontroluj, že končí na `.md` (ne `.txt`); Windows 10 přípony skrývá, viz „Před začátkem“ výše.
+3. Přesuň ten soubor do své složky `Claude` (obvykle `Dokumenty\Claude`).
 
 ## Jak ho spustit
 
