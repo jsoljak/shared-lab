@@ -1,5 +1,7 @@
 # US Freshwater Advisor
 
+> **Sada 3 skillů pro Claude** · version **2026-09-24** · English · **⬇ Download packages:** [us-water-finder](../../downloads/us-water-finder.skill?raw=true) · [us-weather-advisor](../../downloads/us-weather-advisor.skill?raw=true) · [us-fishing-advisor](../../downloads/us-fishing-advisor.skill?raw=true) (download all three)
+
 Three Claude skills that answer one question between them: **where should I go fishing,
 when, and with what.**
 
@@ -78,3 +80,9 @@ underlying idea is the same — replace missing day-to-day water observation wit
 data-driven decision layer. Every data source, species model and regulation here is native
 US material, researched for this toolkit. Nothing is translated or carried over from the
 original beyond the general shape of the idea.
+
+## Version history
+
+| Version | What changed |
+|---|---|
+| 2026-09-24 | Download packages added. Skill descriptions shortened to fit the 1024-character install limit (triggers and scope unchanged in meaning). |

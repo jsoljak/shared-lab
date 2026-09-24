@@ -1,5 +1,7 @@
 # prompt-coach
 
+> **Skill pro Claude** · verze **2026-09-24** · česky · [**⬇ Download package** (prompt-coach.skill)](../../downloads/prompt-coach.skill?raw=true)
+
 Claude skill, který ti pomůže napsat lepší prompt. Neopraví ho za tebe: **ptá se po jedné otázce**, až sám přijdeš na to, co ve tvém zadání chybí. Tím se dlouhodobě učíš psát lépe.
 
 Vhodné pro každého, kdo s AI mluví a nedostává odpovědi, které chce. Není potřeba žádná předchozí znalost.
@@ -18,11 +20,9 @@ Vhodné pro každého, kdo s AI mluví a nedostává odpovědi, které chce. Nen
 >
 > **Coach:** Co by pro tebe byl ideální výstup a co s ním chceš udělat?
 
-## Jak si ho stáhnout a nainstalovat
+## Instalace
 
-**Stáhni jen jeden soubor, [prompt-coach.skill](../../downloads/prompt-coach.skill?raw=true), a nic jiného.** Obsahuje celý skill včetně referencí. Jednotlivé soubory z tohoto repa si nestahuj, slouží jen ke čtení.
-
-1. Klikni na odkaz výše (nebo pravým tlačítkem **Uložit odkaz jako…**). Soubor se stáhne.
+1. Stáhni balík odkazem **Download package** nahoře. Je to jeden soubor a obsahuje celý skill včetně referencí. Jednotlivé soubory z tohoto repa si nestahuj, slouží jen ke čtení.
 2. Otevři ho ve své aplikaci Claude (v Coworku se objeví karta s tlačítkem **Uložit skill**). Kdyby aplikace chtěla soubor `.zip`, přejmenuj příponu z `.skill` na `.zip`, formát je stejný.
 3. Napiš třeba: „Zkontroluj prompt: …“, nebo „prompt coach: vylepši to“.
 
@@ -44,3 +44,9 @@ prompt-coach/
 - Přehled modelů v referenci rychle stárne, frameworky a principy zadávání ne.
 - Do deníku nedávej prompty s osobními nebo firemními údaji.
 - Autor: Jiří Soljak, [LinkedIn](https://www.linkedin.com/in/jirisoljak/). Volně k použití, bez záruky.
+
+## Historie verzí
+
+| Verze | Co se změnilo |
+|---|---|
+| 2026-09-24 | První veřejná verze. Deník je prázdný vzor, původní prompt se do něj ukládá jen se souhlasem. |
