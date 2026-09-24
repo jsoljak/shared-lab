@@ -18,11 +18,16 @@ Vhodné pro každého, kdo s AI mluví a nedostává odpovědi, které chce. Nen
 >
 > **Coach:** Co by pro tebe byl ideální výstup a co s ním chceš udělat?
 
-## Jak ho použít
+## Jak si ho stáhnout a nainstalovat
 
-1. Skill má jediný povinný soubor, `SKILL.md`, a jednu referenci, `references/prompt_engineering_best_practices.md`. Celá složka `prompt-coach/` je skill.
-2. Přidej ji do Claude podle své aplikace (skill ze složky, nebo ho vlož do projektu). Přesný postup se liší podle verze aplikace a tady ho nemám ověřený.
-3. Napiš třeba: „Zkontroluj prompt: …“, nebo „prompt coach: vylepši to“.
+**Stáhni jen jeden soubor, `prompt-coach.skill`, a nic jiného.** Obsahuje celý skill včetně referencí. Jednotlivé soubory z tohoto repa si nestahuj a neskládej, slouží jen ke čtení.
+
+1. Otevři [vydání prompt-coach](../../../../releases/tag/prompt-coach-2026-09-24).
+2. Dole v sekci **Assets** klikni na **prompt-coach.skill**. Soubor se stáhne.
+3. Otevři ho ve své aplikaci Claude (v Coworku se objeví karta s tlačítkem **Uložit skill**). Kdyby aplikace chtěla soubor `.zip`, přejmenuj příponu z `.skill` na `.zip`, formát je stejný.
+4. Napiš třeba: „Zkontroluj prompt: …“, nebo „prompt coach: vylepši to“.
+
+Přesné tlačítko se liší podle verze aplikace a nemám ho ověřené na každé.
 
 ## Obsah složky
 

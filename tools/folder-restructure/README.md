@@ -17,11 +17,12 @@ Určeno pro ty, kdo dostali starší verzi startovní sady (0.2.0), která měla
 
 ## Jak si soubor stáhnout
 
-1. **Klikni na tento odkaz pravým tlačítkem myši** a zvol **Uložit odkaz jako…**: [OPRAVA__zaklad-v0-2-0-na-v0-3-0__2026-09-24.md](OPRAVA__zaklad-v0-2-0-na-v0-3-0__2026-09-24.md?raw=true)
-2. V okně ukládání zvol složku (třeba **Stažené**). Zkontroluj, že soubor končí na `.md`. Pokud se nabízí `.txt`, přepni **Uložit jako typ** na **Všechny soubory** a příponu oprav na `.md`.
-3. Přesuň stažený soubor do své složky `Claude` (obvykle `Dokumenty\Claude`).
+1. Otevři [vydání opravy](../../../../releases/tag/folder-restructure-2026-09-24).
+2. Dole v sekci **Assets** klikni na **OPRAVA__zaklad-v0-2-0-na-v0-3-0__2026-09-24.md**. Soubor se stáhne do složky **Stažené**.
+3. Zkontroluj, že název končí na `.md` (ne `.txt`).
+4. Přesuň stažený soubor do své složky `Claude` (obvykle `Dokumenty\Claude`).
 
-*Kdyby pravé tlačítko nefungovalo:* levým tlačítkem klikni na odkaz, otevře se holý text, zmáčkni **Ctrl + S** a ulož stejným způsobem jako v kroku 2. Ikona „Download raw file“ (šipka dolů) bývá na stránce souboru vpravo nad textem, ale jen tam, ne na stránce s historií změn.
+*Kdyby se soubor jen otevřel jako text:* zmáčkni **Ctrl + S** a ulož ho jako soubor s příponou `.md` (typ **Všechny soubory**).
 
 ## Jak ho spustit
 
