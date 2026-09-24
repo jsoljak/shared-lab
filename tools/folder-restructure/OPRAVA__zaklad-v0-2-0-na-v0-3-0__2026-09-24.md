@@ -63,14 +63,15 @@ Uživatel ti dal tenhle soubor, aby sis podle něj **přestavěl jeho složku `C
 
 ### Počítač uživatele: Windows 10 (přečti před Krokem 0)
 
-Uživatel má **Windows 10**. Nepředpokládej Bash, Linux ani macOS.
+Uživatel má **Windows 10** a aplikaci Claude pro počítač.
 
-1. **Příkazy a Python.** Příkazy spouštěj tak, jak to vyžaduje prostředí, ve kterém běžíš (Windows PowerShell 5.1 nebo příkazový řádek; **ne** `&&`, `<<'EOF'`, `mv`, `cp`, `zip`). Najdi příkaz pro Python: zkus `py -3 --version`, pak `python --version`. **Pozor:** Windows 10 bez Pythonu má v `python` prázdný odkaz na Microsoft Store (vypíše hlášku nebo otevře obchod). To **není** funkční Python; nic z obchodu neinstaluj. Nefunguje-li žádný z obou, jdi na Plán B. Nalezený příkaz je v celém textu dál `PY`.
-2. **Kde příkazy spouštět.** Spouštěj je z nadřazené složky složky `Claude` (obvykle `Dokumenty`), nebo použij plné cesty. Cesty s mezerami nebo diakritikou dej do uvozovek; skript rozumí zpětným i obyčejným lomítkům.
-3. **Otevřené soubory, OneDrive, dlouhé cesty.** Skript při potížích řekne, o který soubor jde. Ty pak: (a) požádáš uživatele, aby soubor ve Wordu, Excelu nebo Průzkumníku zavřel; (b) u souborů „jen online“ požádáš o **Vždy uchovávat na tomto zařízení**; (c) u cest delších než asi 260 znaků soubor **neřeš a nech ho být**, jen ho vypiš uživateli. Potom zkus stejnou dávku znovu, hotové kroky skript přeskočí.
-4. **Velikost písmen.** Windows nerozlišuje velká a malá písmena v názvech (`projects` a `PROJECTS` je totéž). Skript to řeší dvoukrokovým přejmenováním, ty nic zvláštního.
-5. **Soubory, které se ignorují:** skryté soubory, `Thumbs.db`, `desktop.ini` a zámky Office (`~$…`). Nezálohují se a nezařazují.
-6. **Konce řádků.** Soubory z Windows mají konce řádků CRLF a skript je zachová. Sám je nepřevádí.
+1. **Zjisti, co máš k dispozici, neuhaduj.** Aplikace Claude na Windows může běžet ve třech podobách: **(a)** Linuxové prostředí s připojenou složkou uživatele (cesty vypadají jako `/sessions/…/mnt/Claude`; běží tam obyčejné příkazy a bývá tam `python3`), nebo **(b)** přímo Windows (PowerShell 5.1 nebo příkazový řádek). Případně **(c)** nemáš příkazový řádek vůbec, jen nástroje pro čtení, zápis a přesun souborů. Řiď se tím, co ti opravdu funguje, a **nemíchej** styly cest ani příkazů (ve Windows ne `&&`, `<<'EOF'`, `mv`, `cp`, `zip`).
+2. **Najdi Python.** Zkus v tomto pořadí `python3 --version`, `python --version`, `py -3 --version`. První, který vypíše verzi 3.x, je v celém textu dál `PY`. **Pozor:** Windows 10 bez Pythonu má v `python` prázdný odkaz na Microsoft Store (vypíše hlášku nebo otevře obchod). To **není** funkční Python; nic z obchodu neinstaluj. Nenajdeš-li Python nebo příkazový řádek, jdi na **Plán B**. Není to chyba a uživateli to řekni jednoduše (pomalejší postup po jednom souboru).
+3. **Kde příkazy spouštět.** Spouštěj je ze stejného prostředí a z nadřazené složky složky `Claude` (na Windows obvykle `Dokumenty`), nebo použij plné cesty. Cesty s mezerami nebo diakritikou dej do uvozovek; skript rozumí zpětným i obyčejným lomítkům.
+4. **Otevřené soubory, OneDrive, dlouhé cesty.** Skript při potížích řekne, o který soubor jde. Ty pak: (a) požádáš uživatele, aby soubor ve Wordu, Excelu nebo Průzkumníku zavřel; (b) u souborů „jen online“ požádáš o **Vždy uchovávat na tomto zařízení**; (c) u cest delších než asi 260 znaků soubor **neřeš a nech ho být**, jen ho vypiš uživateli. Potom zkus stejnou dávku znovu, hotové kroky skript přeskočí.
+5. **Velikost písmen.** Windows nerozlišuje velká a malá písmena v názvech (`projects` a `PROJECTS` je totéž). Skript to řeší dvoukrokovým přejmenováním, ty nic zvláštního.
+6. **Soubory, které se ignorují:** skryté soubory, `Thumbs.db`, `desktop.ini` a zámky Office (`~$…`). Nezálohují se a nezařazují.
+7. **Konce řádků.** Soubory z Windows mají konce řádků CRLF a skript je zachová. Sám je nepřevádí.
 
 ### Krok 0 — Zjisti, kde jsi, a řekni uživateli, co se bude dít
 
@@ -152,7 +153,7 @@ Na čistém Windows 10 bývá Plán B **běžná cesta**, ne výjimka. Řekni u�
 
 1. **Přílohu nerozbaluj skriptem.** Soubory z přílohy zapiš sám přesně tak, jak stojí, do `Claude/OPRAVA/nove/…` (nástrojem pro zápis souborů).
 2. **Záloha:** požádej uživatele, aby si složku zkopíroval v Průzkumníku (pravé tlačítko na složku `Claude`, **Kopírovat**, na ploše **Vložit**, přejmenovat na `Claude-záloha`), a počkej na potvrzení. Bez zálohy nic nedělej.
-3. **Přesuny** dělej **jeden po druhém** a vždy po souhlasu: PowerShell `Move-Item -LiteralPath "odkud" -Destination "kam"` nebo nástroj pro přesun souborů. Přejmenování jen velikosti písmen (`projects` na `PROJECTS`) dělej **dvěma kroky** přes dočasný název. Každý přesun zapiš do `Claude/OPRAVA/denik.txt` (odkud → kam), ať jde vrátit.
+3. **Přesuny** dělej **jeden po druhém** a vždy po souhlasu: nástroj pro přesun souborů, který máš k dispozici; máš-li PowerShell, `Move-Item -LiteralPath "odkud" -Destination "kam"`. Přejmenování jen velikosti písmen (`projects` na `PROJECTS`) dělej **dvěma kroky** přes dočasný název. Každý přesun zapiš do `Claude/OPRAVA/denik.txt` (odkud → kam), ať jde vrátit.
 4. **Odkazy** opravuj ručně jen v souborech, které tvoří systém (`SYSTEM/registry/…`, `START-HERE.md`, `CLAUDE.md`). Ostatní soubory uživatele neotvírej.
 5. **Skill `guard` nepřeinstalovávej.** Zabalit ho bez Pythonu spolehlivě nejde (`Compress-Archive` a `tar` dávají do archivu špatné cesty). Pravidla dál drží `CLAUDE.md` a mapa složek. Řekni to uživateli a zapiš do `session-brain.md`: „guard čeká na aktualizaci od toho, kdo kit předal“.
 6. **Soubor `OPRAVA/zprava.md`** (Krok 8) napiš stejně.
