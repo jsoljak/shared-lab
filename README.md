@@ -13,6 +13,7 @@ No expertise claims. No agenda. Just stuff I find useful or interesting.
 articles/  — thoughts and observations
 tools/     — prompts, templates, scripts
 skills/    — Claude skills, each in its own folder with its own README
+guides/    — short step-by-step how-tos (in Czech), one file per guide
 
 ## Who am I
 
