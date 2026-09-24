@@ -17,10 +17,11 @@ Určeno pro ty, kdo dostali starší verzi startovní sady (0.2.0), která měla
 
 ## Jak si soubor stáhnout
 
-1. Otevři soubor: [OPRAVA__zaklad-v0-2-0-na-v0-3-0__2026-09-24.md](OPRAVA__zaklad-v0-2-0-na-v0-3-0__2026-09-24.md)
-2. Vpravo nad textem klikni na ikonu **Download raw file** (šipka dolů). Soubor se uloží do složky **Stažené**.
-   - Nevidíš-li ikonu: klikni na **Raw**, na otevřené stránce zmáčkni **Ctrl + S**, jako typ zvol **Všechny soubory** a soubor ulož s příponou `.md` (ne `.txt`).
-3. Přesuň stažený soubor do složky `Claude` (obvykle `Dokumenty\Claude`).
+1. **Klikni na tento odkaz pravým tlačítkem myši** a zvol **Uložit odkaz jako…**: [OPRAVA__zaklad-v0-2-0-na-v0-3-0__2026-09-24.md](OPRAVA__zaklad-v0-2-0-na-v0-3-0__2026-09-24.md?raw=true)
+2. V okně ukládání zvol složku (třeba **Stažené**). Zkontroluj, že soubor končí na `.md`. Pokud se nabízí `.txt`, přepni **Uložit jako typ** na **Všechny soubory** a příponu oprav na `.md`.
+3. Přesuň stažený soubor do své složky `Claude` (obvykle `Dokumenty\Claude`).
+
+*Kdyby pravé tlačítko nefungovalo:* levým tlačítkem klikni na odkaz, otevře se holý text, zmáčkni **Ctrl + S** a ulož stejným způsobem jako v kroku 2. Ikona „Download raw file“ (šipka dolů) bývá na stránce souboru vpravo nad textem, ale jen tam, ne na stránce s historií změn.
 
 ## Jak ho spustit
 
