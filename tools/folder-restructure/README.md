@@ -4,7 +4,7 @@
 
 # Oprava: úprava složky Claude na novou strukturu (Windows 10)
 
-> **Nástroj: jeden soubor pro Clauda** · verze **0.3.0** (z 0.2.0) · česky · [**⬇ Download package** (OPRAVA…md)](OPRAVA__zaklad-v0-2-0-na-v0-3-0__2026-09-24.md?raw=true)
+> **Nástroj: jeden soubor pro Clauda** · verze **0.3.0** (z 0.2.0) · česky · [**⬇ Download package** (OPRAVA…md)](https://raw.githubusercontent.com/jsoljak/shared-lab/main/tools/folder-restructure/OPRAVA__zaklad-v0-2-0-na-v0-3-0__2026-09-24.md)
 
 Jeden textový soubor, který dáš svému Claudovi. Claude ti **zazálohuje složku `Claude`, navrhne přehlednou strukturu podle toho, jak žiješ, a po malých částech (vždy až po tvém „ano“) ji uklidí**. Nic se nemaže, nic neinstaluješ a jde to kdykoli vrátit zpět.
 
@@ -19,7 +19,7 @@ Určeno pro ty, kdo dostali starší verzi startovní sady (0.2.0), která měla
 
 ## Jak si soubor stáhnout
 
-1. Klikni **pravým tlačítkem** na [OPRAVA__zaklad-v0-2-0-na-v0-3-0__2026-09-24.md](OPRAVA__zaklad-v0-2-0-na-v0-3-0__2026-09-24.md?raw=true) a zvol **Uložit odkaz jako…** (Edge, Chrome).
+1. Klikni **pravým tlačítkem** na [OPRAVA__zaklad-v0-2-0-na-v0-3-0__2026-09-24.md](https://raw.githubusercontent.com/jsoljak/shared-lab/main/tools/folder-restructure/OPRAVA__zaklad-v0-2-0-na-v0-3-0__2026-09-24.md) a zvol **Uložit odkaz jako…** (Edge, Chrome).
 2. Ulož ho třeba do složky **Stažené**. Zkontroluj, že název končí na `.md` (ne `.txt`); Windows 10 přípony skrývá, viz „Před začátkem“ výše. Pokud se nabízí `.txt`, přepni **Uložit jako typ** na **Všechny soubory**.
 3. Přesuň soubor do své složky `Claude` (obvykle `Dokumenty\Claude`).
 

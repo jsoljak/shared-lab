@@ -1,6 +1,6 @@
 # prompt-coach
 
-> **Skill pro Claude** · verze **2026-09-24** · česky · [**⬇ Download package** (prompt-coach.skill)](../../downloads/prompt-coach.skill?raw=true)
+> **Skill pro Claude** · verze **2026-09-24** · česky · [**⬇ Download package** (prompt-coach.skill)](https://raw.githubusercontent.com/jsoljak/shared-lab/main/downloads/prompt-coach.skill)
 
 Claude skill, který ti pomůže napsat lepší prompt. Neopraví ho za tebe: **ptá se po jedné otázce**, až sám přijdeš na to, co ve tvém zadání chybí. Tím se dlouhodobě učíš psát lépe.
 

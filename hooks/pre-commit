@@ -38,9 +38,10 @@ scan(){           # $1 = label ; $2 = obsah (NE přes pipe — jinak subshell zt
   grep -m1 -qE "$RATES"   <<<"$t" && flag "$L — rate / fee figure"
   grep -m1 -qE "$PHONE"   <<<"$t" && flag "$L — phone number"
   if [ "$PROFILE" = "PUBLIC" ]; then
+    # Also allowed: URLs of this repo itself (download links).
     # Approved public attribution line is allowed through — anything else
     # about the author (casual name, email) is still blocked.
-    local pub; pub="$(sed -E 's#(Jiří|Jiri) Soljak##g; s#linkedin\.com/in/jirisoljak##g' <<<"$t")"
+    local pub; pub="$(sed -E 's#(Jiří|Jiri) Soljak##g; s#linkedin\.com/in/jirisoljak##g; s#(raw\.githubusercontent|github)\.com/js[o]ljak/shared-lab[^ )"]*##g' <<<"$t")"
     grep -m1 -qE "$EMAIL"   <<<"$pub" && flag "$L — email address (blocked in PUBLIC)"
     grep -m1 -qE "$PERSONA" <<<"$pub" && flag "$L — informal author reference (PUBLIC allows only the formal attribution line)"
   else

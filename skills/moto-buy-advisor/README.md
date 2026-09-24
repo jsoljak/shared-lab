@@ -1,6 +1,6 @@
 # moto-buy-advisor
 
-> **Skill pro Claude** · verze **2026-07-16** · česky (český trh) · [**⬇ Download package** (moto-buy-advisor.skill)](../../downloads/moto-buy-advisor.skill?raw=true)
+> **Skill pro Claude** · verze **2026-07-16** · česky (český trh) · [**⬇ Download package** (moto-buy-advisor.skill)](https://raw.githubusercontent.com/jsoljak/shared-lab/main/downloads/moto-buy-advisor.skill)
 
 Poradce při nákupu nové nebo ojeté motorky, jakékoli značky a modelu. Vezme inzerát nebo tvůj dotaz, dohledá tržní ceny a reference a řekne ti jednoznačný verdikt, ne alibistické „záleží“.
 

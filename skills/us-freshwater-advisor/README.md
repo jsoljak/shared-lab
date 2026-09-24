@@ -1,6 +1,6 @@
 # US Freshwater Advisor
 
-> **Sada 3 skillů pro Claude** · version **2026-09-24** · English · **⬇ Download packages:** [us-water-finder](../../downloads/us-water-finder.skill?raw=true) · [us-weather-advisor](../../downloads/us-weather-advisor.skill?raw=true) · [us-fishing-advisor](../../downloads/us-fishing-advisor.skill?raw=true) (download all three)
+> **Sada 3 skillů pro Claude** · version **2026-09-24** · English · **⬇ Download packages:** [us-water-finder](https://raw.githubusercontent.com/jsoljak/shared-lab/main/downloads/us-water-finder.skill) · [us-weather-advisor](https://raw.githubusercontent.com/jsoljak/shared-lab/main/downloads/us-weather-advisor.skill) · [us-fishing-advisor](https://raw.githubusercontent.com/jsoljak/shared-lab/main/downloads/us-fishing-advisor.skill) (download all three)
 
 Three Claude skills that answer one question between them: **where should I go fishing,
 when, and with what.**
@@ -17,9 +17,9 @@ reading before you trust it — where it's honestly thin.
 ## Download
 
 Three files, one per skill. **Download all three**: the fishing advisor takes its data from the other two.
-[us-water-finder.skill](../../downloads/us-water-finder.skill?raw=true) ·
-[us-weather-advisor.skill](../../downloads/us-weather-advisor.skill?raw=true) ·
-[us-fishing-advisor.skill](../../downloads/us-fishing-advisor.skill?raw=true).
+[us-water-finder.skill](https://raw.githubusercontent.com/jsoljak/shared-lab/main/downloads/us-water-finder.skill) ·
+[us-weather-advisor.skill](https://raw.githubusercontent.com/jsoljak/shared-lab/main/downloads/us-weather-advisor.skill) ·
+[us-fishing-advisor.skill](https://raw.githubusercontent.com/jsoljak/shared-lab/main/downloads/us-fishing-advisor.skill).
 Each file is a complete skill with its reference data; the rest of this folder is for reading.
 
 ## What's here
