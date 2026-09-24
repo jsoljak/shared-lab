@@ -33,12 +33,13 @@
 
 **Kdyby si Claude nevěděl rady nebo se něco nepovedlo:** nic se neděje, záloha je u tebe. Napiš tomu, kdo ti soubor poslal, a přilož zprávu, kterou ti Claude na konci nabídne připravit (je v ní jen to, co se dělo, ne obsah tvých souborů).
 
-*Doporučení navíc:* než začneš, zkopíruj si celou složku `Claude` na plochu jako `Claude-záloha` (Windows: v Průzkumníku pravým tlačítkem na složku, **Kopírovat**, na ploše **Vložit** a přejmenovat; Mac: ve Finderu). Pro jistotu, i když Claude zálohuje sám.
+*Doporučení navíc:* než začneš, zkopíruj si celou složku `Claude` na plochu jako `Claude-záloha`: v Průzkumníku klikni na složku pravým tlačítkem, zvol **Kopírovat**, na ploše klikni pravým a zvol **Vložit** a složku přejmenuj. Pro jistotu, i když Claude zálohuje sám.
 
-**Máš Windows?** Všechno funguje stejně. Před začátkem:
-- **Zavři Word, Excel a PowerPoint** a soubory, které máš ve složce `Claude` otevřené. Otevřený soubor jde špatně přesunout.
-- Leží-li složka `Claude` ve **OneDrive** (třeba `Dokumenty` se synchronizují), klikni na ni pravým tlačítkem a zvol **Vždy uchovávat na tomto zařízení**. Soubory, které jsou jen „online“, jinak zálohování zpomalí nebo se nepovede.
-- Pokud Claude řekne, že nemá Python, nic neinstaluj: postupuje pomaleji jinou cestou (Plán B).
+**Před začátkem (Windows 10):**
+- **Zavři Word, Excel a PowerPoint** a všechny soubory ze složky `Claude`. Otevřený soubor jde špatně přesunout.
+- Leží-li složka `Claude` ve **OneDrive** (často `OneDrive\Dokumenty\Claude`), klikni na ni pravým tlačítkem a zvol **Vždy uchovávat na tomto zařízení**. Soubory, které jsou jen „online“, jinak zálohování zpomalí nebo se nepovede.
+- Windows 10 ve výchozím stavu **skrývá přípony souborů**. Zapni je: v Průzkumníku záložka **Zobrazení**, zaškrtni **Přípony názvů souborů**. Ušetříš si zmatek s příponami `.md` a `.txt`.
+- Pokud Claude řekne, že v počítači není Python, **nic neinstaluj**: postupuje pomaleji jinou cestou (Plán B) a řekne ti to.
 
 ---
 
@@ -60,16 +61,16 @@ Uživatel ti dal tenhle soubor, aby sis podle něj **přestavěl jeho složku `C
 10. **Datum** zjisti ze systému, nehádej.
 11. **Během opravy se řiď jen tímto souborem**, ne staršími skilly (`guard`, `onboarding`…). Ty mluví o starých cestách; po opravě platí nové z tohoto souboru.
 
-### Počítač uživatele (přečti před Krokem 0)
+### Počítač uživatele: Windows 10 (přečti před Krokem 0)
 
-Zjisti, na jakém systému uživatel pracuje (macOS, Windows), a řiď se tím:
+Uživatel má **Windows 10**. Nepředpokládej Bash, Linux ani macOS.
 
-1. **Kde poběží příkazy.** Vidíš-li cesty typu `/sessions/…/mnt/Claude`, běží příkazy v Linuxovém prostředí s připojenou složkou a všechny příkazy níže platí tak, jak jsou psané. Běží-li příkazy přímo na Windows (PowerShell, `cmd`), platí body 2 až 4.
-2. **Příkaz pro Python.** Všude, kde text píše `python3`, použij příkaz, který na tomto počítači funguje: zkus `python --version`, pak `py -3 --version`. Nefunguje-li žádný, jdi na Plán B. **Nic neinstaluj.**
-3. **Žádná syntaxe Bashe ve Windows.** Neposílej do PowerShellu ani `cmd` konstrukce `<<'EOF'`, `mv`, `cp`, `zip`. Bootstrap přílohy ulož jako soubor `rozbal.py` a spusť ho (viz Příloha). Cesty s mezerami dej do uvozovek; skript rozumí zpětným i obyčejným lomítkům.
-4. **Otevřené soubory, OneDrive, dlouhé cesty.** Skript při potížích řekne, o který soubor jde. Ty pak: (a) požádáš uživatele, aby soubor v Wordu, Excelu nebo Průzkumníku zavřel; (b) u souborů „jen online“ požádáš o **Vždy uchovávat na tomto zařízení**; (c) u cest delších než asi 260 znaků soubor **neřeš a nechej ho být**, jen ho vypiš uživateli. Poté zkus stejnou dávku znovu, hotové kroky skript přeskočí.
-5. **Velikost písmen.** Windows i macOS nerozlišují velká a malá písmena v názvech (`projects` a `PROJECTS` je totéž). Skript to řeší dvoukrokovým přejmenováním, ty nic zvláštního.
-6. **Soubory, které se ignorují:** skryté soubory, `Thumbs.db`, `desktop.ini` a zámky Office (`~$…`). Nezálohují se a nezařazují.
+1. **Příkazy a Python.** Příkazy spouštěj tak, jak to vyžaduje prostředí, ve kterém běžíš (Windows PowerShell 5.1 nebo příkazový řádek; **ne** `&&`, `<<'EOF'`, `mv`, `cp`, `zip`). Najdi příkaz pro Python: zkus `py -3 --version`, pak `python --version`. **Pozor:** Windows 10 bez Pythonu má v `python` prázdný odkaz na Microsoft Store (vypíše hlášku nebo otevře obchod). To **není** funkční Python; nic z obchodu neinstaluj. Nefunguje-li žádný z obou, jdi na Plán B. Nalezený příkaz je v celém textu dál `PY`.
+2. **Kde příkazy spouštět.** Spouštěj je z nadřazené složky složky `Claude` (obvykle `Dokumenty`), nebo použij plné cesty. Cesty s mezerami nebo diakritikou dej do uvozovek; skript rozumí zpětným i obyčejným lomítkům.
+3. **Otevřené soubory, OneDrive, dlouhé cesty.** Skript při potížích řekne, o který soubor jde. Ty pak: (a) požádáš uživatele, aby soubor ve Wordu, Excelu nebo Průzkumníku zavřel; (b) u souborů „jen online“ požádáš o **Vždy uchovávat na tomto zařízení**; (c) u cest delších než asi 260 znaků soubor **neřeš a nech ho být**, jen ho vypiš uživateli. Potom zkus stejnou dávku znovu, hotové kroky skript přeskočí.
+4. **Velikost písmen.** Windows nerozlišuje velká a malá písmena v názvech (`projects` a `PROJECTS` je totéž). Skript to řeší dvoukrokovým přejmenováním, ty nic zvláštního.
+5. **Soubory, které se ignorují:** skryté soubory, `Thumbs.db`, `desktop.ini` a zámky Office (`~$…`). Nezálohují se a nezařazují.
+6. **Konce řádků.** Soubory z Windows mají konce řádků CRLF a skript je zachová. Sám je nepřevádí.
 
 ### Krok 0 — Zjisti, kde jsi, a řekni uživateli, co se bude dít
 
@@ -80,12 +81,12 @@ Zjisti, na jakém systému uživatel pracuje (macOS, Windows), a řiď se tím:
 ### Krok 1 — Záloha (bez ní nic nedělej)
 
 1. Rozbal přílohu do pracovní složky (bootstrap v Příloze). Vytvoří se `Claude/OPRAVA/nove/…`.
-2. Zazálohuj: `python3 Claude/OPRAVA/nove/oprava.py backup Claude`. Skript ověří zip a napíše, kolik souborů zazálohoval.
+2. Zazálohuj: `PY Claude/OPRAVA/nove/oprava.py backup Claude`. Skript ověří zip a napíše, kolik souborů zazálohoval.
 3. Řekni uživateli: kde záloha leží, že ji lze kdykoli rozbalit, a že složku `OPRAVA/` může po dokončení nechat (je to jeho pojistka).
 
 ### Krok 2 — Zmapuj složku
 
-Spusť `python3 Claude/OPRAVA/nove/oprava.py scan Claude`. Přečti výsledek sám a **uživateli řekni jen shrnutí** (3 až 6 vět): co je ve starém formátu, kolik má projektů, kolik souborů leží mimo strukturu, jestli jsou duplicity a prázdné složky. Seznamy nevypisuj, jen když se zeptá.
+Spusť `PY Claude/OPRAVA/nove/oprava.py scan Claude`. Přečti výsledek sám a **uživateli řekni jen shrnutí** (3 až 6 vět): co je ve starém formátu, kolik má projektů, kolik souborů leží mimo strukturu, jestli jsou duplicity a prázdné složky. Seznamy nevypisuj, jen když se zeptá.
 
 ### Krok 3 — Rozhovor: zvol strukturu (podle průvodce)
 
@@ -99,7 +100,7 @@ Přečti `Claude/OPRAVA/nove/pruvodce/structure-guide.md` a `skeletons.md` (sekc
 
 ### Krok 4 — Sestav plán
 
-Vytvoř `Claude/OPRAVA/plan.json`: seznam operací `{"batch": N, "op": "mkdir|move|install", "from": "…", "to": "…", "why": "…"}` (viz `python3 oprava.py --help`). Dávky:
+Vytvoř `Claude/OPRAVA/plan.json`: seznam operací `{"batch": N, "op": "mkdir|move|install", "from": "…", "to": "…", "why": "…"}` (viz `PY oprava.py --help`). Dávky:
 1. **Systém a nové soubory:** `mkdir SYSTEM`; `move Registry → SYSTEM/registry`; `move skill-memory → SYSTEM/skill-memory`; `move wiki → RESOURCES`; `move profile.md → PROFILE.md`; potom `install` nových souborů z `OPRAVA/nove/` (`CLAUDE.md`, `START-HERE.md`, `SYSTEM/registry/folder-map.md`, `workspace-rules.md`, `project-method.md`). Starý soubor se při `install` uloží do `OPRAVA/stare-verze/`. **Soubory `projects-registry.md`, `decisions-registry.md`, `session-brain.md`, `skills-catalog.md` a uživatelovy PROFILE nepřepisuj** (jen se přesunou s Registry).
 2. **Kostra:** `move inbox → INBOX`, `move projects → PROJECTS` (přejmenování jen velikosti písmen skript zvládne), `mkdir ARCHIVE/projects`, `mkdir ARCHIVE/areas`, `mkdir` složek oblastí `AREAS/<skupina>/<oblast>` (jen ty, které uživatel zvolil).
 3. **Projekty (jen varianta B):** `move PROJECTS/<projekt> → AREAS/<skupina>/<oblast>/<projekt>`. U varianty A žádné přesuny.
@@ -109,7 +110,7 @@ Každou dávku **ukaž jako tabulku** a zeptej se „Provedu tuhle dávku?“.
 
 ### Krok 5 — Provedení po dávkách
 
-Pro každou schválenou dávku: `python3 Claude/OPRAVA/nove/oprava.py apply Claude Claude/OPRAVA/plan.json --batch N --dry-run` (ukaž výsledek, včetně počtu oprav odkazů), po souhlasu stejný příkaz bez `--dry-run`. Skript vede deník v `OPRAVA/denik.jsonl` a opravuje odkazy mezi soubory. Po každé dávce řekni jednou větou, co se udělalo.
+Pro každou schválenou dávku: `PY Claude/OPRAVA/nove/oprava.py apply Claude Claude/OPRAVA/plan.json --batch N --dry-run` (ukaž výsledek, včetně počtu oprav odkazů), po souhlasu stejný příkaz bez `--dry-run`. Skript vede deník v `OPRAVA/denik.jsonl` a opravuje odkazy mezi soubory. Po každé dávce řekni jednou větou, co se udělalo.
 
 ### Krok 6 — Doplň obsah (po přesunech, se souhlasem)
 
@@ -127,7 +128,7 @@ Pro každou schválenou dávku: `python3 Claude/OPRAVA/nove/oprava.py apply Clau
 1. **Zastaralé cesty v mapě složek.** V `SYSTEM/registry/folder-map.md` vyplň tabulku **Zastaralé cesty** (starý řádek `_(žádné …)_` nahraď): `Registry/` → `SYSTEM/registry/`, `wiki/` → `RESOURCES/`, `profile.md` → `PROFILE.md`, `inbox/` → `INBOX/`, `projects/` → `PROJECTS/` (nebo `AREAS/<skupina>/<oblast>/` podle varianty), `skill-memory/` → `SYSTEM/skill-memory/`; sloupec „Od kdy“ dnešní datum, poznámka „přesunuto opravou 0.3.0“. Díky tomu `guard` staré cesty pozná a navrhne nové.
 2. **Zjisti, zda je nainstalovaný skill `guard`:** podívej se do seznamu skillů, které máš k dispozici (název `guard`). **Není?** Řekni, že hlídání zajišťují `CLAUDE.md` a mapa složek (pravidla jsou v nich), a přeskoč zbytek kroku.
 3. **Je?** Je ve staré verzi a hledá mapu složek na **starém místě** (`Registry/…`), které už není. Vysvětli to jednoduše („hlídač u tebe ještě hledá mapu na původním místě, aktualizuju ho, bude to jedno kliknutí“) a zeptej se „Můžu?“.
-4. Zabal aktualizovaný skill: `python3 Claude/OPRAVA/nove/oprava.py packskill Claude/OPRAVA/nove/skills/guard Claude/OPRAVA/guard.skill`.
+4. Zabal aktualizovaný skill: `PY Claude/OPRAVA/nove/oprava.py packskill Claude/OPRAVA/nove/skills/guard Claude/OPRAVA/guard.skill`.
 5. **Nabídni soubor uživateli jako kartu v chatu** (nástrojem pro předání souboru, ne jen cestu). Řekni: „Pod touhle zprávou je karta se souborem `guard.skill`. Klikni na **Uložit skill** (nebo podobné tlačítko). Zeptá-li se, jestli nahradit starý skill, potvrď.“ **Nevidí-li kartu nebo tlačítko:** řekni, kde soubor leží (`OPRAVA/guard.skill`), že se skill v aplikaci přidává v nastavení skillů (přesné tlačítko se liší podle verze aplikace), a nech si od uživatele napsat, co na obrazovce vidí; radíš krok za krokem. Bez přeinstalace se dá dál pracovat podle `CLAUDE.md`, nic se nerozbije.
 6. **Ověř v nové konverzaci** (nový skill se načte až v ní). Řekni: „Otevři novou konverzaci se složkou Claude a napiš: **Kam patří soubor o rekonstrukci kuchyně?** Když hlídač odpoví cestou v nové struktuře (`PROJECTS/…` nebo `AREAS/…`), je vše v pořádku.“ Potvrdí-li to uživatel, v `SYSTEM/registry/skills-catalog.md` uprav řádek `guard` (verze `0.3.0`, poslední změna dnešní datum). Nepotvrdí-li, zapiš do `SYSTEM/registry/session-brain.md`: „guard čeká na přeinstalaci“.
 7. **Další soubory `*.skill` od toho, kdo ti kit předal:** leží-li v `Claude/OPRAVA/` (nebo v `Claude/`) další soubory s příponou `.skill`, nabídni je uživateli **po jednom jako karty** stejným způsobem jako `guard` (jeden po druhém, po každém ověření). Nejsou-li, nic nehledej.
@@ -136,24 +137,31 @@ Pro každou schválenou dávku: `python3 Claude/OPRAVA/nove/oprava.py apply Clau
 
 ### Krok 8 — Kontrola a předání
 
-1. `python3 Claude/OPRAVA/nove/oprava.py check Claude`. Vyřeš `FLAG`, u `WARN` vysvětli.
+1. `PY Claude/OPRAVA/nove/oprava.py check Claude`. Vyřeš `FLAG`, u `WARN` vysvětli.
 2. Řekni uživateli **jednoduše, co se změnilo** (kolik souborů se přesunulo, jaké oblasti vznikly, kam patří projekty, zda se aktualizoval `guard`), **kde je záloha**, jak se vrátí (**„Vrať opravu zpátky“** → `oprava.py undo Claude --all`) a **které prázdné složky zůstaly** (smazat je může sám, ty nemaž).
 3. **Nabídni zprávu pro toho, kdo ti soubor poslal.** Vytvoř `Claude/OPRAVA/zprava.md`: datum; zda proběhla záloha; kolik souborů se přesunulo a kolik oprav odkazů; zvolená varianta (`jedna vrstva` / `pod oblastí`) a **názvy** oblastí (ne obsah souborů); zda se aktualizoval `guard`; co se zaseklo nebo bylo nejasné; výsledek `check`. **Žádný obsah osobních souborů a žádná jména dokumentů.** Ukaž ji uživateli a zeptej se, zda ji chce poslat; posílá ji sám.
 4. Řekni, jak příště navázat: **„Kde jsem skončil?“**, a že od teď platí nová pravidla z `CLAUDE.md`.
 
 ### Návrat zpět
 
-Když uživatel řekne „Vrať opravu zpátky“: `python3 Claude/OPRAVA/nove/oprava.py undo Claude --all` (nebo `--batch N`). Skript vrátí přesuny a nahradí nové systémové soubory jejich původními verzemi. Potom spusť `check`. Záloha `OPRAVA/zaloha__….zip` je poslední záchrana (rozbalit ručně).
+Když uživatel řekne „Vrať opravu zpátky“: `PY Claude/OPRAVA/nove/oprava.py undo Claude --all` (nebo `--batch N`). Skript vrátí přesuny a nahradí nové systémové soubory jejich původními verzemi. Potom spusť `check`. Záloha `OPRAVA/zaloha__….zip` je poslední záchrana (rozbalit ručně).
 
-### Plán B (bez Pythonu nebo bez příkazového řádku)
+### Plán B (bez Pythonu, nebo když skript nejde spustit)
 
-Přílohu nemusíš rozbalovat skriptem: soubory z ní zapiš sám přesně tak, jak stojí, do `Claude/OPRAVA/nove/…`. Zálohu udělej tak, že uživatele požádáš, aby si složku zkopíroval ve Finderu, a počkáš na potvrzení. Přesuny dělej **jeden po druhém** příkazem přesunu souboru (`mv`; ve Windows PowerShellu `Move-Item -LiteralPath odkud -Destination kam`), nebo nástrojem pro přesun souborů, vždy po souhlasu, a každý zapiš do `Claude/OPRAVA/denik.txt` (odkud → kam), ať jde vrátit. Odkazy opravuj ručně jen u souborů, které tvoří systém (`SYSTEM/registry/…`, `START-HERE.md`, `CLAUDE.md`). Skill `guard` v tom případě zabal příkazem `zip` tak, aby `SKILL.md` ležel na kořeni archivu (ne v podsložce). **Ve Windows a bez Pythonu se tohle spolehlivě dělá špatně** (`Compress-Archive` a `tar` často dají do archivu cesty s předponou nebo zpětnými lomítky), proto skill raději **nepřeinstalovávej**: pravidla dál drží `CLAUDE.md` a mapa složek. Řekni to uživateli a zapiš do `session-brain.md`, že `guard` čeká na aktualizaci od toho, kdo kit předal. Řekni uživateli, že je to pomalejší.
+Na čistém Windows 10 bývá Plán B **běžná cesta**, ne výjimka. Řekni uživateli jednoduše, že to bude pomalejší a půjde po jednom souboru.
+
+1. **Přílohu nerozbaluj skriptem.** Soubory z přílohy zapiš sám přesně tak, jak stojí, do `Claude/OPRAVA/nove/…` (nástrojem pro zápis souborů).
+2. **Záloha:** požádej uživatele, aby si složku zkopíroval v Průzkumníku (pravé tlačítko na složku `Claude`, **Kopírovat**, na ploše **Vložit**, přejmenovat na `Claude-záloha`), a počkej na potvrzení. Bez zálohy nic nedělej.
+3. **Přesuny** dělej **jeden po druhém** a vždy po souhlasu: PowerShell `Move-Item -LiteralPath "odkud" -Destination "kam"` nebo nástroj pro přesun souborů. Přejmenování jen velikosti písmen (`projects` na `PROJECTS`) dělej **dvěma kroky** přes dočasný název. Každý přesun zapiš do `Claude/OPRAVA/denik.txt` (odkud → kam), ať jde vrátit.
+4. **Odkazy** opravuj ručně jen v souborech, které tvoří systém (`SYSTEM/registry/…`, `START-HERE.md`, `CLAUDE.md`). Ostatní soubory uživatele neotvírej.
+5. **Skill `guard` nepřeinstalovávej.** Zabalit ho bez Pythonu spolehlivě nejde (`Compress-Archive` a `tar` dávají do archivu špatné cesty). Pravidla dál drží `CLAUDE.md` a mapa složek. Řekni to uživateli a zapiš do `session-brain.md`: „guard čeká na aktualizaci od toho, kdo kit předal“.
+6. **Soubor `OPRAVA/zprava.md`** (Krok 8) napiš stejně.
 
 ---
 
 ## PŘÍLOHA (technická; nečti ji celou, jen ji rozbal)
 
-Bootstrap (spusť jednou, vytáhne všechny soubory z přílohy do `Claude/OPRAVA/nove/`). **Funguje všude (macOS, Linux, Windows):** ulož následující kód jako soubor `rozbal.py` (kamkoli, třeba na plochu) a spusť ho příkazem `python rozbal.py "CESTA/K/TOMUTO/SOUBORU.md" "CESTA/KE/SLOZCE/Claude"` (v Linuxu a na macOS `python3`; ve Windows případně `py -3`). Obě cesty dej do uvozovek.
+Bootstrap (spusť jednou, vytáhne všechny soubory z přílohy do `Claude/OPRAVA/nove/`). Ulož následující kód jako soubor `rozbal.py` (kamkoli, třeba na plochu) a spusť ho příkazem `PY rozbal.py "CESTA\K\TOMUTO\SOUBORU.md" "CESTA\KE\SLOZCE\Claude"` (PowerShell nebo příkazový řádek; `PY` je `py -3` nebo `python`). Obě cesty dej do uvozovek.
 
 ```python
 import re, sys, os
@@ -193,14 +201,14 @@ Obsah přílohy (každý soubor je mezi značkami `BEGIN FILE` a `END FILE`):
 #!/usr/bin/env python3
 """oprava.py — pomocný skript opravného souboru (přestavba stávající složky Claude/).
 
-Použití (z libovolného místa; <ws> = složka Claude/):
-  python3 oprava.py backup <ws>                       zazálohuje celou složku do <ws>/OPRAVA/zaloha__RRRR-MM-DD.zip
-  python3 oprava.py scan   <ws>                       zmapuje složku (nic nemění), vypíše hlášení
-  python3 oprava.py apply  <ws> <plan.json> --batch N [--dry-run]
+Použití (z libovolného místa; PY = py -3 nebo python; <ws> = složka Claude/):
+  PY oprava.py backup <ws>                       zazálohuje celou složku do <ws>/OPRAVA/zaloha__RRRR-MM-DD.zip
+  PY oprava.py scan   <ws>                       zmapuje složku (nic nemění), vypíše hlášení
+  PY oprava.py apply  <ws> <plan.json> --batch N [--dry-run]
                                                       provede jednu dávku plánu (suchý běh nic nemění)
-  python3 oprava.py undo   <ws> [--batch N | --all]   vrátí provedené dávky podle deníku
-  python3 oprava.py check  <ws>                       jednoduchá kontrola výsledku (nic nemění)
-  python3 oprava.py packskill <složka-skillu> <výstup.skill>
+  PY oprava.py undo   <ws> [--batch N | --all]   vrátí provedené dávky podle deníku
+  PY oprava.py check  <ws>                       jednoduchá kontrola výsledku (nic nemění)
+  PY oprava.py packskill <složka-skillu> <výstup.skill>
                                                       zabalí skill do souboru .skill (SKILL.md na kořeni, jen povolené složky)
 
 Plán (plan.json) je seznam operací: {"batch": 1, "op": "mkdir|move|install", "from": "...", "to": "...", "why": "..."}
@@ -250,7 +258,7 @@ def ws_of(arg):
 
 
 def has(ws, name):
-    """Existuje položka přesně s tímto psaním? (na macOS se jinak splete PROJECTS a projects)"""
+    """Existuje položka přesně s tímto psaním? (Windows a macOS jinak splete PROJECTS a projects)"""
     return name in os.listdir(ws)
 
 
@@ -463,7 +471,7 @@ def cmd_apply(ws, plan_path, batch, dry):
     if not ops:
         die(f"v plánu není dávka {batch}")
     if not (ws / WORK).is_dir() or not list((ws / WORK).glob("zaloha__*.zip")):
-        die("nejdřív zálohu: python3 oprava.py backup <složka>")
+        die("nejdřív zálohu: PY oprava.py backup <složka>")
     print(("SUCHÝ BĚH (nic se nemění)" if dry else "PROVEDENÍ") + f" dávky {batch}: {len(ops)} operací")
     for o in ops:
         kind, src, dst = o["op"], o.get("from", ""), o["to"]
