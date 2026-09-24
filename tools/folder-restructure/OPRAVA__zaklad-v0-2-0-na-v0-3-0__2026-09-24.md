@@ -1171,7 +1171,7 @@ status: draft
 > Author: Jiří Soljak | linkedin.com/in/jirisoljak
 > Version: 2026-09-24
 
-> Schváleno (D-017, JSO 2026-09-24). Názvy kostry: VELKÁ PÍSMENA, složka `SYSTEM/` s `registry/`, `skill-memory/`, `skills/`, soubor `PROFILE.md`. Uvnitř `ARCHIVE/` jsou podsložky malými písmeny (`projects/`, `areas/`).
+> Schváleno 2026-09-24. Názvy kostry: VELKÁ PÍSMENA, složka `SYSTEM/` s `registry/`, `skill-memory/`, `skills/`, soubor `PROFILE.md`. Uvnitř `ARCHIVE/` jsou podsložky malými písmeny (`projects/`, `areas/`).
 
 # Průvodce strukturou: jak si postavit složku
 

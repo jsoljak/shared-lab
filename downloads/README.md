@@ -15,7 +15,7 @@ Nejdřív si přečti **Info** u věci, která tě zajímá: co dělá, pro koho
 | **us-weather-advisor** | skill (2 ze 3) | 2026-09-24 | Počasí a stav řek pro výlet nebo rybaření v USA. | [Info](../skills/us-freshwater-advisor/README.md) | [**⬇ Download package**](https://raw.githubusercontent.com/jsoljak/shared-lab/main/downloads/us-weather-advisor.skill) |
 | **us-fishing-advisor** | skill (3 ze 3) | 2026-09-24 | Kam, kdy a na co chytat; bere data z předchozích dvou. | [Info](../skills/us-freshwater-advisor/README.md) | [**⬇ Download package**](https://raw.githubusercontent.com/jsoljak/shared-lab/main/downloads/us-fishing-advisor.skill) |
 | **Jak z AI dostat užitečnou odpověď** | návod | 2026-06-01 | Pět věcí, které si před otázkou pro AI odpovědět, a šablona. | [Info](../guides/README.md) | [**⬇ Download package**](https://raw.githubusercontent.com/jsoljak/shared-lab/main/guides/jak-z-ai-dostat-uzitecnou-odpoved.md) |
-| **Oprava složky Claude (Windows 10)** | nástroj | 0.3.0 | Uklidí tvou složku Claude podle nové struktury. | [Info](../tools/folder-restructure/README.md) | [**⬇ Download package**](https://raw.githubusercontent.com/jsoljak/shared-lab/main/tools/folder-restructure/OPRAVA__zaklad-v0-2-0-na-v0-3-0__2026-09-24.md) |
+| **Oprava složky Claude (Windows 10)** | nástroj | 0.3.1 | Uklidí tvou složku Claude podle nové struktury. | [Info](../tools/folder-restructure/README.md) | [**⬇ Download package**](https://raw.githubusercontent.com/jsoljak/shared-lab/main/tools/folder-restructure/OPRAVA__zaklad-v0-2-0-na-v0-3-0__2026-09-24.md) |
 
 **Skilly `us-*` patří k sobě.** Stáhni všechny tři: rybářský poradce bere data z ostatních dvou.
 

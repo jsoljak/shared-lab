@@ -4,7 +4,7 @@
 
 # Oprava: úprava složky Claude na novou strukturu (Windows 10)
 
-> **Nástroj: jeden soubor pro Clauda** · verze **0.3.0** (z 0.2.0) · česky · [**⬇ Download package** (OPRAVA…md)](https://raw.githubusercontent.com/jsoljak/shared-lab/main/tools/folder-restructure/OPRAVA__zaklad-v0-2-0-na-v0-3-0__2026-09-24.md)
+> **Nástroj: jeden soubor pro Clauda** · verze **0.3.1** (z 0.2.0) · česky · [**⬇ Download package** (OPRAVA…md)](https://raw.githubusercontent.com/jsoljak/shared-lab/main/tools/folder-restructure/OPRAVA__zaklad-v0-2-0-na-v0-3-0__2026-09-24.md)
 
 Jeden textový soubor, který dáš svému Claudovi. Claude ti **zazálohuje složku `Claude`, navrhne přehlednou strukturu podle toho, jak žiješ, a po malých částech (vždy až po tvém „ano“) ji uklidí**. Nic se nemaže, nic neinstaluješ a jde to kdykoli vrátit zpět.
 
@@ -47,4 +47,5 @@ Kdyby se něco nepovedlo, záloha je u tebe a na konci ti Claude nabídne krátk
 
 | Verze | Co se změnilo |
 |---|---|
+| 0.3.1 (2026-09-24) | Z přiložené příručky odstraněn interní odkaz (označení schválení). Postup se nemění. |
 | 0.3.0 (2026-09-24) | První vydání. Přechod složky ze struktury 0.2.0 na novou (kostra velkými písmeny, `SYSTEM/`, oblasti, `PROFILE.md`). Určeno pro Windows 10. |

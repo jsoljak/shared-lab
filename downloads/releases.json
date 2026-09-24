@@ -72,14 +72,20 @@
     ]
   },
   "OPRAVA__zaklad-v0-2-0-na-v0-3-0__2026-09-24.md": {
-    "version": "0.3.0",
-    "sha256": "db18960c10f9c4bc3116bb0d3d0ec8ce1cfcd1153b67f55c9de46cb520acc1c4",
+    "version": "0.3.1",
+    "sha256": "bc2e7a98ba7a4a303012cf6b14549859a10bebea9d9591a3733d774e09f1d0c9",
     "history": [
       {
         "version": "0.3.0",
         "date": "2026-09-24",
         "sha256": "db18960c10f9c4bc3116bb0d3d0ec8ce1cfcd1153b67f55c9de46cb520acc1c4",
         "note": "První vydání. Přechod složky ze struktury 0.2.0 na novou (kostra velkými písmeny, `SYSTEM/`, oblasti, `PROFILE.md`). Určeno pro Windows 10."
+      },
+      {
+        "version": "0.3.1",
+        "date": "2026-09-24",
+        "sha256": "bc2e7a98ba7a4a303012cf6b14549859a10bebea9d9591a3733d774e09f1d0c9",
+        "note": "Z přiložené příručky odstraněn interní odkaz (označení schválení). Postup se nemění."
       }
     ]
   }
