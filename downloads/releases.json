@@ -88,5 +88,17 @@
         "note": "Z přiložené příručky odstraněn interní odkaz (označení schválení). Postup se nemění."
       }
     ]
+  },
+  "ai-starter-kit__package__zaklad-v0-4-0__2026-10-01.zip": {
+    "version": "0.4.0",
+    "sha256": "2e701027fd85c878a663ca1cd44634298b28db7b854c5e791adeae31a609b3f4",
+    "history": [
+      {
+        "version": "0.4.0",
+        "date": "2026-10-01",
+        "sha256": "2e701027fd85c878a663ca1cd44634298b28db7b854c5e791adeae31a609b3f4",
+        "note": "První veřejné vydání. Nový skill `model-advisor` (na jakém modelu úkol pustit); Základ má 10 skillů."
+      }
+    ]
   }
 }

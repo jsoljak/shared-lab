@@ -13,6 +13,7 @@ No expertise claims. No agenda. Just stuff I find useful or interesting.
 articles/  — thoughts and observations
 tools/     — prompts, templates, scripts
 skills/    — Claude skills, each in its own folder with its own README
+kits/      — starter kits: a set of skills plus a ready-made working folder, one .zip to download
 guides/    — short step-by-step how-tos (in Czech), one file per guide
 downloads/ — the catalog: what each thing is, its version, and one file to download
 

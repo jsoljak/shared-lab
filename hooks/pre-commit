@@ -59,6 +59,16 @@ for f in $STAGED; do
       if command -v unzip >/dev/null 2>&1; then
         scan "$f (.skill payload)" "$(unzip -p "$f" '*.md' '*.yaml' '*.yml' '*.txt' 2>/dev/null)"
       fi ;;
+    *.zip)        # only kits/ allows zips (.gitignore); scan payload incl. nested .skill/.plugin
+      if command -v unzip >/dev/null 2>&1; then
+        local_t="$(mktemp -d)"
+        unzip -qq "$f" -d "$local_t" 2>/dev/null
+        find "$local_t" \( -name '*.skill' -o -name '*.plugin' \) -type f | while read -r n; do
+          mkdir -p "$n.x" && unzip -qq "$n" -d "$n.x" 2>/dev/null
+        done
+        scan "$f (.zip payload)" "$(find "$local_t" -type f \( -name '*.md' -o -name '*.yaml' -o -name '*.yml' -o -name '*.txt' -o -name '*.json' -o -name '*.py' -o -name '*.sh' \) -exec cat {} + 2>/dev/null)"
+        rm -rf "$local_t"
+      fi ;;
     *.md|*.yaml|*.yml|*.txt|*.json)
       scan "$f" "$(git show ":$f" 2>/dev/null)" ;;
   esac

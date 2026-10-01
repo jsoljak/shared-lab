@@ -22,6 +22,8 @@
 *.xlsx
 *.pdf
 *.zip
+# jediná výjimka: sada se šablonou složky; hook skenuje i vnořené .skill/.plugin
+!kits/ai-starter-kit/*.zip
 *.key
 *.env
 .DS_Store

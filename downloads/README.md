@@ -14,6 +14,7 @@ Nejdřív si přečti **Info** u věci, která tě zajímá: co dělá, pro koho
 | **us-water-finder** | skill (1 ze 3) | 2026-09-24 | Kde se v USA smí chytat ryby a jaká tam platí pravidla. | [Info](../skills/us-freshwater-advisor/README.md) | [**⬇ Download package**](https://raw.githubusercontent.com/jsoljak/shared-lab/main/downloads/us-water-finder.skill) |
 | **us-weather-advisor** | skill (2 ze 3) | 2026-09-24 | Počasí a stav řek pro výlet nebo rybaření v USA. | [Info](../skills/us-freshwater-advisor/README.md) | [**⬇ Download package**](https://raw.githubusercontent.com/jsoljak/shared-lab/main/downloads/us-weather-advisor.skill) |
 | **us-fishing-advisor** | skill (3 ze 3) | 2026-09-24 | Kam, kdy a na co chytat; bere data z předchozích dvou. | [Info](../skills/us-freshwater-advisor/README.md) | [**⬇ Download package**](https://raw.githubusercontent.com/jsoljak/shared-lab/main/downloads/us-fishing-advisor.skill) |
+| **AI Starter Kit — Základ** | sada | 0.4.0 | Uspořádaná pracovní složka a 10 skillů pro začátek s Claudem. | [Info](../kits/ai-starter-kit/README.md) | [**⬇ Download package**](https://raw.githubusercontent.com/jsoljak/shared-lab/main/kits/ai-starter-kit/ai-starter-kit__package__zaklad-v0-4-0__2026-10-01.zip) |
 | **Jak z AI dostat užitečnou odpověď** | návod | 2026-06-01 | Pět věcí, které si před otázkou pro AI odpovědět, a šablona. | [Info](../guides/README.md) | [**⬇ Download package**](https://raw.githubusercontent.com/jsoljak/shared-lab/main/guides/jak-z-ai-dostat-uzitecnou-odpoved.md) |
 | **Oprava složky Claude (Windows 10)** | nástroj | 0.3.1 | Uklidí tvou složku Claude podle nové struktury. | [Info](../tools/folder-restructure/README.md) | [**⬇ Download package**](https://raw.githubusercontent.com/jsoljak/shared-lab/main/tools/folder-restructure/OPRAVA__zaklad-v0-2-0-na-v0-3-0__2026-09-24.md) |
 
@@ -22,6 +23,7 @@ Nejdřív si přečti **Info** u věci, která tě zajímá: co dělá, pro koho
 ## Jak stahovat
 
 - **Skill (`.skill`):** klikni na **Download package**, soubor se stáhne. Otevři ho v aplikaci Claude a ulož jako skill. Kdyby aplikace chtěla `.zip`, přejmenuj příponu.
+- **Sada (`.zip`):** klikni na **Download package**, stáhne se jeden `.zip`. Rozbal ho a postupuj podle **Info** (část „Jak začít“).
 - **Návod nebo nástroj (`.md`):** klikni na **Download package pravým tlačítkem** a zvol **Uložit odkaz jako…** (levé tlačítko soubor otevře jako text, pak stačí Ctrl + S). Zkontroluj, že název končí na `.md`.
 
 Historie verzí je vždy v **Info** u dané věci. Odkazy ke stažení vedou vždy na aktuální verzi.
