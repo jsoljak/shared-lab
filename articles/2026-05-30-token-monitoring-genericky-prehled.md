@@ -2,6 +2,8 @@
 > Author: Jiří Soljak | [linkedin.com/in/jirisoljak](https://linkedin.com/in/jirisoljak)<br>
 > Version: 2026-05-30
 
+> **Aktualizace:** novější přehled z října 2026 najdeš v [2026-10-03-token-monitoring-prehled.md](2026-10-03-token-monitoring-prehled.md). Tento text odpovídá stavu ke květnu 2026.
+
 # Claude Code: Token monitoring, routing a optimalizace — přehled nástrojů (květen 2026)
 
 *Výzkum provedený pomocí multi-agent deep research (103+ agentů, 21 zdrojů, adversarial verifikace claims)*
