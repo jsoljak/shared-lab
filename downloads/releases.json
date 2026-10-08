@@ -100,5 +100,17 @@
         "note": "První veřejné vydání. Nový skill `model-advisor` (na jakém modelu úkol pustit); Základ má 10 skillů."
       }
     ]
+  },
+  "ai-starter-kit__package__zaklad-v0-5-0__2026-10-08.zip": {
+    "version": "0.5.0",
+    "sha256": "507b2638e7092370183591e758204d7de90277e5c89ed28bead6f0dfb447d998",
+    "history": [
+      {
+        "version": "0.5.0",
+        "date": "2026-10-08",
+        "sha256": "507b2638e7092370183591e758204d7de90277e5c89ed28bead6f0dfb447d998",
+        "note": "Audit toho, co už máš, Mac i Windows, nový `cleanup` (převzetí starých souborů), aktualizace jednou větou, přejmenované skilly (`file-guard`, `basic-security-guard`, `idea-inbox`, `token-economy`), `coach` rozdělen: `prompt-coach` v Základu."
+      }
+    ]
   }
 }
