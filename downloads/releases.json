@@ -112,5 +112,17 @@
         "note": "Audit toho, co už máš, Mac i Windows, nový `cleanup` (převzetí starých souborů), aktualizace jednou větou, přejmenované skilly (`file-guard`, `basic-security-guard`, `idea-inbox`, `token-economy`), `coach` rozdělen: `prompt-coach` v Základu."
       }
     ]
+  },
+  "ai-starter-kit__package__zaklad-v0-5-1__2026-10-08.zip": {
+    "version": "0.5.1",
+    "sha256": "b4bc7386307478ca96d10b946bab8afef0dcc2d1fe1369cb23c9963229023609",
+    "history": [
+      {
+        "version": "0.5.1",
+        "date": "2026-10-08",
+        "sha256": "b4bc7386307478ca96d10b946bab8afef0dcc2d1fe1369cb23c9963229023609",
+        "note": "Oprava dokumentace: záloha před zásahem do existující složky `Claude`, doporučené místo `Dokumenty/Claude` a proč; onboarding se v prvním kroku zeptá, kde složka leží a zda se zálohuje."
+      }
+    ]
   }
 }
