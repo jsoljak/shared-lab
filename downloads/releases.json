@@ -124,5 +124,17 @@
         "note": "Oprava dokumentace: záloha před zásahem do existující složky `Claude`, doporučené místo `Dokumenty/Claude` a proč; onboarding se v prvním kroku zeptá, kde složka leží a zda se zálohuje."
       }
     ]
+  },
+  "ai-starter-kit__package__zaklad-v0-5-2__2026-10-08.zip": {
+    "version": "0.5.2",
+    "sha256": "362d27e6c61544b6e5efe6b50d8e663c733033f3055568248416c2690e1b262a",
+    "history": [
+      {
+        "version": "0.5.2",
+        "date": "2026-10-08",
+        "sha256": "362d27e6c61544b6e5efe6b50d8e663c733033f3055568248416c2690e1b262a",
+        "note": "Jednodušší cesta pro ty, kdo už mají vlastní prostředí: zazálohovat, zkopírovat balíček do své složky a napsat Claudovi, ať poradí, jak kit zapojit. Onboarding na tuhle větu začne auditem."
+      }
+    ]
   }
 }

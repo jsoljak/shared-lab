@@ -4,13 +4,17 @@
 
 # AI Starter Kit — Základ
 
-> **Sada: 12 skillů + šablona pracovní složky** · verze **0.5.1** · česky · Mac i Windows · [**⬇ Download package** (.zip)](https://raw.githubusercontent.com/jsoljak/shared-lab/main/kits/ai-starter-kit/ai-starter-kit__package__zaklad-v0-5-1__2026-10-08.zip)
+> **Sada: 12 skillů + šablona pracovní složky** · verze **0.5.2** · česky · Mac i Windows · [**⬇ Download package** (.zip)](https://raw.githubusercontent.com/jsoljak/shared-lab/main/kits/ai-starter-kit/ai-starter-kit__package__zaklad-v0-5-2__2026-10-08.zip)
 
 Startovní sada pro práci s Claudem v desktopové aplikaci (Cowork) pro lidi, kteří s AI teprve začínají. Dá ti **jednu uspořádanou pracovní složku** a skilly, se kterými si v ní postavíš cokoli: systém, proces nebo osobní projekt. Claude si pamatuje, kde jsi skončil, ukládá a pojmenovává soubory podle pravidel, pomůže ti napsat dobré zadání i vybrat model, ať zbytečně nevyčerpáš limit. Umí také **uklidit a převzít tvoje staré soubory** a zjistit, co už máš.
 
 **Stav:** koncept. Skilly, skripty i šablona jsou zkontrolované mimo aplikaci, na cizím účtu a na Windows sada zatím zkoušena nebyla. Když něco nefunguje, napiš na LinkedIn.
 
-## Co je nového ve verzi 0.5.1
+## Co je nového ve verzi 0.5.2
+
+- **Máš už vlastní prostředí? Stačí jedna věta pro Clauda** (návod níže). Onboarding projde, co máš, navrhne zapojení kitu a před každou změnou se zeptá.
+
+## Co přinesla verze 0.5.1
 
 - **Nejdřív záloha:** máš-li už složku `Claude` s vlastními soubory, zazipuj ji nebo zkopíruj jinam dřív, než cokoli uděláš.
 - **Doporučené místo `Dokumenty/Claude`** i s vysvětlením: složka Dokumenty se obvykle zálohuje sama (Mac: iCloud Drive nebo Time Machine, Windows: OneDrive nebo Historie souborů). Onboarding se zeptá, kde složka leží a jestli se zálohuje.
@@ -64,9 +68,14 @@ Celé release notes jsou v balíčku (`RELEASE-NOTES.md`) a níže v části His
 
 Skripty uvnitř skillů potřebují Python 3, pouští je Claude. Když v počítači není, skilly přejdou na ruční postup a řeknou to. Nic neinstaluj jen kvůli nim.
 
-## Už máš složku Claude s vlastními soubory?
+## Už máš vlastní složku, skilly nebo nastavení Clauda?
 
-Nejdřív ji zazálohuj (zazipuj, nebo zkopíruj jinam). Nekopíruj šablonu přes ni, přepsala by ti `CLAUDE.md`, profil a další soubory. Rozbal balíček vedle (třeba do `Dokumenty/Claude-kit`), zkopíruj ho celý do své složky `Claude/INBOX/prevzeti/kit/` a napiš Claudovi „Začínám — spusť onboarding.“ Vlastní pravidla neztratíš, `CLAUDE.md` se obohatí o naše, ne přepíše.
+Nic nekopíruj přes ně, přepsalo by ti to tvoje soubory. Místo toho:
+1. **Zazálohuj, co máš** (zazipuj složku, nebo ji zkopíruj jinam).
+2. **Rozbal balíček** a zkopíruj ho celý do své složky `Claude/INBOX/prevzeti/kit/` (Claude vidí jen nasdílenou složku).
+3. **Napiš Claudovi:** „Podívej se na tenhle kit a poraď mi, jak by se dal zapojit do mého stávajícího prostředí. Provedeš mě tím podle onboardingu.“
+
+Claude projde, co už máš (skilly, pravidla, seznamy, soubory), navrhne, co ponechat, co sloučit a co z kitu přidat, a provede tě tím po krocích. Před každou změnou se zeptá, nic nesmaže a tvůj `CLAUDE.md` obohatí o naše pravidla, ne přepíše. Můžeš cokoli odmítnout.
 
 ## Máš starší verzi sady?
 
@@ -81,6 +90,7 @@ Starou složku z verze 0.2.0 už nepřestavuje samostatný opravný soubor, ře�
 
 | Verze | Datum | Změna |
 |---|---|---|
+| 0.5.2 | 2026-10-08 | Jednodušší cesta pro ty, kdo už mají vlastní prostředí: zazálohovat, zkopírovat balíček do své složky a napsat Claudovi, ať poradí, jak kit zapojit. Onboarding na tuhle větu začne auditem. |
 | 0.5.1 | 2026-10-08 | Oprava dokumentace: záloha před zásahem do existující složky `Claude`, doporučené místo `Dokumenty/Claude` a proč; onboarding se v prvním kroku zeptá, kde složka leží a zda se zálohuje. |
 | 0.5.0 | 2026-10-08 | Audit toho, co už máš, Mac i Windows, nový `cleanup` (převzetí starých souborů), aktualizace jednou větou, přejmenované skilly (`file-guard`, `basic-security-guard`, `idea-inbox`, `token-economy`), `coach` rozdělen: `prompt-coach` v Základu. |
 | 0.4.0 | 2026-10-01 | První veřejné vydání. Nový skill `model-advisor`; Základ má 10 skillů. |
