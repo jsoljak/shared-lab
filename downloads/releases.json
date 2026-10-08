@@ -148,5 +148,17 @@
         "note": "Aktuální vydání: 12 skillů, Mac i Windows, audit stávajícího prostředí a zapojení kitu do něj, převzetí starých souborů po dávkách, záloha a doporučené místo `Dokumenty/Claude`, aktualizace jednou větou."
       }
     ]
+  },
+  "ai-starter-kit__package__zaklad-v0-5-4__2026-10-08.zip": {
+    "version": "0.5.4",
+    "sha256": "03a9a3d53ebd17c4661e39d75adf7e608d42a57afd433a79e8f23e02431b1bd0",
+    "history": [
+      {
+        "version": "0.5.4",
+        "date": "2026-10-08",
+        "sha256": "03a9a3d53ebd17c4661e39d75adf7e608d42a57afd433a79e8f23e02431b1bd0",
+        "note": "Doplněná historie vývoje (release notes od verze 0.5.0). Žádná změna v chování skillů."
+      }
+    ]
   }
 }
