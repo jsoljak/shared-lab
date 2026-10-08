@@ -136,5 +136,17 @@
         "note": "Jednodušší cesta pro ty, kdo už mají vlastní prostředí: zazálohovat, zkopírovat balíček do své složky a napsat Claudovi, ať poradí, jak kit zapojit. Onboarding na tuhle větu začne auditem."
       }
     ]
+  },
+  "ai-starter-kit__package__zaklad-v0-5-3__2026-10-08.zip": {
+    "version": "0.5.3",
+    "sha256": "e103ff260c87aa36dd5eaa81ddbfe66bd48d0e14f92b100f92d5d7a26752382e",
+    "history": [
+      {
+        "version": "0.5.3",
+        "date": "2026-10-08",
+        "sha256": "e103ff260c87aa36dd5eaa81ddbfe66bd48d0e14f92b100f92d5d7a26752382e",
+        "note": "Aktuální vydání: 12 skillů, Mac i Windows, audit stávajícího prostředí a zapojení kitu do něj, převzetí starých souborů po dávkách, záloha a doporučené místo `Dokumenty/Claude`, aktualizace jednou větou."
+      }
+    ]
   }
 }

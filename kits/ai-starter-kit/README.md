@@ -4,7 +4,7 @@
 
 # AI Starter Kit — Základ
 
-> **Sada: 12 skillů + šablona pracovní složky** · verze **0.5.2** · česky · Mac i Windows · [**⬇ Download package** (.zip)](https://raw.githubusercontent.com/jsoljak/shared-lab/main/kits/ai-starter-kit/ai-starter-kit__package__zaklad-v0-5-2__2026-10-08.zip)
+> **Sada: 12 skillů + šablona pracovní složky** · verze **0.5.3** · česky · Mac i Windows · [**⬇ Download package** (.zip)](https://raw.githubusercontent.com/jsoljak/shared-lab/main/kits/ai-starter-kit/ai-starter-kit__package__zaklad-v0-5-3__2026-10-08.zip)
 
 Startovní sada pro práci s Claudem v desktopové aplikaci (Cowork) pro lidi, kteří s AI teprve začínají. Dá ti **jednu uspořádanou pracovní složku** a skilly (pomocníky), se kterými si v ní postavíš cokoli: systém, proces nebo osobní projekt. Claude si pamatuje, kde jsi skončil, ukládá a pojmenovává soubory podle pravidel, pomůže ti napsat dobré zadání i vybrat model, ať nevyčerpáš limit. Umí také **uklidit a převzít tvoje staré soubory** a zjistit, co už máš.
 
@@ -12,7 +12,7 @@ Startovní sada pro práci s Claudem v desktopové aplikaci (Cowork) pro lidi, k
 
 **Nepotřebuješ GitHub ani účet.** Klikni na odkaz, soubor se stáhne do složky Stažené. (Nepoužívej zelené tlačítko **Code** na stránce repa, to stáhne celé repo s věcmi, které nepotřebuješ.)
 
-- **⬇ Celá sada, jeden soubor** (12 skillů + šablona složky Claude + návody): [ai-starter-kit__package__zaklad-v0-5-2__2026-10-08.zip](https://raw.githubusercontent.com/jsoljak/shared-lab/main/kits/ai-starter-kit/ai-starter-kit__package__zaklad-v0-5-2__2026-10-08.zip). Doporučuju tuhle možnost, jedině s ní dostaneš složku s mapou a pravidly, na kterých skilly stojí.
+- **⬇ Celá sada, jeden soubor** (12 skillů + šablona složky Claude + návody): [ai-starter-kit__package__zaklad-v0-5-3__2026-10-08.zip](https://raw.githubusercontent.com/jsoljak/shared-lab/main/kits/ai-starter-kit/ai-starter-kit__package__zaklad-v0-5-3__2026-10-08.zip). Doporučuju tuhle možnost, jedině s ní dostaneš složku s mapou a pravidly, na kterých skilly stojí.
 - **⬇ Jeden skill zvlášť** (zkusit si jen jeden, nebo přeinstalovat jeden): tabulka níže u každého skillu, nebo [SKILLS.md](SKILLS.md). Soubor `.skill` otevři v aplikaci Claude a ulož jako skill. Kdyby aplikace chtěla `.zip`, přejmenuj příponu.
 
 ## Co potřebuješ
@@ -36,7 +36,7 @@ Je to koncept. Skilly, skripty i šablona jsou zkontrolované mimo aplikaci, ale
 | **Stáhnout celou sadu, nebo jeden skill** | [Stažení](#stažení-celé-sady-nebo-jednoho-skillu) |
 | **Instaluju poprvé** | [Krok 0](#krok-0-záloha) → [1](#krok-1-stáhni-a-rozbal) → [2](#krok-2-složka-claude-na-správné-místo) → [3](#krok-3-nasdílej-složku-v-aplikaci) → [4](#krok-4-nainstaluj-skilly) → [5](#krok-5-první-spuštění) → [6](#krok-6-ověř-že-to-funguje) |
 | **Už mám vlastní složku, skilly nebo nastavení** | [Mám vlastní prostředí](#mám-vlastní-prostředí) |
-| **Aktualizuju starší verzi** | [Aktualizace](#aktualizace) |
+| **Aktualizace, až vyjde nová verze** | [Aktualizace](#aktualizace) |
 | **Co je nového a proč to instalovat** | [RELEASE-NOTES.md](RELEASE-NOTES.md) |
 | **Co který skill umí a co říct, aby se spustil** | [SKILLS.md](SKILLS.md) |
 | **Co je v balíčku** | [Co je v balíčku](#co-je-v-balíčku) |
@@ -101,11 +101,10 @@ Claude projde, co už máš (skilly, pravidla, seznamy, soubory), navrhne, co po
 
 ## Aktualizace
 
-*Máš starší verzi sady?*
-1. Rozbal nový balíček.
-2. V aplikaci **vypni staré přejmenované skilly** (`guard`, `safety`, `inbox`, `model-advisor`, `coach`, `architect`, `planner`), jinak se budou spouštět vedle nových. Seznam, co se jak jmenuje, je v [RELEASE-NOTES.md](RELEASE-NOTES.md).
-3. Nainstaluj nové skilly (plugin, nebo `skills-jednotlive/`).
-4. Napiš Claudovi: **„Aktualizuj kit.“** Před každou změnou se zeptá a předtím zazálohuje. Tvoje projekty, profil ani to, co jsi napsal(a), nepřepíše.
+*Až vyjde nová verze sady:*
+1. Stáhni a rozbal nový balíček.
+2. Nainstaluj skilly znovu (plugin, nebo `skills-jednotlive/`), přepíšou se novými.
+3. Napiš Claudovi: **„Aktualizuj kit.“** Před každou změnou se zeptá a předtím zazálohuje. Tvoje projekty, profil, pravidla ani to, co jsi napsal(a), nepřepíše.
 
 ## Nefunguje něco?
 
@@ -152,15 +151,12 @@ Podrobnosti, příklady vět a co který skill **nedělá** jsou v [SKILLS.md](S
 | `skill-builder` | vytvoří, upraví a zkontroluje tvůj vlastní skill; projde skilly, které už máš · [⬇](https://raw.githubusercontent.com/jsoljak/shared-lab/main/kits/ai-starter-kit/skills/skill-builder.skill) |
 | `token-economy` | poradí, na jakém modelu Claude úkol pustit, ať zbytečně nevyčerpáš limit · [⬇](https://raw.githubusercontent.com/jsoljak/shared-lab/main/kits/ai-starter-kit/skills/token-economy.skill) |
 
-## Co je nového
+## Co je v téhle verzi
 
-Celé release notes jsou v [RELEASE-NOTES.md](RELEASE-NOTES.md). Ve zkratce ve verzi 0.5.2: **máš-li vlastní prostředí, stačí jedna věta pro Clauda** (viz [Mám vlastní prostředí](#mám-vlastní-prostředí)). Ve verzi 0.5.1 přibyla **záloha před zásahem do existující složky** a doporučené místo `Dokumenty/Claude` s vysvětlením.
+Celé release notes jsou v [RELEASE-NOTES.md](RELEASE-NOTES.md). Co který skill umí, je v [SKILLS.md](SKILLS.md).
 
-## Historie verzí
+## Verze
 
 | Verze | Datum | Změna |
 |---|---|---|
-| 0.5.2 | 2026-10-08 | Jednodušší cesta pro ty, kdo už mají vlastní prostředí: zazálohovat, zkopírovat balíček do své složky a napsat Claudovi, ať poradí, jak kit zapojit. Onboarding na tuhle větu začne auditem. |
-| 0.5.1 | 2026-10-08 | Oprava dokumentace: záloha před zásahem do existující složky `Claude`, doporučené místo `Dokumenty/Claude` a proč; onboarding se v prvním kroku zeptá, kde složka leží a zda se zálohuje. |
-| 0.5.0 | 2026-10-08 | Audit toho, co už máš, Mac i Windows, nový `cleanup` (převzetí starých souborů), aktualizace jednou větou, přejmenované skilly (`file-guard`, `basic-security-guard`, `idea-inbox`, `token-economy`, `workspace-architect`, `project-planner`), `prompt-coach` v Základu. |
-| 0.4.0 | 2026-10-01 | První veřejné vydání. Nový skill `model-advisor`; Základ má 10 skillů. |
+| 0.5.3 | 2026-10-08 | Aktuální vydání: 12 skillů, Mac i Windows, audit stávajícího prostředí a zapojení kitu do něj, převzetí starých souborů po dávkách, záloha a doporučené místo `Dokumenty/Claude`, aktualizace jednou větou. |
