@@ -160,5 +160,17 @@
         "note": "Doplněná historie vývoje (release notes od verze 0.5.0). Žádná změna v chování skillů."
       }
     ]
+  },
+  "ai-starter-kit__package__zaklad-v0-6-0__2026-10-21.zip": {
+    "version": "0.6.0",
+    "sha256": "f405901a7037db99d669fdb57876ec57fe1de818a5ae598eabd94ec942e7a948",
+    "history": [
+      {
+        "version": "0.6.0",
+        "date": "2026-10-21",
+        "sha256": "f405901a7037db99d669fdb57876ec57fe1de818a5ae598eabd94ec942e7a948",
+        "note": "Nový skill `wiki` (druhý mozek podle Karpathyho) a návod na Obsidian a Web Clipper; `skill-builder` před stavbou ověří, jestli podobný skill už neexistuje. 13 skillů."
+      }
+    ]
   }
 }

@@ -4,6 +4,20 @@
 
 # AI Starter Kit: co je v téhle verzi
 
+## 0.6.0 — 2026-10-21 (vrstva Základ, 13 skillů)
+
+**Nový skill `wiki`: druhý mozek.** Claude ukládá články, poznámky a dokumenty do složky `RESOURCES/`, sepisuje z nich propojené stránky a odpovídá jen z toho, co sis uložil, i se zdrojem (model „LLM wiki“ Andreje Karpathyho). Odkazy mezi stránkami jsou ve tvaru `[[nazev]]`, takže se wiki dá procházet v Obsidianu i s grafem souvislostí.
+
+**Nový návod [WIKI-OBSIDIAN.md](WIKI-OBSIDIAN.md):** k čemu je Obsidian a jak ho nainstalovat (zdarma), synchronizace přes iCloud (Mac) a OneDrive (Windows), volitelný Web Clipper do prohlížeče, co získáš a co ztratíš, a poctivé limity.
+
+**Co s tím udělat:**
+- Máš kit: stáhni a ulož [wiki.skill](https://raw.githubusercontent.com/jsoljak/shared-lab/main/kits/ai-starter-kit/skills/wiki.skill). Nic dalšího, `RESOURCES/` už máš. Obsidian a Web Clipper jsou volitelné.
+- Nemáš kit: stáhni celou sadu, nebo jen `wiki.skill` a napiš Claudovi „Založ si wiki“.
+
+**`skill-builder` nejdřív hledá, pak staví.** Než začne psát nový skill, podívá se, jestli totéž už nemáš ty, starter kit nebo někdo na GitHubu, a doporučí použít hotový, upravit svůj, nebo postavit nový. Cizí skill z internetu bere jen jako inspiraci: projde ho, upozorní na podezřelé pokyny a přepíše po svém. Máš kit? Přeinstaluj i [skill-builder.skill](https://raw.githubusercontent.com/jsoljak/shared-lab/main/kits/ai-starter-kit/skills/skill-builder.skill).
+
+**Známá omezení:** Web Clipper ukládá pod názvem článku s diakritikou, Claude ho přejmenuje až při „zpracuj nové zdroje“. Na telefonu wiki v Obsidianu v této verzi nečteš. Webové stránky čte Claude někdy zkráceně; pro přesné znění vlož text nebo použij Web Clipper.
+
 ## 0.5.4 — 2026-10-08 (vrstva Základ, 12 skillů)
 
 Doplněná historie vývoje: release notes od první verze, ať je vidět, jak sada postupně vznikala. Žádná změna v chování skillů. Máš 0.5.3? Přeinstalovávat nic nemusíš.

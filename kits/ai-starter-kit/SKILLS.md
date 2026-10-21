@@ -1,17 +1,18 @@
 > **visibility: PUBLIC | Distribution: LINK-ONLY**
 > Author: Jiří Soljak | linkedin.com/in/jirisoljak
-> Version: 2026-10-08
+> Version: 2026-10-21
 
 # AI Starter Kit: co který skill umí
 
 Skill je pomocník, kterého Claude spustí, když řekneš správnou větu. Nemusíš znát jejich názvy: stačí napsat, co potřebuješ, a Claude vybere. Tady je přehled **po situacích**, ke každému skillu příklady vět a také co **nedělá**. Zpět na [úvodní stránku](README.md) · [co je nového](RELEASE-NOTES.md).
 
-**Jak stáhnout:** klikni na odkaz **⬇ Stáhnout jen tenhle skill** u skillu, soubor se uloží do složky Stažené (GitHub ani účet nepotřebuješ). Otevři ho v aplikaci Claude a ulož jako skill. **Celou sadu** (všech 12 skillů + šablonu složky) stáhneš jedním odkazem na [úvodní stránce](README.md#stažení-celé-sady-nebo-jednoho-skillu). Samostatně dobře fungují `prompt-coach` a `token-economy`; ostatní skilly počítají se složkou `Claude/` z balíčku (mapa složek, pravidla, registry), tak je stahuj až spolu s ní.
+**Jak stáhnout:** klikni na odkaz **⬇ Stáhnout jen tenhle skill** u skillu, soubor se uloží do složky Stažené (GitHub ani účet nepotřebuješ). Otevři ho v aplikaci Claude a ulož jako skill. **Celou sadu** (všech 13 skillů + šablonu složky) stáhneš jedním odkazem na [úvodní stránce](README.md#stažení-celé-sady-nebo-jednoho-skillu). Samostatně dobře fungují `prompt-coach`, `token-economy` a `wiki`; ostatní skilly počítají se složkou `Claude/` z balíčku (mapa složek, pravidla, registry), tak je stahuj až spolu s ní.
 
 | Když… | Skilly |
 |---|---|
 | začínáš a chceš mít pořádek | [onboarding](#onboarding) · [cleanup](#cleanup) · [file-guard](#file-guard) |
 | každý den něco zapisuješ a třídíš | [idea-inbox](#idea-inbox) · [triage](#triage) · [session-close](#session-close) |
+| si chceš pamatovat, co čteš a zjišťuješ | [wiki](#wiki) |
 | vedeš projekty | [workspace-architect](#workspace-architect) · [project-planner](#project-planner) |
 | chceš být v bezpečí a šetřit limit | [basic-security-guard](#basic-security-guard) · [token-economy](#token-economy) |
 | se chceš naučit víc | [prompt-coach](#prompt-coach) · [skill-builder](#skill-builder) |
@@ -90,6 +91,16 @@ Při založení projektu se Claude zeptá jednou: „Bude to fungovat dál a mě
 **Co udělá:** ujasní, kdy je hotovo a do kdy, rozdělí projekt na fáze, řekne, kdo za co odpovídá a kde se rozhoduje. Při navázání ukáže, co běží, co blokuje a co je další krok.
 **Co nedělá:** nevede věci, které trvají a mění se (to je `workspace-architect`), a neplánuje za tebe.
 
+## Znalosti (druhý mozek)
+
+### wiki
+⬇ [Stáhnout jen tenhle skill](https://raw.githubusercontent.com/jsoljak/shared-lab/main/kits/ai-starter-kit/skills/wiki.skill)
+
+**K čemu:** tvoje knihovna znalostí. Ukládá články, poznámky a dokumenty, sepisuje z nich propojené stránky a za půl roku ti z nich odpoví, i se zdrojem.
+**Řekni třeba:** „Ulož si tenhle článek.“ · „Co jsem si uložil o kompostu?“ · „Zpracuj nové zdroje.“ · „Zkontroluj wiki.“
+**Co udělá:** zdroj uloží beze změny do `RESOURCES/sources/`, zapracuje ho do stránek v `RESOURCES/pages/` (hlavní téma a nejvýš 4 související), aktualizuje rozcestník a deník. Stránky jdou číst v Obsidianu, výstřižky z Web Clipperu umí zpracovat dodatečně. Funguje i bez zbytku kitu („Založ si wiki“). Návod: [WIKI-OBSIDIAN.md](WIKI-OBSIDIAN.md).
+**Co nedělá:** neodpovídá z obecných znalostí (jen na vyžádání a označeně „MIMO WIKI“), neukládá citlivé údaje, zdroje nikdy neupravuje a nemaže.
+
 ## Bezpečí a limit
 
 ### basic-security-guard
@@ -123,5 +134,5 @@ Při založení projektu se Claude zeptá jednou: „Bude to fungovat dál a mě
 
 **K čemu:** pomůže ti vytvořit vlastní skill, nebo zkontrolovat ty, které už máš.
 **Řekni třeba:** „Chci si udělat skill.“ · „Projdi moje skilly.“ · „Je můj skill moc dlouhý?“ · „Rozděl ten skill.“
-**Co udělá:** vede tě po krocích (účel, spouštěcí věty, krátký popis, zkouška na třech větách, zabalení), umí projít existující skilly, rozdělit dlouhý skill a sloučit dva, které dělají totéž.
+**Co udělá:** nejdřív se podívá, jestli podobný skill už nemáš ty, kit nebo někdo na GitHubu (cizí skill nikdy neinstaluje naslepo, jen jako inspiraci po kontrole). Pak tě vede po krocích (účel, spouštěcí věty, krátký popis, zkouška na třech větách, zabalení), umí projít existující skilly, rozdělit dlouhý skill a sloučit dva, které dělají totéž.
 **Co nedělá:** nic nemaže. Pro jednorázové úkoly skill nepotřebuješ.

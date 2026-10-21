@@ -1,10 +1,10 @@
 > **visibility: PUBLIC | Distribution: LINK-ONLY**
 > Author: Jiří Soljak | linkedin.com/in/jirisoljak
-> Version: 2026-10-08
+> Version: 2026-10-21
 
 # AI Starter Kit — Základ
 
-> **Sada: 12 skillů + šablona pracovní složky** · verze **0.5.4** · česky · Mac i Windows · [**⬇ Download package** (.zip)](https://raw.githubusercontent.com/jsoljak/shared-lab/main/kits/ai-starter-kit/ai-starter-kit__package__zaklad-v0-5-4__2026-10-08.zip)
+> **Sada: 13 skillů + šablona pracovní složky** · verze **0.6.0** · česky · Mac i Windows · [**⬇ Download package** (.zip)](https://raw.githubusercontent.com/jsoljak/shared-lab/main/kits/ai-starter-kit/ai-starter-kit__package__zaklad-v0-6-0__2026-10-21.zip)
 
 Startovní sada pro práci s Claudem v desktopové aplikaci (Cowork) pro lidi, kteří s AI teprve začínají. Dá ti **jednu uspořádanou pracovní složku** a skilly (pomocníky), se kterými si v ní postavíš cokoli: systém, proces nebo osobní projekt. Claude si pamatuje, kde jsi skončil, ukládá a pojmenovává soubory podle pravidel, pomůže ti napsat dobré zadání i vybrat model, ať nevyčerpáš limit. Umí také **uklidit a převzít tvoje staré soubory** a zjistit, co už máš.
 
@@ -12,7 +12,7 @@ Startovní sada pro práci s Claudem v desktopové aplikaci (Cowork) pro lidi, k
 
 **Nepotřebuješ GitHub ani účet.** Klikni na odkaz, soubor se stáhne do složky Stažené. (Nepoužívej zelené tlačítko **Code** na stránce repa, to stáhne celé repo s věcmi, které nepotřebuješ.)
 
-- **⬇ Celá sada, jeden soubor** (12 skillů + šablona složky Claude + návody): [ai-starter-kit__package__zaklad-v0-5-4__2026-10-08.zip](https://raw.githubusercontent.com/jsoljak/shared-lab/main/kits/ai-starter-kit/ai-starter-kit__package__zaklad-v0-5-4__2026-10-08.zip). Doporučuju tuhle možnost, jedině s ní dostaneš složku s mapou a pravidly, na kterých skilly stojí.
+- **⬇ Celá sada, jeden soubor** (13 skillů + šablona složky Claude + návody): [ai-starter-kit__package__zaklad-v0-6-0__2026-10-21.zip](https://raw.githubusercontent.com/jsoljak/shared-lab/main/kits/ai-starter-kit/ai-starter-kit__package__zaklad-v0-6-0__2026-10-21.zip). Doporučuju tuhle možnost, jedině s ní dostaneš složku s mapou a pravidly, na kterých skilly stojí.
 - **⬇ Jeden skill zvlášť** (zkusit si jen jeden, nebo přeinstalovat jeden): tabulka níže u každého skillu, nebo [SKILLS.md](SKILLS.md). Soubor `.skill` otevři v aplikaci Claude a ulož jako skill. Kdyby aplikace chtěla `.zip`, přejmenuj příponu.
 
 ## Co potřebuješ
@@ -37,6 +37,7 @@ Je to koncept. Skilly, skripty i šablona jsou zkontrolované mimo aplikaci, ale
 | **Instaluju poprvé** | [Krok 0](#krok-0-záloha) → [1](#krok-1-stáhni-a-rozbal) → [2](#krok-2-složka-claude-na-správné-místo) → [3](#krok-3-nasdílej-složku-v-aplikaci) → [4](#krok-4-nainstaluj-skilly) → [5](#krok-5-první-spuštění) → [6](#krok-6-ověř-že-to-funguje) |
 | **Už mám vlastní složku, skilly nebo nastavení** | [Mám vlastní prostředí](#mám-vlastní-prostředí) |
 | **Aktualizace, až vyjde nová verze** | [Aktualizace](#aktualizace) |
+| **Druhý mozek: wiki, Obsidian a Web Clipper** | [WIKI-OBSIDIAN.md](WIKI-OBSIDIAN.md) (co to je, instalace, synchronizace, limity) |
 | **Co je nového a proč to instalovat** | [RELEASE-NOTES.md](RELEASE-NOTES.md) |
 | **Co který skill umí a co říct, aby se spustil** | [SKILLS.md](SKILLS.md) |
 | **Co je v balíčku** | [Co je v balíčku](#co-je-v-balíčku) |
@@ -66,7 +67,7 @@ V aplikaci Claude otevři novou konverzaci a jako pracovní složku vyber `Claud
 
 ## Krok 4: Nainstaluj skilly
 
-Otevři soubor `ai-starter-kit.plugin` (dvojklik, v aplikaci). Všech 12 skillů se nainstaluje najednou. Nejde-li to, nainstaluj soubory ze složky `skills-jednotlive/` po jednom.
+Otevři soubor `ai-starter-kit.plugin` (dvojklik, v aplikaci). Všech 13 skillů se nainstaluje najednou. Nejde-li to, nainstaluj soubory ze složky `skills-jednotlive/` po jednom.
 
 ## Krok 5: První spuštění
 
@@ -125,14 +126,15 @@ Nic z toho nepomohlo? Napiš na LinkedIn, ať to můžu opravit.
 | Část | K čemu |
 |---|---|
 | `Claude/` | šablona pracovní složky: pravidla pro Clauda (`CLAUDE.md`), pět vět na začátek (`START-HERE.md`), profil, složky podle metody PARA a `SYSTEM/` se vším, co spravuje Claude |
-| `ai-starter-kit.plugin` | všech 12 skillů najednou |
+| `ai-starter-kit.plugin` | všech 13 skillů najednou |
 | `skills-jednotlive/` | totéž po jednom jako `.skill` (když plugin nejde nainstalovat) |
 | `README.md`, `RELEASE-NOTES.md` | popis sady, co je nového |
+| `WIKI-OBSIDIAN.md` | návod na druhý mozek: wiki, Obsidian, Web Clipper, synchronizace |
 | `RUNBOOK.md` | postup pro toho, kdo sadu někomu předává a provádí ho první hodinou |
 
 Skripty uvnitř skillů potřebují Python 3, pouští je Claude. Když v počítači není, skilly přejdou na ruční postup a řeknou to. Nic neinstaluj jen kvůli nim.
 
-## Dvanáct skillů ve zkratce
+## Třináct skillů ve zkratce
 
 Podrobnosti, příklady vět a co který skill **nedělá** jsou v [SKILLS.md](SKILLS.md).
 
@@ -144,6 +146,7 @@ Podrobnosti, příklady vět a co který skill **nedělá** jsou v [SKILLS.md](S
 | `workspace-architect` | projekty, které trvají a mění se, a pohled přes všechny projekty: přehled, kontrola konzistence, „už to někde běží?“ · [⬇](https://raw.githubusercontent.com/jsoljak/shared-lab/main/kits/ai-starter-kit/skills/workspace-architect.skill) |
 | `project-planner` | projekty, které proběhnou a skončí: fáze, kdo je zapojen, rozhodovací body · [⬇](https://raw.githubusercontent.com/jsoljak/shared-lab/main/kits/ai-starter-kit/skills/project-planner.skill) |
 | `triage` | roztřídí hromadu úkolů a nápadů (a obsah `INBOX/`) do projektů, oblastí a znalostí; nic nemaže · [⬇](https://raw.githubusercontent.com/jsoljak/shared-lab/main/kits/ai-starter-kit/skills/triage.skill) |
+| `wiki` | druhý mozek: ukládá články a poznámky, sepisuje z nich propojené stránky a odpovídá jen z nich; čte se i v Obsidianu ([návod](WIKI-OBSIDIAN.md)) · [⬇](https://raw.githubusercontent.com/jsoljak/shared-lab/main/kits/ai-starter-kit/skills/wiki.skill) |
 | `idea-inbox` | zachytí nápad nebo úkol do 30 sekund, případně rovnou do projektu · [⬇](https://raw.githubusercontent.com/jsoljak/shared-lab/main/kits/ai-starter-kit/skills/idea-inbox.skill) |
 | `session-close` | konec práce: předání, kde jsi skončil · [⬇](https://raw.githubusercontent.com/jsoljak/shared-lab/main/kits/ai-starter-kit/skills/session-close.skill) |
 | `basic-security-guard` | co do AI nevkládat, zálohy, kontrola složky na hesla a čísla karet · [⬇](https://raw.githubusercontent.com/jsoljak/shared-lab/main/kits/ai-starter-kit/skills/basic-security-guard.skill) |
@@ -159,6 +162,7 @@ Celé release notes jsou v [RELEASE-NOTES.md](RELEASE-NOTES.md). Co který skill
 
 | Verze | Datum | Změna |
 |---|---|---|
+| 0.6.0 | 2026-10-21 | Nový skill `wiki` (druhý mozek podle Karpathyho) a návod na Obsidian a Web Clipper; `skill-builder` před stavbou ověří, jestli podobný skill už neexistuje. 13 skillů. |
 | 0.5.4 | 2026-10-08 | Doplněná historie vývoje (release notes od verze 0.5.0). Žádná změna v chování skillů. |
 | 0.5.3 | 2026-10-08 | Přehledná dokumentace: README s navigací, popis každého skillu, každý skill ke stažení zvlášť. |
 | 0.5.2 | 2026-10-08 | Jednodušší cesta pro ty, kdo už mají vlastní prostředí: zazálohovat, zkopírovat balíček do své složky a napsat Claudovi, ať poradí, jak kit zapojit. |
