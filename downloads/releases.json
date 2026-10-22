@@ -172,5 +172,29 @@
         "note": "Nový skill `wiki` (druhý mozek podle Karpathyho) a návod na Obsidian a Web Clipper; `skill-builder` před stavbou ověří, jestli podobný skill už neexistuje. 13 skillů."
       }
     ]
+  },
+  "ai-starter-kit__package__zaklad-v0-7-0__2026-10-22.zip": {
+    "version": "0.7.0",
+    "sha256": "3670da03c5d5d1051dd174a1ce2bcb220fa9a2f3da93a7548b3f067cc4f0b310",
+    "history": [
+      {
+        "version": "0.7.0",
+        "date": "2026-10-22",
+        "sha256": "3670da03c5d5d1051dd174a1ce2bcb220fa9a2f3da93a7548b3f067cc4f0b310",
+        "note": "Nová vrstva Pokročilé jako rozšíření Základu, první skill `work-graph` (graf práce napříč projekty). Základ: celý kit v angličtině přes `onboarding`, volitelný plný zápis rozhodnutí ve `workspace-architect`. 13 skillů v Základu, 1 v Pokročilých."
+      }
+    ]
+  },
+  "ai-starter-kit__package__pokrocile-v0-7-0__2026-10-22.zip": {
+    "version": "0.7.0",
+    "sha256": "4fcdb9a1fb1d8e9f3d4ff9c38fccc41643f735772111b81c988d68f5bf04fa52",
+    "history": [
+      {
+        "version": "0.7.0",
+        "date": "2026-10-22",
+        "sha256": "4fcdb9a1fb1d8e9f3d4ff9c38fccc41643f735772111b81c988d68f5bf04fa52",
+        "note": "Nová vrstva Pokročilé jako rozšíření Základu, první skill `work-graph` (graf práce napříč projekty). Základ: celý kit v angličtině přes `onboarding`, volitelný plný zápis rozhodnutí ve `workspace-architect`. 13 skillů v Základu, 1 v Pokročilých."
+      }
+    ]
   }
 }

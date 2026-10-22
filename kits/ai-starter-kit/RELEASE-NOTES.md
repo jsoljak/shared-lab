@@ -1,8 +1,27 @@
 > **visibility: PUBLIC | Distribution: LINK-ONLY**
 > Author: Jiří Soljak | linkedin.com/in/jirisoljak
-> Version: 2026-10-08
+> Version: 2026-10-22
 
 # AI Starter Kit: co je v téhle verzi
+
+## 0.7.0 — 2026-10-22 (Základ 13 skillů, nově vrstva Pokročilé)
+
+**Nová vrstva Pokročilé: rozšíření Základu.** Samostatný balíček pro chvíli, kdy ti Základ začne být těsný. Instaluje se k Základu (vlastní plugin, Základ nepřepíše) a každý skill v něm říká, který skill Základu rozšiřuje, co přidává a **kdy ho ještě nepotřebuješ**. Popis je v README balíčku Pokročilé.
+
+**První skill Pokročilé: `work-graph`, graf práce napříč projekty.** Rozšiřuje `project-planner` a `workspace-architect`: ty vedou každý projekt zvlášť, graf ukazuje jednotlivé kroky napříč projekty, kdo je drží a na co čekají. Řekne, co můžeš dělat hned („Co je volné?“) a co blokuje nejvíc dalších věcí („Na čem to stojí?“). Před každým zápisem zálohuje, nic nemaže a kontrolní skript hlídá rozbité odkazy, kruhy a zmizelé řádky.
+
+**Základ: celý kit v angličtině.** `onboarding` se na začátku zeptá, jestli chceš pracovat česky, nebo anglicky, a umí celý kit převést: profil, úvodní soubor a skilly (připraví anglické verze k instalaci). Předem řekne, co převede a co záměrně ne, a všechno zazálohuje. Po každé aktualizaci kitu převod nabídne znovu sám.
+
+**Základ: plný zápis rozhodnutí.** `workspace-architect` u drahého nebo těžko vratného rozhodnutí nabídne delší tvar: podle čeho rozhoduješ, tabulka variant, nejsilnější argument proti a kdy to otevřít znovu. Krátký zápis zůstává výchozí, číslování a registr se nemění.
+
+**Vyřazeno:** návrh AI pomocníků jako samostatný skill. AI pomocník nebo automatizace se vede jako každý jiný projekt, který trvá a mění se (`workspace-architect`).
+
+**Co s tím udělat:**
+- Máš Základ 0.6.0: stáhni nový balíček Základ, přeinstaluj skilly a napiš Claudovi „Aktualizuj kit.“ (doplní mapu složek, pravidlo o jazyce a metodu rozhodnutí; nic tvého nepřepíše).
+- Chceš Pokročilé: po aktualizaci Základu stáhni balíček Pokročilé a nainstaluj jeho plugin, nebo jen `work-graph.skill`.
+- Chceš všechno anglicky: po aktualizaci napiš „Chci všechno anglicky.“
+
+**Známá omezení:** soubory v `SYSTEM/registry/` a hlášky skriptů zůstávají při převodu do angličtiny česky (čtou je skripty). Jestli aplikace při instalaci anglického skillu se stejným názvem přepíše český, nebo ukáže oba, zatím ověřené není; Claude se zeptá, co vidíš. Graf práce se na telefonu neupravuje.
 
 ## 0.6.0 — 2026-10-21 (vrstva Základ, 13 skillů)
 

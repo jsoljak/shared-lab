@@ -1,10 +1,10 @@
 > **visibility: PUBLIC | Distribution: LINK-ONLY**
 > Author: Jiří Soljak | linkedin.com/in/jirisoljak
-> Version: 2026-10-21
+> Version: 2026-10-22
 
 # AI Starter Kit — Základ
 
-> **Sada: 13 skillů + šablona pracovní složky** · verze **0.6.0** · česky · Mac i Windows · [**⬇ Download package** (.zip)](https://raw.githubusercontent.com/jsoljak/shared-lab/main/kits/ai-starter-kit/ai-starter-kit__package__zaklad-v0-6-0__2026-10-21.zip)
+> **Sada: 13 skillů + šablona pracovní složky** · verze **0.7.0** · česky · Mac i Windows · [**⬇ Download package** (.zip)](https://raw.githubusercontent.com/jsoljak/shared-lab/main/kits/ai-starter-kit/ai-starter-kit__package__zaklad-v0-7-0__2026-10-22.zip)
 
 Startovní sada pro práci s Claudem v desktopové aplikaci (Cowork) pro lidi, kteří s AI teprve začínají. Dá ti **jednu uspořádanou pracovní složku** a skilly (pomocníky), se kterými si v ní postavíš cokoli: systém, proces nebo osobní projekt. Claude si pamatuje, kde jsi skončil, ukládá a pojmenovává soubory podle pravidel, pomůže ti napsat dobré zadání i vybrat model, ať nevyčerpáš limit. Umí také **uklidit a převzít tvoje staré soubory** a zjistit, co už máš.
 
@@ -12,7 +12,7 @@ Startovní sada pro práci s Claudem v desktopové aplikaci (Cowork) pro lidi, k
 
 **Nepotřebuješ GitHub ani účet.** Klikni na odkaz, soubor se stáhne do složky Stažené. (Nepoužívej zelené tlačítko **Code** na stránce repa, to stáhne celé repo s věcmi, které nepotřebuješ.)
 
-- **⬇ Celá sada, jeden soubor** (13 skillů + šablona složky Claude + návody): [ai-starter-kit__package__zaklad-v0-6-0__2026-10-21.zip](https://raw.githubusercontent.com/jsoljak/shared-lab/main/kits/ai-starter-kit/ai-starter-kit__package__zaklad-v0-6-0__2026-10-21.zip). Doporučuju tuhle možnost, jedině s ní dostaneš složku s mapou a pravidly, na kterých skilly stojí.
+- **⬇ Celá sada, jeden soubor** (13 skillů + šablona složky Claude + návody): [ai-starter-kit__package__zaklad-v0-7-0__2026-10-22.zip](https://raw.githubusercontent.com/jsoljak/shared-lab/main/kits/ai-starter-kit/ai-starter-kit__package__zaklad-v0-7-0__2026-10-22.zip). Doporučuju tuhle možnost, jedině s ní dostaneš složku s mapou a pravidly, na kterých skilly stojí.
 - **⬇ Jeden skill zvlášť** (zkusit si jen jeden, nebo přeinstalovat jeden): tabulka níže u každého skillu, nebo [SKILLS.md](SKILLS.md). Soubor `.skill` otevři v aplikaci Claude a ulož jako skill. Kdyby aplikace chtěla `.zip`, přejmenuj příponu.
 
 ## Co potřebuješ
@@ -38,6 +38,8 @@ Je to koncept. Skilly, skripty i šablona jsou zkontrolované mimo aplikaci, ale
 | **Už mám vlastní složku, skilly nebo nastavení** | [Mám vlastní prostředí](#mám-vlastní-prostředí) |
 | **Aktualizace, až vyjde nová verze** | [Aktualizace](#aktualizace) |
 | **Druhý mozek: wiki, Obsidian a Web Clipper** | [WIKI-OBSIDIAN.md](WIKI-OBSIDIAN.md) (co to je, instalace, synchronizace, limity) |
+| **Rozšíření Pokročilé (víc projektů najednou)** | [Pokročilé](#pokročilé-rozšíření-základu) |
+| **Chci všechno anglicky** | [Anglicky](#chceš-všechno-anglicky) |
 | **Co je nového a proč to instalovat** | [RELEASE-NOTES.md](RELEASE-NOTES.md) |
 | **Co který skill umí a co říct, aby se spustil** | [SKILLS.md](SKILLS.md) |
 | **Co je v balíčku** | [Co je v balíčku](#co-je-v-balíčku) |
@@ -107,6 +109,20 @@ Claude projde, co už máš (skilly, pravidla, seznamy, soubory), navrhne, co po
 2. Nainstaluj skilly znovu (plugin, nebo `skills-jednotlive/`), přepíšou se novými.
 3. Napiš Claudovi: **„Aktualizuj kit.“** Před každou změnou se zeptá a předtím zazálohuje. Tvoje projekty, profil, pravidla ani to, co jsi napsal(a), nepřepíše.
 
+## Pokročilé: rozšíření Základu
+
+Až ti Základ začne být těsný (víc projektů najednou, víc věcí na sebe čeká), přidej **Pokročilé**: samostatný balíček, který se instaluje k Základu a nepřepíše ho. Každý skill v něm říká, který skill Základu rozšiřuje, co přidává a **kdy ho ještě nepotřebuješ**. Skilly budou postupně přibývat.
+
+- **⬇ Balíček Pokročilé** (potřebuje Základ 0.7.0): [ai-starter-kit__package__pokrocile-v0-7-0__2026-10-22.zip](https://raw.githubusercontent.com/jsoljak/shared-lab/main/kits/ai-starter-kit/ai-starter-kit__package__pokrocile-v0-7-0__2026-10-22.zip). Uvnitř je README s tabulkou „co přidává“.
+
+| Skill | Rozšiřuje | Co přidává | Kdy ho ještě nepotřebuješ |
+|---|---|---|---|
+| `work-graph` | `project-planner`, `workspace-architect` | graf práce napříč projekty: kroky, kdo je drží, na co čekají; „Co je volné?“ a „Na čem to stojí?“; záloha před každým zápisem · [⬇](https://raw.githubusercontent.com/jsoljak/shared-lab/main/kits/ai-starter-kit/skills/work-graph.skill) | máš jeden nebo dva projekty |
+
+## Chceš všechno anglicky?
+
+Kit je napsaný česky. Napiš Claudovi **„Chci všechno anglicky“** (nebo „Switch everything to English“): `onboarding` převede profil, úvodní soubor a skilly do angličtiny a předem řekne, co záměrně nechá česky (soubory, které čtou skripty). Všechno nejdřív zazálohuje. Anglické skilly ti připraví k instalaci. Po každé aktualizaci kitu se převod nabídne znovu, protože aktualizace vrátí české verze skillů.
+
 ## Nefunguje něco?
 
 | Problém | Co zkusit |
@@ -162,6 +178,7 @@ Celé release notes jsou v [RELEASE-NOTES.md](RELEASE-NOTES.md). Co který skill
 
 | Verze | Datum | Změna |
 |---|---|---|
+| 0.7.0 | 2026-10-22 | Nová vrstva Pokročilé jako rozšíření Základu, první skill `work-graph` (graf práce napříč projekty). Základ: celý kit v angličtině přes `onboarding`, volitelný plný zápis rozhodnutí ve `workspace-architect`. 13 skillů v Základu, 1 v Pokročilých. |
 | 0.6.0 | 2026-10-21 | Nový skill `wiki` (druhý mozek podle Karpathyho) a návod na Obsidian a Web Clipper; `skill-builder` před stavbou ověří, jestli podobný skill už neexistuje. 13 skillů. |
 | 0.5.4 | 2026-10-08 | Doplněná historie vývoje (release notes od verze 0.5.0). Žádná změna v chování skillů. |
 | 0.5.3 | 2026-10-08 | Přehledná dokumentace: README s navigací, popis každého skillu, každý skill ke stažení zvlášť. |

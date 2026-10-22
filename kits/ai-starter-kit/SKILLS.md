@@ -16,6 +16,7 @@ Skill je pomocník, kterého Claude spustí, když řekneš správnou větu. Nem
 | vedeš projekty | [workspace-architect](#workspace-architect) · [project-planner](#project-planner) |
 | chceš být v bezpečí a šetřit limit | [basic-security-guard](#basic-security-guard) · [token-economy](#token-economy) |
 | se chceš naučit víc | [prompt-coach](#prompt-coach) · [skill-builder](#skill-builder) |
+| máš víc projektů a ztrácíš přehled, co čeká na co (balíček Pokročilé) | [work-graph](#work-graph) |
 
 ---
 
@@ -136,3 +137,19 @@ Při založení projektu se Claude zeptá jednou: „Bude to fungovat dál a mě
 **Řekni třeba:** „Chci si udělat skill.“ · „Projdi moje skilly.“ · „Je můj skill moc dlouhý?“ · „Rozděl ten skill.“
 **Co udělá:** nejdřív se podívá, jestli podobný skill už nemáš ty, kit nebo někdo na GitHubu (cizí skill nikdy neinstaluje naslepo, jen jako inspiraci po kontrole). Pak tě vede po krocích (účel, spouštěcí věty, krátký popis, zkouška na třech větách, zabalení), umí projít existující skilly, rozdělit dlouhý skill a sloučit dva, které dělají totéž.
 **Co nedělá:** nic nemaže. Pro jednorázové úkoly skill nepotřebuješ.
+
+---
+
+## Pokročilé: rozšíření Základu
+
+Samostatný balíček, instaluje se k Základu (verze 0.7.0) a nepřepíše ho. U každého skillu je, co v Základu rozšiřuje a kdy ho ještě nepotřebuješ.
+
+### work-graph
+⬇ [Stáhnout jen tenhle skill](https://raw.githubusercontent.com/jsoljak/shared-lab/main/kits/ai-starter-kit/skills/work-graph.skill)
+
+**Rozšiřuje:** `project-planner` a `workspace-architect`. Ty vedou každý projekt zvlášť; graf ukazuje jednotlivé kroky **napříč projekty**.
+**K čemu:** máš víc projektů a věci na sebe čekají („koupelna čeká na rozpočet, rozpočet na nabídku“). Graf je jedna tabulka kroků: kdo krok drží a na co čeká.
+**Řekni třeba:** „Přidej do grafu: objednat obkladače, až vybereme dlaždice.“ · „Co je volné?“ · „Na čem to stojí?“ · „N-004 je hotové.“ · „Zkontroluj graf.“
+**Co udělá:** zapíše krok s číslem (N-001…), řekne, co můžeš dělat hned a co blokuje nejvíc dalších věcí. Před každým zápisem zazálohuje, po zápisu skriptem zkontroluje rozbité odkazy, kroky čekající dokola a zmizelé řádky.
+**Co nedělá:** nic nemaže (hotové je `done`, odložené `parked`), nezakládá projekty a nepřepisuje plán ani mapu projektu.
+**Kdy ho ještě nepotřebuješ:** máš jeden nebo dva projekty; plán projektu ti stačí.
