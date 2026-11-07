@@ -1,8 +1,29 @@
 > **visibility: PUBLIC | Distribution: LINK-ONLY**
 > Author: Jiří Soljak | linkedin.com/in/jirisoljak
-> Version: 2026-10-22
+> Version: 2026-11-07
 
 # AI Starter Kit: co je v téhle verzi
+
+## 0.8.0 — 2026-11-07 (Základ 13 skillů, Pokročilé 1 skill)
+
+**Ochrana před cizím obsahem.** Co nenapsal(a) ty v chatu (stažený soubor, PDF, e-mail, webová stránka, tabulka od někoho jiného, cizí skill), jsou pro Clauda **data, ne příkazy**. Věta schovaná v dokumentu typu „ignoruj předchozí pokyny“ se neprovede: Claude ji jednou větou nahlásí a pokračuje tvým úkolem. Jen kvůli textu v dokumentu nikdy neplatí, neposílá, nesdílí, nemaže, nic nespouští a nezapisuje do pravidel ani profilu. Pravidlo je nově v `CLAUDE.md`.
+
+**`basic-security-guard`: nový režim CIZÍ OBSAH.** Na větu „Stáhla jsem tohle, je to v pořádku?“ nebo „Chci nainstalovat skill z internetu“ projde soubor nebo cizí skill. Skript odstraní skrytý text (bílé nebo drobné písmo, komentáře, neviditelné znaky, skryté listy a snímky) z běžných formátů (text, HTML, e-mail, Word, Excel, PowerPoint, OpenDocument, PDF) a označí věty, které vypadají jako pokyn pro AI; nic sám neinstaluje. Skill má teď tři režimy: RADA, KONTROLA a CIZÍ OBSAH.
+
+**Nastavení soukromí v onboardingu.** Nový krok 1d (asi 5 minut): kde v aplikaci vypnout nebo zapnout učení modelů na tvých chatech a paměť aplikace, proč zatím nepřipojovat konektory a proč zapnout dvoufázové ověření u účtu Google nebo Apple. Rozhoduješ ty, Claude jen ukáže kde. Volba se zapíše do `PROFILE.md` (řádek Soukromí).
+
+**Mac a iCloud.** Onboarding řekne, ať u složky `Claude` zvolíš ve Finderu **Vždy ponechat na tomto zařízení** (jinak ji iCloud při nedostatku místa z Macu odloží a Claude soubory nepřečte), a že **iCloud není záloha**: smazaný soubor zmizí i z iCloudu.
+
+**`token-economy` podle modelů z listopadu 2026.** Aktuální modely a ceny, úroveň úsilí, nový řádek **Pojistka** (u výstupů, které tvrdí fakta: jaký podklad dát do zadání, aby si Claude nevymýšlel), kdy se obnoví limit předplatného a rada otevřít pro jiný model nový chat.
+
+**Drobnosti:** `skill-builder` při kontrole skillu nově hlídá i cizí obsah (9. oblast), `wiki` a `triage` berou uložené články a dokumenty jako data, ne pokyny. Pokročilé (`work-graph`) beze změny, jen nová verze kvůli Základu.
+
+**Co s tím udělat:**
+- Máš Základ 0.7.0 nebo starší: stáhni nový balíček Základ, přeinstaluj skilly (plugin, nebo `skills-jednotlive/`) a napiš Claudovi **„Aktualizuj kit.“** Doplní pravidlo o cizím obsahu do `CLAUDE.md` a řádek Soukromí do profilu a nabídne projít nastavení soukromí. Nic tvého nepřepíše.
+- Stačí ti jen nové skilly: přeinstaluj `basic-security-guard`, `onboarding`, `token-economy`, `skill-builder`, `wiki` a `triage`.
+- Máš Pokročilé 0.7.0: nic měnit nemusíš.
+
+**Známá omezení:** skript najde skryté pokyny jen podle známých vzorů; hlavní ochrana je pravidlo v `CLAUDE.md`, ne skript. PDF zkontroluje jen s knihovnou PyMuPDF; chybí-li, řekne „PDF NEZKONTROLOVÁNO“ a nic sám neinstaluje. Starý formát DOC, XLS, obrázky a archivy odmítne („TYP NEPODPOROVÁN“). Názvy položek v nastavení aplikace se mohou měnit; když je Claude nenajde, popiš mu, co vidíš.
 
 ## 0.7.0 — 2026-10-22 (Základ 13 skillů, nově vrstva Pokročilé)
 

@@ -1,10 +1,10 @@
 > **visibility: PUBLIC | Distribution: LINK-ONLY**
 > Author: Jiří Soljak | linkedin.com/in/jirisoljak
-> Version: 2026-10-22
+> Version: 2026-11-07
 
 # AI Starter Kit — Základ
 
-> **Sada: 13 skillů + šablona pracovní složky** · verze **0.7.0** · česky · Mac i Windows · [**⬇ Download package** (.zip)](https://raw.githubusercontent.com/jsoljak/shared-lab/main/kits/ai-starter-kit/ai-starter-kit__package__zaklad-v0-7-0__2026-10-22.zip)
+> **Sada: 13 skillů + šablona pracovní složky** · verze **0.8.0** · česky · Mac i Windows · [**⬇ Download package** (.zip)](https://raw.githubusercontent.com/jsoljak/shared-lab/main/kits/ai-starter-kit/ai-starter-kit__package__zaklad-v0-8-0__2026-11-07.zip)
 
 Startovní sada pro práci s Claudem v desktopové aplikaci (Cowork) pro lidi, kteří s AI teprve začínají. Dá ti **jednu uspořádanou pracovní složku** a skilly (pomocníky), se kterými si v ní postavíš cokoli: systém, proces nebo osobní projekt. Claude si pamatuje, kde jsi skončil, ukládá a pojmenovává soubory podle pravidel, pomůže ti napsat dobré zadání i vybrat model, ať nevyčerpáš limit. Umí také **uklidit a převzít tvoje staré soubory** a zjistit, co už máš.
 
@@ -12,12 +12,12 @@ Startovní sada pro práci s Claudem v desktopové aplikaci (Cowork) pro lidi, k
 
 **Nepotřebuješ GitHub ani účet.** Klikni na odkaz, soubor se stáhne do složky Stažené. (Nepoužívej zelené tlačítko **Code** na stránce repa, to stáhne celé repo s věcmi, které nepotřebuješ.)
 
-- **⬇ Celá sada, jeden soubor** (13 skillů + šablona složky Claude + návody): [ai-starter-kit__package__zaklad-v0-7-0__2026-10-22.zip](https://raw.githubusercontent.com/jsoljak/shared-lab/main/kits/ai-starter-kit/ai-starter-kit__package__zaklad-v0-7-0__2026-10-22.zip). Doporučuju tuhle možnost, jedině s ní dostaneš složku s mapou a pravidly, na kterých skilly stojí.
+- **⬇ Celá sada, jeden soubor** (13 skillů + šablona složky Claude + návody): [ai-starter-kit__package__zaklad-v0-8-0__2026-11-07.zip](https://raw.githubusercontent.com/jsoljak/shared-lab/main/kits/ai-starter-kit/ai-starter-kit__package__zaklad-v0-8-0__2026-11-07.zip). Doporučuju tuhle možnost, jedině s ní dostaneš složku s mapou a pravidly, na kterých skilly stojí.
 - **⬇ Jeden skill zvlášť** (zkusit si jen jeden, nebo přeinstalovat jeden): tabulka níže u každého skillu, nebo [SKILLS.md](SKILLS.md). Soubor `.skill` otevři v aplikaci Claude a ulož jako skill. Kdyby aplikace chtěla `.zip`, přejmenuj příponu.
 
 ## Co potřebuješ
 
-- desktopovou aplikaci Claude (Cowork) a přihlášený účet,
+- desktopovou aplikaci Claude (Cowork) a přihlášený účet; aplikaci stahuj jen z [claude.ai/download](https://claude.ai/download), ne z App Storu ani odjinud,
 - Mac, nebo Windows (funguje na obou),
 - asi 20 minut na instalaci a pak hodinu s Claudem. Python ani nic dalšího instalovat nemusíš.
 
@@ -59,7 +59,9 @@ Klikni na **Download package** nahoře. Stáhne se jeden `.zip`. Rozbal ho (dvoj
 
 Složku `Claude/` z balíčku zkopíruj do **Dokumentů** (vznikne `Dokumenty/Claude`). Mac: označ a Cmd + C, v Dokumentech Cmd + V. Windows: Ctrl + C a Ctrl + V; máš-li Dokumenty ve OneDrive, kopíruj tam.
 
-**Proč právě Dokumenty:** složka Dokumenty se většinou zálohuje sama: na Macu přes iCloud Drive (Plocha a Dokumenty) nebo Time Machine, ve Windows přes OneDrive (zálohování složek) nebo Historii souborů. Co leží v `Dokumenty/Claude`, je tedy i zazálohované. Máš-li složku `Claude` už jinde, nech ji tam, jen si ověř, že se zálohuje.
+**Proč právě Dokumenty:** složka Dokumenty se většinou zálohuje sama: na Macu přes iCloud Drive (Plocha a Dokumenty) nebo Time Machine, ve Windows přes OneDrive (zálohování složek) nebo Historii souborů. Co leží v `Dokumenty/Claude`, je tedy i zazálohované. Desktopová aplikace pracuje se složkou `Dokumenty/Claude` sama, v nastavení se nic nenastavuje (jinou domovskou složku zvolit nejde). Máš-li složku `Claude` s vlastními soubory už jinde, nepřesouvej ji naslepo: postupuj podle [Mám vlastní prostředí](#mám-vlastní-prostředí).
+
+**Mac s iCloudem (Plocha a Dokumenty):** ve Finderu klikni na složku `Claude` pravým tlačítkem a zvol **Vždy ponechat na tomto zařízení**, jinak ji iCloud při nedostatku místa z Macu odloží a Claude soubory nepřečte. A pozor: **iCloud není záloha.** Smazaný soubor zmizí i z iCloudu, proto měj ještě Time Machine nebo jinou kopii.
 
 **Windows:** zapni si v Průzkumníku zobrazení přípon souborů (Zobrazit, Zobrazit, Přípony názvů souborů). Jinak se při přejmenování snadno ztratí `.pdf` a soubor se přestane otevírat.
 
@@ -76,11 +78,12 @@ Otevři soubor `ai-starter-kit.plugin` (dvojklik, v aplikaci). Všech 13 skillů
 Napiš Claudovi: **„Začínám — spusť onboarding.“** Počítej asi s hodinou, jde přerušit a později navázat. Co se bude dít:
 
 1. Zeptá se, jestli máš Mac, nebo Windows, a kde složka leží.
-2. Zjistí, co už máš (skilly, pravidla, seznamy), a navrhne, co ponechat nebo sloučit.
-3. Vysvětlí, jak je složka uspořádaná (metoda PARA: projekty, oblasti, zdroje, archiv), a **můžete o ní diskutovat**. Pokud chceš, nechá ti tvoje uspořádání.
-4. Navrhne oblasti podle toho, jak žiješ, a dohodnete se na pojmenování souborů.
-5. Nabídne převzetí tvých starých souborů (volitelné).
-6. Vyplní profil a založí s tebou první projekt. Na konci uloží, kde jste skončili.
+2. Projde s tebou nastavení soukromí v aplikaci (asi 5 minut): učení modelů na tvých chatech, paměť aplikace, konektory. Rozhoduješ ty.
+3. Zjistí, co už máš (skilly, pravidla, seznamy), a navrhne, co ponechat nebo sloučit.
+4. Vysvětlí, jak je složka uspořádaná (metoda PARA: projekty, oblasti, zdroje, archiv), a **můžete o ní diskutovat**. Pokud chceš, nechá ti tvoje uspořádání.
+5. Navrhne oblasti podle toho, jak žiješ, a dohodnete se na pojmenování souborů.
+6. Nabídne převzetí tvých starých souborů (volitelné).
+7. Vyplní profil a založí s tebou první projekt. Na konci uloží, kde jste skončili.
 
 Nic nesmaže bez tvého „ano“.
 
@@ -113,7 +116,7 @@ Claude projde, co už máš (skilly, pravidla, seznamy, soubory), navrhne, co po
 
 Až ti Základ začne být těsný (víc projektů najednou, víc věcí na sebe čeká), přidej **Pokročilé**: samostatný balíček, který se instaluje k Základu a nepřepíše ho. Každý skill v něm říká, který skill Základu rozšiřuje, co přidává a **kdy ho ještě nepotřebuješ**. Skilly budou postupně přibývat.
 
-- **⬇ Balíček Pokročilé** (potřebuje Základ 0.7.0): [ai-starter-kit__package__pokrocile-v0-7-0__2026-10-22.zip](https://raw.githubusercontent.com/jsoljak/shared-lab/main/kits/ai-starter-kit/ai-starter-kit__package__pokrocile-v0-7-0__2026-10-22.zip). Uvnitř je README s tabulkou „co přidává“.
+- **⬇ Balíček Pokročilé** (potřebuje Základ 0.7.0 nebo novější): [ai-starter-kit__package__pokrocile-v0-8-0__2026-11-07.zip](https://raw.githubusercontent.com/jsoljak/shared-lab/main/kits/ai-starter-kit/ai-starter-kit__package__pokrocile-v0-8-0__2026-11-07.zip). Uvnitř je README s tabulkou „co přidává“.
 
 | Skill | Rozšiřuje | Co přidává | Kdy ho ještě nepotřebuješ |
 |---|---|---|---|
@@ -165,12 +168,14 @@ Podrobnosti, příklady vět a co který skill **nedělá** jsou v [SKILLS.md](S
 | `wiki` | druhý mozek: ukládá články a poznámky, sepisuje z nich propojené stránky a odpovídá jen z nich; čte se i v Obsidianu ([návod](WIKI-OBSIDIAN.md)) · [⬇](https://raw.githubusercontent.com/jsoljak/shared-lab/main/kits/ai-starter-kit/skills/wiki.skill) |
 | `idea-inbox` | zachytí nápad nebo úkol do 30 sekund, případně rovnou do projektu · [⬇](https://raw.githubusercontent.com/jsoljak/shared-lab/main/kits/ai-starter-kit/skills/idea-inbox.skill) |
 | `session-close` | konec práce: předání, kde jsi skončil · [⬇](https://raw.githubusercontent.com/jsoljak/shared-lab/main/kits/ai-starter-kit/skills/session-close.skill) |
-| `basic-security-guard` | co do AI nevkládat, zálohy, kontrola složky na hesla a čísla karet · [⬇](https://raw.githubusercontent.com/jsoljak/shared-lab/main/kits/ai-starter-kit/skills/basic-security-guard.skill) |
+| `basic-security-guard` | co do AI nevkládat, zálohy, nastavení soukromí, kontrola složky na hesla a čísla karet a kontrola staženého souboru nebo cizího skillu na skryté pokyny pro AI · [⬇](https://raw.githubusercontent.com/jsoljak/shared-lab/main/kits/ai-starter-kit/skills/basic-security-guard.skill) |
 | `prompt-coach` | pomůže napsat dobré zadání pro Claude a vysvětlí proč · [⬇](https://raw.githubusercontent.com/jsoljak/shared-lab/main/kits/ai-starter-kit/skills/prompt-coach.skill) |
 | `skill-builder` | vytvoří, upraví a zkontroluje tvůj vlastní skill; projde skilly, které už máš · [⬇](https://raw.githubusercontent.com/jsoljak/shared-lab/main/kits/ai-starter-kit/skills/skill-builder.skill) |
 | `token-economy` | poradí, na jakém modelu Claude úkol pustit, ať zbytečně nevyčerpáš limit · [⬇](https://raw.githubusercontent.com/jsoljak/shared-lab/main/kits/ai-starter-kit/skills/token-economy.skill) |
 
 ## Co je v téhle verzi
+
+**0.8.0:** Claude bere cizí obsah (stažené soubory, e-maily, weby, cizí skilly) jako data, ne příkazy; `basic-security-guard` umí soubor nebo skill zvenku zkontrolovat na skryté pokyny. Onboarding nově projde nastavení soukromí v aplikaci a na Macu poradí s iCloudem. `token-economy` zná modely z listopadu 2026 a radí, jak předejít vymýšlení. Máš starší verzi? Viz [Aktualizace](#aktualizace).
 
 Celé release notes jsou v [RELEASE-NOTES.md](RELEASE-NOTES.md). Co který skill umí, je v [SKILLS.md](SKILLS.md).
 
@@ -178,6 +183,7 @@ Celé release notes jsou v [RELEASE-NOTES.md](RELEASE-NOTES.md). Co který skill
 
 | Verze | Datum | Změna |
 |---|---|---|
+| 0.8.0 | 2026-11-07 | Ochrana před cizím obsahem: pravidlo v `CLAUDE.md` a nový režim CIZÍ OBSAH v `basic-security-guard` (kontrola souboru a cizího skillu). Onboarding: nastavení soukromí v aplikaci, iCloud na Macu. `token-economy` podle modelů 11/2026. 13 skillů v Základu, 1 v Pokročilých. |
 | 0.7.0 | 2026-10-22 | Nová vrstva Pokročilé jako rozšíření Základu, první skill `work-graph` (graf práce napříč projekty). Základ: celý kit v angličtině přes `onboarding`, volitelný plný zápis rozhodnutí ve `workspace-architect`. 13 skillů v Základu, 1 v Pokročilých. |
 | 0.6.0 | 2026-10-21 | Nový skill `wiki` (druhý mozek podle Karpathyho) a návod na Obsidian a Web Clipper; `skill-builder` před stavbou ověří, jestli podobný skill už neexistuje. 13 skillů. |
 | 0.5.4 | 2026-10-08 | Doplněná historie vývoje (release notes od verze 0.5.0). Žádná změna v chování skillů. |

@@ -196,5 +196,29 @@
         "note": "Nová vrstva Pokročilé jako rozšíření Základu, první skill `work-graph` (graf práce napříč projekty). Základ: celý kit v angličtině přes `onboarding`, volitelný plný zápis rozhodnutí ve `workspace-architect`. 13 skillů v Základu, 1 v Pokročilých."
       }
     ]
+  },
+  "ai-starter-kit__package__zaklad-v0-8-0__2026-11-07.zip": {
+    "version": "0.8.0",
+    "sha256": "aaeb9ae001ad299a43868415990a1d5603797dcbc8a86ab44d646e85732e60e3",
+    "history": [
+      {
+        "version": "0.8.0",
+        "date": "2026-11-07",
+        "sha256": "aaeb9ae001ad299a43868415990a1d5603797dcbc8a86ab44d646e85732e60e3",
+        "note": "Ochrana před cizím obsahem: pravidlo v `CLAUDE.md` a nový režim CIZÍ OBSAH v `basic-security-guard` (kontrola souboru a cizího skillu). Onboarding: nastavení soukromí v aplikaci, iCloud na Macu. `token-economy` podle modelů 11/2026. 13 skillů v Základu, 1 v Pokročilých."
+      }
+    ]
+  },
+  "ai-starter-kit__package__pokrocile-v0-8-0__2026-11-07.zip": {
+    "version": "0.8.0",
+    "sha256": "aed3281b1acda4545f4ac78cf0192b56a38e3abfe82fb5a05c89a2dcf5fbcb7c",
+    "history": [
+      {
+        "version": "0.8.0",
+        "date": "2026-11-07",
+        "sha256": "aed3281b1acda4545f4ac78cf0192b56a38e3abfe82fb5a05c89a2dcf5fbcb7c",
+        "note": "Ochrana před cizím obsahem: pravidlo v `CLAUDE.md` a nový režim CIZÍ OBSAH v `basic-security-guard` (kontrola souboru a cizího skillu). Onboarding: nastavení soukromí v aplikaci, iCloud na Macu. `token-economy` podle modelů 11/2026. 13 skillů v Základu, 1 v Pokročilých."
+      }
+    ]
   }
 }
