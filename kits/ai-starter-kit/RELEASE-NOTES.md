@@ -1,8 +1,31 @@
 > **visibility: PUBLIC | Distribution: LINK-ONLY**
 > Author: Jiří Soljak | linkedin.com/in/jirisoljak
-> Version: 2026-11-07
+> Version: 2026-11-08
 
 # AI Starter Kit: co je v téhle verzi
+
+## 0.8.1 — 2026-11-08 (Základ 13 skillů, Pokročilé 1 skill)
+
+**Onboarding tě vede celou dobu.** Po každém kroku řekne, co bude dál, a zeptá se, jestli pokračovat; nikdy neskončí naprázdno. Když odbočíš (otázka mimo, chceš rozebrat profil), krátce odpoví a vrátí se: „Vracím se ke kroku 4: …“. Kde jsi, si průběžně zapisuje do předání (`SYSTEM/registry/session-brain.md`, sekce Onboarding), takže můžeš kdykoli přestat. Příště stačí napsat **„Kde jsem skončil?“** a pokračuje se tam, kde jste přestali.
+
+**Projekty a oblasti na tvých věcech, názvy česky, nebo anglicky.** Při zakládání složek Claude vysvětlí rozdíl dvěma větami (projekt má konec, oblast trvá) na příkladu z toho, co jsi řekl(a), a zeptá se, jestli chceš názvy oblastí česky (`domacnost`), nebo anglicky (`home`).
+
+**Prohlídka skillů.** Po prvním projektu ti Claude ukáže skilly, které máš, vždycky na tvé věci: ty napíšeš jednu zkušební větu a uvidíš, co skill udělá. Dva až tři hned, zbytek si zapamatuje a nabídne příště.
+
+**Týdenní přehled „Jak používám systém?“.** Za 3 až 5 dní používání Claude nabídne, že ti jednou týdně udělá přehled: jak systém používáš, 2 až 3 vylepšení a u věcí, které děláš pořád dokola, jestli by se nehodil vlastní skill. Na placeném plánu tě krok za krokem provede založením naplánované úlohy v aplikaci (**Scheduled** → **New task**), jinak ti to jednou týdně připomene a přehled udělá v chatu. Úloha nic nemění, jen zapíše přehled do `INBOX/`.
+
+**Návod krok za krokem: co kam dát a čím to otevřít.** README na GitHubu, README v balíčku i `START-HERE.md` teď u každé věci z balíčku říkají, co s ní udělat: složka `Claude` do Dokumentů, plugin nahrát v aplikaci, zbytek nechat ve Stažených. Nově výslovně: **soubory z kitu nedávej do okna chatu.** Claude by je jen četl, nic by se nenainstalovalo a bralo by to limit.
+
+**Skilly se nahrávají v nastavení aplikace:** vlevo **Customize** → **Plugins** → **Add** → **Upload plugin** a vybrat soubor `ai-starter-kit.plugin` (ne celý stažený zip). Jeden skill zvlášť: **Customize** → **Skills** → **Upload skill**.
+
+**Nová verze kitu patří do `Claude/INBOX/kit/`.** Jedna podsložka v INBOXu místo dřívější `INBOX/prevzeti/kit/`. Tam ji najde `onboarding` při aktualizaci, při zapojení do vlastního prostředí i při převodu do angličtiny. `cleanup`, `triage` a `idea-inbox` složku `kit` přeskakují, takže její soubory nehlásí jako špatné názvy ani jako starý inbox.
+
+**Co s tím udělat:**
+- Máš Základ 0.8.0 nebo starší: nový zip rozbal ve Stažených, v `Dokumenty/Claude/INBOX` vytvoř složku `kit` a zkopíruj do ní všechno z rozbalené složky. Pak nahraj nový plugin (**Customize** → **Plugins** → **Upload plugin**) a do okna chatu napiš **„Aktualizuj kit.“** Doplní do mapy složek řádek pro `INBOX/kit/`, návod na novou verzi do `START-HERE.md`, do `CLAUDE.md` pravidlo, že nedokončený onboarding nabídne dokončit, a do předání kontrolní seznam onboardingu. Pak ti nabídne prohlídku skillů.
+- Máš ještě starou složku `INBOX/prevzeti/kit/`: Claude ti ji nabídne smazat, nový kit patří do `INBOX/kit/`.
+- Máš Pokročilé 0.8.0: přeinstalovat nemusíš, změnil se jen návod.
+
+**Známá omezení:** názvy tlačítek v aplikaci jsou podle nápovědy Claude a podle verze aplikace se můžou lišit. Jestli nový plugin starý nahradí, nebo se ukáže dvakrát, zatím ověřené není; když dvakrát, starší odeber. Naplánované úlohy jsou jen na placených plánech; úloha pracuje se složkou na tvém počítači, takže počítač má být v čase běhu zapnutý. Jestli běh bere z limitu, nápověda neuvádí, proto jednou týdně.
 
 ## 0.8.0 — 2026-11-07 (Základ 13 skillů, Pokročilé 1 skill)
 

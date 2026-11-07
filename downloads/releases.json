@@ -220,5 +220,29 @@
         "note": "Ochrana před cizím obsahem: pravidlo v `CLAUDE.md` a nový režim CIZÍ OBSAH v `basic-security-guard` (kontrola souboru a cizího skillu). Onboarding: nastavení soukromí v aplikaci, iCloud na Macu. `token-economy` podle modelů 11/2026. 13 skillů v Základu, 1 v Pokročilých."
       }
     ]
+  },
+  "ai-starter-kit__package__zaklad-v0-8-1__2026-11-08.zip": {
+    "version": "0.8.1",
+    "sha256": "77ee3eeeb70a79898e4c15a95eba2767cc8427521d74039a83b20b3fdddf370c",
+    "history": [
+      {
+        "version": "0.8.1",
+        "date": "2026-11-08",
+        "sha256": "77ee3eeeb70a79898e4c15a95eba2767cc8427521d74039a83b20b3fdddf370c",
+        "note": "Onboarding vede celým cyklem (po každém kroku další, pamatuje si, kde jsi skončil), prohlídka skillů na tvých věcech, po pár dnech týdenní přehled „Jak používám systém?“, názvy oblastí česky, nebo anglicky. Návod krok za krokem: co kam dát a čím to otevřít, nic do okna chatu; skilly se nahrávají přes Customize → Plugins → Upload plugin; nová verze kitu patří do `Claude/INBOX/kit/` a úklid ji přeskakuje. 13 skillů v Základu, 1 v Pokročilých."
+      }
+    ]
+  },
+  "ai-starter-kit__package__pokrocile-v0-8-1__2026-11-08.zip": {
+    "version": "0.8.1",
+    "sha256": "6f8eb3d1d463348ac14bd8ccec1d917a6a23f3ab548eada0b806ea6d943e29f9",
+    "history": [
+      {
+        "version": "0.8.1",
+        "date": "2026-11-08",
+        "sha256": "6f8eb3d1d463348ac14bd8ccec1d917a6a23f3ab548eada0b806ea6d943e29f9",
+        "note": "Onboarding vede celým cyklem (po každém kroku další, pamatuje si, kde jsi skončil), prohlídka skillů na tvých věcech, po pár dnech týdenní přehled „Jak používám systém?“, názvy oblastí česky, nebo anglicky. Návod krok za krokem: co kam dát a čím to otevřít, nic do okna chatu; skilly se nahrávají přes Customize → Plugins → Upload plugin; nová verze kitu patří do `Claude/INBOX/kit/` a úklid ji přeskakuje. 13 skillů v Základu, 1 v Pokročilých."
+      }
+    ]
   }
 }

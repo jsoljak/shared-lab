@@ -1,12 +1,12 @@
 > **visibility: PUBLIC | Distribution: LINK-ONLY**
 > Author: Jiří Soljak | linkedin.com/in/jirisoljak
-> Version: 2026-11-07
+> Version: 2026-11-08
 
 # AI Starter Kit: co který skill umí
 
 Skill je pomocník, kterého Claude spustí, když řekneš správnou větu. Nemusíš znát jejich názvy: stačí napsat, co potřebuješ, a Claude vybere. Tady je přehled **po situacích**, ke každému skillu příklady vět a také co **nedělá**. Zpět na [úvodní stránku](README.md) · [co je nového](RELEASE-NOTES.md).
 
-**Jak stáhnout:** klikni na odkaz **⬇ Stáhnout jen tenhle skill** u skillu, soubor se uloží do složky Stažené (GitHub ani účet nepotřebuješ). Otevři ho v aplikaci Claude a ulož jako skill. **Celou sadu** (všech 13 skillů + šablonu složky) stáhneš jedním odkazem na [úvodní stránce](README.md#stažení-celé-sady-nebo-jednoho-skillu). Samostatně dobře fungují `prompt-coach`, `token-economy` a `wiki`; ostatní skilly počítají se složkou `Claude/` z balíčku (mapa složek, pravidla, registry), tak je stahuj až spolu s ní.
+**Jak stáhnout:** klikni na odkaz **⬇ Stáhnout jen tenhle skill** u skillu, soubor se uloží do složky Stažené (GitHub ani účet nepotřebuješ). **Do okna chatu ho nedávej.** V aplikaci Claude klikni vlevo na **Customize** → **Skills** → **+** → **Upload skill** (může se jmenovat i **Create skill**, pak **Upload a skill**) a vyber soubor ve Stažených. Kdyby aplikace chtěla `.zip`, přejmenuj příponu `.skill` na `.zip`. **Celou sadu** (všech 13 skillů + šablonu složky) stáhneš jedním odkazem na [úvodní stránce](README.md#stažení-celé-sady-nebo-jednoho-skillu). Samostatně dobře fungují `prompt-coach`, `token-economy` a `wiki`; ostatní skilly počítají se složkou `Claude/` z balíčku (mapa složek, pravidla, registry), tak je stahuj až spolu s ní.
 
 | Když… | Skilly |
 |---|---|
@@ -25,9 +25,9 @@ Skill je pomocník, kterého Claude spustí, když řekneš správnou větu. Nem
 ### onboarding
 ⬇ [Stáhnout jen tenhle skill](https://raw.githubusercontent.com/jsoljak/shared-lab/main/kits/ai-starter-kit/skills/onboarding.skill)
 
-**K čemu:** provede tě prvním nastavením, nebo zapojením kitu do toho, co už máš. Trvá zhruba hodinu a jde přerušit.
-**Řekni třeba:** „Začínám — spusť onboarding.“ · „Podívej se na tenhle kit a poraď mi, jak by se dal zapojit do mého stávajícího prostředí.“ · „Aktualizuj kit.“
-**Co udělá:** zjistí, jestli máš Mac, nebo Windows, projde, co už máš (skilly, pravidla, seznamy), vysvětlí, jak je složka uspořádaná, a navrhne složky a oblasti podle toho, jak žiješ. Pak vyplní profil a založí s tebou první projekt. Na konci uloží, kde jste skončili.
+**K čemu:** provede tě prvním nastavením, nebo zapojením kitu do toho, co už máš. Trvá zhruba hodinu a čtvrt; vede tě celou dobu a jde kdykoli přerušit a navázat.
+**Řekni třeba:** „Začínám — spusť onboarding.“ · „Pokračuj v onboardingu.“ · „Ukaž mi moje skilly.“ · „Jak používám systém?“ · „Podívej se na tenhle kit a poraď mi, jak by se dal zapojit do mého stávajícího prostředí.“ · „Aktualizuj kit.“
+**Co udělá:** zjistí, jestli máš Mac, nebo Windows, projde, co už máš (skilly, pravidla, seznamy), vysvětlí, jak je složka uspořádaná, a navrhne složky a oblasti podle toho, jak žiješ. Pak vyplní profil, založí s tebou první projekt a ukáže ti skilly na tvých věcech (ty píšeš zkušební věty). Po každém kroku řekne, co bude dál; kde jste, si průběžně zapisuje do předání. Za pár dní nabídne týdenní přehled „Jak používám systém?“ (na placeném plánu jako naplánovanou úlohu v aplikaci).
 **Co nedělá:** nic nesmaže a nic nepřepíše bez tvého „ano“. Můžeš odmítnout kitovou strukturu a nechat si svoje uspořádání. Tvůj vlastní `CLAUDE.md` obohatí, ne přepíše.
 
 ### cleanup

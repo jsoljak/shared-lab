@@ -1,6 +1,6 @@
 > **visibility: PUBLIC | Distribution: LINK-ONLY**
 > Author: Jiří Soljak | linkedin.com/in/jirisoljak
-> Version: 2026-10-21
+> Version: 2026-11-07
 
 # Druhý mozek: wiki s Claudem a Obsidian
 
@@ -28,7 +28,7 @@ Příklady použití: zahrada, vaření, opravy v domě, návody k vybavení · 
 ### A) Starter kit už máš
 
 1. Stáhni skill [wiki.skill](https://raw.githubusercontent.com/jsoljak/shared-lab/main/kits/ai-starter-kit/skills/wiki.skill).
-2. Otevři ho v aplikaci Claude a ulož jako skill.
+2. Soubor se uloží do Stažených. Pak ho nahraj v aplikaci Claude: vlevo **Customize** → **Skills** → **+** → **Upload skill** a vyber ho ve Stažených (do okna chatu ho nedávej; aplikace chce `.zip`? přejmenuj příponu `.skill` na `.zip`).
 3. Hotovo. Složku `RESOURCES/` ve své složce `Claude` už máš. Napiš Claudovi „Ulož si tenhle článek“ a vlož text.
 
 ### B) Starter kit nemáš
@@ -38,7 +38,7 @@ Příklady použití: zahrada, vaření, opravy v domě, návody k vybavení · 
 Chceš jen wiki:
 1. V Dokumentech si založ složku `Claude` (vznikne `Dokumenty/Claude`).
 2. V aplikaci Claude ji nasdílej (v nové konverzaci zvol práci se složkou a vyber `Claude`).
-3. Stáhni [wiki.skill](https://raw.githubusercontent.com/jsoljak/shared-lab/main/kits/ai-starter-kit/skills/wiki.skill), otevři ho v aplikaci Claude a ulož jako skill.
+3. Stáhni [wiki.skill](https://raw.githubusercontent.com/jsoljak/shared-lab/main/kits/ai-starter-kit/skills/wiki.skill); soubor se uloží do Stažených. Pak ho nahraj v aplikaci Claude: vlevo **Customize** → **Skills** → **+** → **Upload skill** a vyber ho ve Stažených (do okna chatu ho nedávej; aplikace chce `.zip`? přejmenuj příponu `.skill` na `.zip`).
 4. Napiš Claudovi: „Založ si wiki.“ Vytvoří složku `RESOURCES/` s rozcestníkem a deníkem.
 
 ### Jak s wiki mluvit
